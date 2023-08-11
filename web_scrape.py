@@ -3,7 +3,11 @@ import pandas as pd
 
 base_link = "https://fantasy.premierleague.com/api/"
 
-# Request current season stats from FPL api
+"""
+Request current season stats from FPL api.
+It then filters the scraped results into display stats regarding teams. 
+Saves the database into a .csv file for locally stored data for offline analysis. 
+""" 
 def update_bootstrap_data():
     
     # Combine the base link above with the extension for the bootstrap-static. 
@@ -18,6 +22,11 @@ def update_bootstrap_data():
     # return the stored values to be used in the future. 
     return bootstrap, team_data
 
+"""
+Requests current seasons stats from FPL api. It filters the scraped results to only player "elements"
+stats that correspond to players only rather than teams.
+Saves the database into a .csv file for locally stored data for offline analysis. 
+"""
 def update_player_data():
 
     # Add the the same extension "bootstrap-static to collate the FPL data
