@@ -33,8 +33,8 @@ fixtures_df["team_a"].replace(team_replace_dict, inplace = True)
 fixtures_df["team_h"].replace(team_replace_dict, inplace = True)
 
 df_columns = {
-    "current_name": ["team_h", "team_h_score", "team_a_score", "team_a", "event", "kickoff_time"],
-    "new_name": ["Home", "Home_goals", "Away_goals", "Away", "GW", "kickoff_time"]
+    "current_name": ["id","team_h", "team_h_score", "team_a_score", "team_a", "event", "kickoff_time","stats"],
+    "new_name": ["Match_ID","Home", "Home_goals", "Away_goals", "Away", "GW", "kickoff_time", "Match_stats"]
 }
 def test_function(current_column_name, new_column_name, column_position):
         reorder_col = fixtures_df.pop(current_column_name)
@@ -47,4 +47,4 @@ for i in range(len(df_columns["new_name"])):
         i
         )
 
-fixtures_df = fixtures_df[df_columns["new_name"]]
+fixtures_df = fixtures_df[df_columns["new_name"]].sort_values(by="GW", ascending=True)
