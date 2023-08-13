@@ -24,10 +24,10 @@ Saves the database into a .csv file for locally stored data for offline analysis
     players_df = pd.DataFrame(players)
 
     # Save the DataFrame into a .csv file to sotere the data for offline analysis. 
-    players_df.to_csv("data/2023-2024/player_database")
+    players_df.to_csv("data/2023-2024/player_database.csv")
     return players_df
 
-def clean_player_data(df_column, player_df):
+def clean_player_data(player_df):
     """
 Similar to the clean_team_data(season) above this new function cleans the player stats database either stored in .csv file or is used in 
 conjunction with web_scrape.py which scrapes the data from the FPL website using its API
@@ -39,14 +39,14 @@ Function variables:
 """
     # Define the columns to be rearranged 
     df_columns = {
-        "current_name": ["web_name", "id", "element_type"],
-        "new_name": ["name", "id", "position"]
+        "current_name": ["web_name" , "team", "id", "element_type", "now_cost"],
+        "new_name": ["name", "team" , "id", "position", "price"]
     }
     
     # Define a function that rearranges the columns within the player_df DataFrame
     def test_function(current_column_name, new_column_name, column_position):
         reorder_col = player_df.pop(current_column_name)
-        player_df.insert(int(column_position), new_column_name, reorder_col)
+        player_df.insert(column_position, new_column_name, reorder_col)
     
     # Iterate over the length of column_df and call test_function() for each iteration.
     for i in range(len(df_columns["new_name"])):
@@ -60,7 +60,7 @@ Function variables:
     position_replace_dict = { 1: "GLK", 2: "DEF", 3 : "MID", 4: "FWD"}
 
     # Replace the numbers within the "Position" column with the corrosponding positions that the players are positioned. 
-    player_df["Position"].replace(position_replace_dict, inplace=True)
+    player_df["position"].replace(position_replace_dict, inplace=True)
     
     # Create a dictionary of the teams and the correspoinding team codes for each of the players 
     team_replace_dict = { 
@@ -91,60 +91,46 @@ Function variables:
     return player_df
 
 
-def get_basic_stats_GLK():
+def get_basic_stats_GLK(players_df):
 
     # Filter the players DataFrame by position only showing the players with the GLK label. 
     # The DataFrame does require the user to have previously cleaned the data (Converted the player_element to position and from numbers to poition)
-    GLK_df = players_df[players_df["Position"] == "GLK"]
+    GLK_df = players_df[players_df["position"] == "GLK"]
 
     # Create a list with the relavent stats for the goalkeeper position. Futher stats columns can be included by appending the list below
-    GLK_stats = ["Name", "id", "Position", "total_points", "bonus", "goals_scored", "assists", "clean_sheets", "goals_conceded", "saves"]
+    GLK_stats = ["name", "team", "id", "position", "price", "total_points", "bonus", "goals_scored", "assists", "clean_sheets", "goals_conceded", "saves"]
     
     # Using the GLK_stats list futher filter the GLK_df down so that it only shows the relavent stats columns.
-    GLK_df = GLK_df[GLK_stats]
-    return GLK_df
+    GLK_stats_df = GLK_df[GLK_stats]
+
+    for row in range(len(GLK_df["position"])):
+        cpp = GLK_df["total_points"].iloc[row] / (GLK_df["price"].iloc[row]/10)
+        print(cpp)
+
+    return GLK_stats_df
 
 
-def get_basic_stats_DEF():
+def get_basic_stats_DEF(players_df):
 
     # Filter 
-    DEF_df = players_df[players_df["Position"] == "DEF"] 
-    DEF_stats = ["Name", "id", "Position", "total_points", "bonus", "goals_scored", "assists", "clean_sheets", "goals_conceded"]
-    return DEF_df
-
-
-def get_basic_stats_MID():
-    MID_df = players_df[players_df["Position"] == "MID"] 
-    MID_stats = ["Name", "id", "Position", "total_points", "bonus", "goals_scored", "assists"]
-    return MID_df
-
-
-def get_basic_stats_FWD():
-    FWD_df = players_df[players_df["Position"] == "FWD"] 
-    FWD_stats ["Name", "id", "Position", "total_points", "bonus", "goals_scored", "assists"]
-    return FWD_df
-
-"""
-player economy function contains a series of simple equations that calculates the effectiveness of players based on the number of points 
-that they score compared to other parameters.
-
-Function input variables:
-    1) total_points -> total number of points that a player has collated, input should be taken from the player_stats DataFrame or the .csv file for offline analysis.
-    2) minutes_played -> total minutes played for the player selected, (personally a better representation of how well players perform as some players will play lots of matches in a season as last minute substitutions)
-    3) now_cost -> how much the player currently costs as this can fluctuate during the season due to performance, this variable shouble be taken from the most recent version of the DataFrame.
-
-Notes:  
-"""
-def player_economy(total_points, minutes_played, now_cost, goals_scored, assists):
+    DEF_df = players_df[players_df["position"] == "DEF"] 
+    DEF_stats = ["name", "team", "id", "position", "price" ,  "total_points", "bonus", "goals_scored", "assists", "clean_sheets", "goals_conceded"]
+    DEF_stats_df = DEF_df[DEF_stats]
     
-    # ppm_economy (points per minute) calculates the average number of points that a player will score per the amount of time they play
-    ppm_economy = int(total_points)/int(minutes_played)
+    return DEF_stats_df
 
-    # ppc_economy (point per cost) divide minutes played by 10 to create the same format as FPL website. 
-    ppc_economy = total_points/(now_cost/10)
 
-    # mpg_economy (minutes per goal) 
-    mpg_economy = goals_scored/minutes_played
-    
-    # mpa_economy (minutes per assist)
-    mpa_economy = assists/minutes_played
+def get_basic_stats_MID(players_df):
+    MID_df = players_df[players_df["position"] == "MID"] 
+    MID_stats = ["name", "team", "id", "position", "price" ,"total_points", "bonus", "goals_scored", "assists"]
+    MID_stats_df = MID_df[MID_stats]
+    return MID_stats_df
+
+
+def get_basic_stats_FWD(players_df):
+    FWD_df = players_df[players_df["position"] == "FWD"] 
+    FWD_stats = ["name", "team" , "id", "position","price", "total_points", "bonus", "goals_scored", "assists"]
+    FWD_stats_df = FWD_df[FWD_stats]
+    return FWD_stats_df
+
+
