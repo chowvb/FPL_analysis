@@ -1,6 +1,7 @@
 import pandas as pd
 import csv, json, requests
-
+from player_analysis import update_player_data, clean_player_data
+import numpy as np
 
 def update_bootstrap_data():
     """
@@ -36,3 +37,22 @@ def clean_team_data(season):
     
     # Save the team strength database into a new .csv file
     team_strength_stat.to_csv("data/"+ season + "/teams_strength_stat.csv")
+
+def get_high_performing_teams():
+    """
+    Takes the player database and aggregates all of the data into teams, showing which teams have scored the most points as well as the average player cost.
+    Displays the top 5 teams in the league. 
+    """
+    # Request the player data from fantasy premier league api using the update_player_data() function defined in player_analysis.py
+    player_data = update_player_data()
+
+    # Clean the data using the clean_player_data() function from player_analysis.py
+    cleaned_player_df = clean_player_data(player_data)
+
+    # Group the player data by the column team and aggregate the price and total points and store these in a new dataframe. Sort the data by "total points".
+    team_group = np.round(cleaned_player_df.groupby("team", as_index = False).aggregate({"price":np.mean, "total_points":np.sum}),)
+    
+    # Reset the indexes and show the top 5 teams by points scored 
+    team_group = team_group.sort_values(by="total_points", ascending = False).reset_index(drop = True).head(5)
+    
+    return team_group

@@ -1,1 +1,6 @@
 https://towardsdatascience.com/python-for-fpl-data-analytics-dadb414ccefd
+https://www.game-change.co.uk/2023/02/10/a-complete-guide-to-the-fantasy-premier-league-fpl-api/
+
+
+to get individual indepth statistics use the following endpoint link:
+https://fantasy.premierleague.com/api/element-summary/{player_id}

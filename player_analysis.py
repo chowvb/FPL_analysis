@@ -103,10 +103,6 @@ def get_basic_stats_GLK(players_df):
     # Using the GLK_stats list futher filter the GLK_df down so that it only shows the relavent stats columns.
     GLK_stats_df = GLK_df[GLK_stats]
 
-    for row in range(len(GLK_df["position"])):
-        cpp = GLK_df["total_points"].iloc[row] / (GLK_df["price"].iloc[row]/10)
-        print(cpp)
-
     return GLK_stats_df
 
 
@@ -134,3 +130,25 @@ def get_basic_stats_FWD(players_df):
     return FWD_stats_df
 
 
+def get_basic_stats_glob(position, players_df):
+
+    df = players_df[players_df["position"] == position]
+    
+    # Each positions stats to pull in a list
+    base_stats = ["name", "team", "id", "position", "price", "total_points", "bonus"]
+    GLK_stats = ["goals_scored", "assists", "clean_sheets", "goals_conceded", "saves"]
+    DEF_stats = ["goals_scored", "assists", "clean_sheets", "goals_conceded"]
+    MID_stats = ["goals_scored", "assists", "clean_sheets"]
+    FWD_stats = ["goals_scored", "assists"]
+
+    if position == "GLK":
+        df_stats = df[GLK_stats]
+    elif position == "DEF":
+        df_stats = df[DEF_stats]
+    elif position == "MID":
+        df_stats = df[MID_stats]
+    else:
+        df_stats = df[FWD_stats]
+    
+    
+    return df_stats
