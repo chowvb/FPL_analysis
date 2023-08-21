@@ -4,3 +4,12 @@ https://www.game-change.co.uk/2023/02/10/a-complete-guide-to-the-fantasy-premier
 
 to get individual indepth statistics use the following endpoint link:
 https://fantasy.premierleague.com/api/element-summary/{player_id}
+
+
+Player performance prediction, ML?
+    - Team strength (away and home: taken from "teams" filter?)
+    - Difficulty? (From "fixtures" filter?)
+    - Current Form (Taken from "elements" filter?)
+    - Last seasons performance? (Scraped of github.)
+    - Opposition to face? (Team Strength)
+    - ICT index? 

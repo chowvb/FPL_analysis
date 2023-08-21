@@ -22,7 +22,7 @@ Saves the database into a .csv file for locally stored data for offline analysis
     team_data.to_csv("data/2023-2024/team_data.csv")
 
     # return the stored values to be used in the future. 
-    return bootstrap, team_data
+    return team_data
 
 
 # Data for the 2022-2023 season can be pulled from the following GHub Repo https://github.com/vaastav/Fantasy-Premier-League/tree/master/data/2022-23
