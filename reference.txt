@@ -6,6 +6,16 @@ to get individual indepth statistics use the following endpoint link:
 https://fantasy.premierleague.com/api/element-summary/{player_id}
 
 
+Reference to the different endpoints in the api: https://www.oliverlooney.com/blogs/FPL-APIs-Explained
+List of endpoints:
+- bootstrap-static/ 
+- fixtures/
+- fixtures/?event={event_id}
+- element_summary/{element_id}/
+- event/{event_id}/live/
+
+
+
 Player performance prediction, ML?
     - Team strength (away and home: taken from "teams" filter?)
     - Difficulty? (From "fixtures" filter?)
@@ -13,3 +23,17 @@ Player performance prediction, ML?
     - Last seasons performance? (Scraped of github.)
     - Opposition to face? (Team Strength)
     - ICT index? 
+
+
+Team data visualisation?
+    - Strength stats Octodiagram?
+
+                    Overall_attack (3)
+
+                (4)Home_attack     Away_attack (2)
+
+        (5)Home_Overall                Away_Overall (1)
+
+                (6)Home_defence    Away_defence(8)
+                
+                    Overall_defence(7)

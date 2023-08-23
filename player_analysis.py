@@ -1,154 +1,93 @@
-import pandas as pd 
-import requests, csv, json
+import requests
+import pandas as pd
+from pprint import pprint
 
+url = "https://fantasy.premierleague.com/api/"
 
-def update_player_data():
-    """
-Requests current seasons stats from FPL api. It filters the scraped results to only player "elements"
-stats that correspond to players only rather than teams.
-Saves the database into a .csv file for locally stored data for offline analysis. 
-"""
-    # Set the base URL for the fantasy football api
-    base_link = "https://fantasy.premierleague.com/api/"
+# Obtain the web_name of a player by inputting their player_id
+def get_name(player_id):
+    # Open the raw player database csv file.
+    player_id_csv = pd.read_csv("data/2023-2024/players_raw.csv")
 
-    # Add the the same extension "bootstrap-static to collate the FPL data
-    response = requests.get(base_link + "bootstrap-static/")
+    # Filter the database to players that match the player_id
+    player_name = player_id_csv[player_id_csv["id"] == int(player_id)].reset_index()
 
-    # store the websraped data as a .json format 
-    response = json.loads(response.content)
+    # Obtain the web_name for the player (Note: first and second names shouldn't be used as many players (Brazilians) don't always go by their given names)
+    player_name = player_name.at[0,"web_name"]
 
-    # filter the json results to "element" this represents the data linked to players. 
-    players = response["elements"]
+    # Return the player name
+    return player_name
 
-    # Convert the .json results into a pandas DataFrame for easier data analysis formatting. 
-    players_df = pd.DataFrame(players)
+# Obtain player performance statistics from the element_summary endpoint based of a player_id number
+def get_player_performance(player_id):
+    # Add the endpoint name
+    endpoint = "element-summary/"
 
-    # Save the DataFrame into a .csv file to sotere the data for offline analysis. 
-    players_df.to_csv("data/2023-2024/player_database.csv")
-    return players_df
+    # Scrape the data off fpl API combining the url + endpoint + player_id
+    response = requests.get(url + endpoint + str(player_id) + "/").json()
 
-def clean_player_data(player_df):
-    """
-Similar to the clean_team_data(season) above this new function cleans the player stats database either stored in .csv file or is used in 
-conjunction with web_scrape.py which scrapes the data from the FPL website using its API
+    # Convert the json format to a DataFrame, filtering through "history"
+    df = pd.DataFrame(response["history"])
 
-Function variables: 
-- df_column -> a dictionary which contains the:
-    1) names of the columns to move
-    2) the new name of the column to be displayed in the new DataFrame
-"""
-    # Define the columns to be rearranged 
-    df_columns = {
-        "current_name": ["web_name" , "team", "id", "element_type", "now_cost"],
-        "new_name": ["name", "team" , "id", "position", "price"]
-    }
+    # Call the get_name() function defined above to get the player name corresponding to the player_id
+    player_name = get_name(player_id)
+
+    # Create a dictionary to replace the id number with the player name
+    full_name = {player_id: player_name}
+
+    # Replace the player number with the player name
+    df["element"].replace(full_name, inplace= True)
+
+    # Return the formatted dataframe
+    return df
+
+# Collect individual performance based off the game week and player_id 
+def get_weekly_performance(player_id, GW_number):
+    # Define the endpoint to be used
+    endpoint = "event/"+ str(GW_number) + "/live/"
+
+    # Request data from fpl apy
+    response = requests.get(url + endpoint).json()
+
+    # Convert json to dataframe filtering through "elements" (players)
+    player_df = pd.DataFrame(response["elements"])
     
-    # Define a function that rearranges the columns within the player_df DataFrame
-    def test_function(current_column_name, new_column_name, column_position):
-        reorder_col = player_df.pop(current_column_name)
-        player_df.insert(column_position, new_column_name, reorder_col)
-    
-    # Iterate over the length of column_df and call test_function() for each iteration.
-    for i in range(len(df_columns["new_name"])):
-        test_function(
-            df_columns["current_name"][i],
-            df_columns["new_name"][i],
-            i
-            )
-        
-    # Create a dictionary of the position of the players in the raw format and the corrosponding position that that the players play in. 
-    position_replace_dict = { 1: "GLK", 2: "DEF", 3 : "MID", 4: "FWD"}
+    # Filter and locate the desired player by using the player_id passed through the function
+    player_df = player_df[player_df["id"] == player_id].reset_index()
 
-    # Replace the numbers within the "Position" column with the corrosponding positions that the players are positioned. 
-    player_df["position"].replace(position_replace_dict, inplace=True)
-    
-    # Create a dictionary of the teams and the correspoinding team codes for each of the players 
-    team_replace_dict = { 
-        1 : "Arsenal",
-        2 : "Aston Villa",
-        3 : "Bournemouth",
-        4 : "Brentford",
-        5 : "Bighton",
-        6 : "Burnley",
-        7 : "Chelsea",
-        8 : "Crystal Palace", 
-        9 : "Everton",
-        10 : "Fulham",
-        11 : "Liverpool",
-        12 : "Luton",
-        13 : "Man City",
-        14 : "Man Utd",
-        15 : "Newcastle",
-        16 : "Nott'm Forrest",
-        17 : "Sheffield Utd",
-        18 : "Spurs",
-        19 : "West Ham",
-        20 : "Wolves"
-    }
+    # Extract the data from the "stats" column
+    player_df = player_df.at[0, "stats"]
+    player_df = pd.DataFrame(player_df, index =[0])
+    # Add a column called round with the value of the game week. This will be needed to merge the dataframe to the player_performance dataframe above
+    player_df["round"] = GW_number
 
-    # Replace the numbers in the team column with the name of the clubs that the players play for.
-    player_df["team"].replace(team_replace_dict, inplace = True)
+    # Return the player dataframe
     return player_df
 
 
-def get_basic_stats_GLK(players_df):
+def main_function(player_id):
+    # Get John McGinn's recent performance
+    df = get_player_performance(player_id)
 
-    # Filter the players DataFrame by position only showing the players with the GLK label. 
-    # The DataFrame does require the user to have previously cleaned the data (Converted the player_element to position and from numbers to poition)
-    GLK_df = players_df[players_df["position"] == "GLK"]
+    # Create an empty DataFrame
+    player_df = pd.DataFrame()
 
-    # Create a list with the relavent stats for the goalkeeper position. Futher stats columns can be included by appending the list below
-    GLK_stats = ["name", "team", "id", "position", "price", "total_points", "bonus", "goals_scored", "assists", "clean_sheets", "goals_conceded", "saves"]
-    
-    # Using the GLK_stats list futher filter the GLK_df down so that it only shows the relavent stats columns.
-    GLK_stats_df = GLK_df[GLK_stats]
+    # Loop through the number of games played 
+    for gw in df["round"]:
+        # Call the get_weekly_performance and store the results into a DataFrame
+        performance_df = get_weekly_performance(player_id, gw)
 
-    return GLK_stats_df
+        # Concat to the empty DataFrame
+        player_df = pd.concat([player_df,performance_df], ignore_index= True)
 
+    # Merge the two dataframes with "round" as the common columns
+    merged_df = pd.merge(df,player_df, on = ["round","assists","bonus", "bps","clean_sheets", "creativity",
+                                             "expected_assists", "expected_goal_involvements", "expected_goals",
+                                             "expected_goals_conceded", "goals_conceded", "goals_scored", "ict_index",
+                                             "influence", "minutes", "own_goals", "penalties_missed","penalties_saved",
+                                             "red_cards","saves","starts","threat", "total_points", "yellow_cards"])
 
-def get_basic_stats_DEF(players_df):
+    return merged_df
 
-    # Filter 
-    DEF_df = players_df[players_df["position"] == "DEF"] 
-    DEF_stats = ["name", "team", "id", "position", "price" ,  "total_points", "bonus", "goals_scored", "assists", "clean_sheets", "goals_conceded"]
-    DEF_stats_df = DEF_df[DEF_stats]
-    
-    return DEF_stats_df
-
-
-def get_basic_stats_MID(players_df):
-    MID_df = players_df[players_df["position"] == "MID"] 
-    MID_stats = ["name", "team", "id", "position", "price" ,"total_points", "bonus", "goals_scored", "assists"]
-    MID_stats_df = MID_df[MID_stats]
-    return MID_stats_df
-
-
-def get_basic_stats_FWD(players_df):
-    FWD_df = players_df[players_df["position"] == "FWD"] 
-    FWD_stats = ["name", "team" , "id", "position","price", "total_points", "bonus", "goals_scored", "assists"]
-    FWD_stats_df = FWD_df[FWD_stats]
-    return FWD_stats_df
-
-
-def get_basic_stats_glob(position, players_df):
-
-    df = players_df[players_df["position"] == position]
-    
-    # Each positions stats to pull in a list
-    base_stats = ["name", "team", "id", "position", "price", "total_points", "bonus"]
-    GLK_stats = ["goals_scored", "assists", "clean_sheets", "goals_conceded", "saves"]
-    DEF_stats = ["goals_scored", "assists", "clean_sheets", "goals_conceded"]
-    MID_stats = ["goals_scored", "assists", "clean_sheets"]
-    FWD_stats = ["goals_scored", "assists"]
-
-    if position == "GLK":
-        df_stats = df[GLK_stats]
-    elif position == "DEF":
-        df_stats = df[DEF_stats]
-    elif position == "MID":
-        df_stats = df[MID_stats]
-    else:
-        df_stats = df[FWD_stats]
-    
-    
-    return df_stats
+# Call the main function with desired player_id (308 = Mo Salah)
+df = main_function(308)

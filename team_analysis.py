@@ -1,6 +1,5 @@
 import pandas as pd
 import csv, json, requests
-from player_analysis import update_player_data, clean_player_data
 import numpy as np
 
 def update_bootstrap_data():
@@ -32,27 +31,29 @@ def clean_team_data(season):
     # Using pandas read the saved dataframe data from the .csv file. The inputted season in the function will dictate which seasons data is cleaned
     team_df = pd.read_csv("data/"+ season + "/team_data.csv")
 
+    # Generate an attacking overall and defending overall stat for each of the teams 
+    attack_overall = []
+    defence_overall = []
+
+    # Loop through the each of the teams
+    for team in range(len(team_df["strength_attack_home"])):
+
+        # Calculate attack strength by averaging home and away scores.
+        attack = ((team_df["strength_attack_home"].iloc[team] + team_df["strength_attack_away"].iloc[team]) / 2)
+
+        # Calculate defence strength by averaging home and away scores. 
+        defence = ((team_df["strength_defence_home"].iloc[team] + team_df["strength_defence_away"].iloc[team]) / 2)
+
+        # At the end of each loop add the attack score to the scores respective list (round the scores to the nearest integer)
+        attack_overall.append(np.round(attack))
+        defence_overall.append(np.round(defence))
+
     # Filter and pull out the relavent strength stats from the team_df into a new DataFrame
-    team_strength_stat = team_df[["short_name", "strength_overall_home", "strength_attack_home", "strength_attack_away", "strength_defence_home", "strength_defence_away"]]
+    team_strength_stat = team_df[["short_name", "strength_overall_home", "strength_overall_away", "strength_attack_home", "strength_attack_away", "strength_defence_home", "strength_defence_away"]]
+    
+    # Add the two new lists as new columns in the DataFrame
+    team_strength_stat["attack_overall"] = attack_overall
+    team_strength_stat["defence_overall"] = defence_overall
     
     # Save the team strength database into a new .csv file
-    team_strength_stat.to_csv("data/"+ season + "/teams_strength_stat.csv")
-
-def get_high_performing_teams():
-    """
-    Takes the player database and aggregates all of the data into teams, showing which teams have scored the most points as well as the average player cost.
-    Displays the top 5 teams in the league. 
-    """
-    # Request the player data from fantasy premier league api using the update_player_data() function defined in player_analysis.py
-    player_data = update_player_data()
-
-    # Clean the data using the clean_player_data() function from player_analysis.py
-    cleaned_player_df = clean_player_data(player_data)
-
-    # Group the player data by the column team and aggregate the price and total points and store these in a new dataframe. Sort the data by "total points".
-    team_group = np.round(cleaned_player_df.groupby("team", as_index = False).aggregate({"price":np.mean, "total_points":np.sum}),)
-    
-    # Reset the indexes and show the top 5 teams by points scored 
-    team_group = team_group.sort_values(by="total_points", ascending = False).reset_index(drop = True).head(5)
-    
-    return team_group
+    team_strength_stat.to_csv("data/"+ season + "/teams_strength_stat.csv", index = False)
