@@ -23,6 +23,8 @@ Scrape fpl database for generic team and individual statistics (clean_data.py) a
 |18|Tottenham Hotspur|
 |19|West Ham United|
 |20|Wolverhampton Wanderers|
+
+
 ==clean_data.py ==
 |Name|Description|Arguments|Return|
 |---|---|---|---|
