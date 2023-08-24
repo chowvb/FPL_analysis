@@ -1,6 +1,7 @@
 import pandas as pd
 import csv, json, requests
 import numpy as np
+from bs4 import BeautifulSoup
 
 def update_bootstrap_data():
     """
@@ -57,3 +58,81 @@ def clean_team_data(season):
     
     # Save the team strength database into a new .csv file
     team_strength_stat.to_csv("data/"+ season + "/teams_strength_stat.csv", index = False)
+
+
+# Define a function to copy and process the Premier League table from SkySports returns the league table as a DataFrame
+def copy_premier_league_table():
+    
+    # Define the URL of Skysports premier league table
+    url = "https://www.skysports.com/premier-league-table"
+    
+    # Send a HTTP GET request to the provided URL and store the response
+    response = requests.get(url)
+    
+    # Define a dictionary to replace the team names to the FPL names
+    team_replace_dict = { 
+        "Arsenal" : "Arsenal",
+        "Aston Villa" : "Aston Villa",
+        "Bournemouth" : "Bournemouth",
+        "Brentford" : "Brentford",
+        "Bright" : "Brighton",
+        "Burnley" : "Burnley",
+        "Chelsea" : "Chelsea",
+        "Crystal Palace" : "Crystal Palace", 
+        "Everton" : "Everton",
+        "Fulham" : "Fulham",
+        "Liverpool" : "Liverpool",
+        "Luton Town" : "Luton",
+        "Manchester City" : "Man City",
+        "Manchester United" : "Man Utd",
+        "Newcastle United" : "Newcastle",
+        "Nottingham Forrest" : "Nott'm Forrest",
+        "Sheffield United" : "Sheffield Utd",
+        "Tottenhap Hotspur" : "Spurs",
+        "West Ham United" : "West Ham",
+        "Wolverhampton Wanderers" : "Wolves"
+    }
+
+    # Check if the HTTP response code is 200 (OK)
+    if response.status_code == 200:
+
+        # parse the HTML content of the response using BeautifulSoup
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Find the table with the relevant class or id
+        table = soup.find('table', class_='standing-table__table')
+        
+        # Check if table element is found
+        if table:
+            data = [] # Initialise a list to store the table data
+            headers = [] # Initialise a list to store the table headers
+            
+            # Extract header row
+            header_row = table.find('thead').find('tr')
+            header_columns = header_row.find_all('th')
+            headers = [header.get_text(strip=True) for header in header_columns]
+            
+            # Iterate through rows and extract data and extract the data from the cells
+            rows = table.find_all('tr')
+            for row in rows:
+                columns = row.find_all(['th', 'td'])
+                row_data = [column.get_text(strip=True) for column in columns]
+                
+                # Skip adding the header row data to the data list
+                if row_data != headers:
+                    data.append(row_data)
+            
+            # Convert data into a DataFrame using pandas
+            df = pd.DataFrame(data, columns=headers)
+            df.dropna(inplace=True)  # Drop rows with missing values
+            df.reset_index(drop=True, inplace=True) # Reset row indicies
+            
+            # Replace team names with FPL names in the "Team" column of the DataFrame
+            df["Team"].replace(team_replace_dict, inplace = True)
+
+            # Return the processed DataFrame
+            return df
+        else:
+            print("Table not found on the page.")
+    else:
+        print("Failed to fetch the webpage.")
