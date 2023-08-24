@@ -75,7 +75,7 @@ def copy_premier_league_table():
         "Aston Villa" : "Aston Villa",
         "Bournemouth" : "Bournemouth",
         "Brentford" : "Brentford",
-        "Bright" : "Brighton",
+        "Brighton and Hove Albion" : "Brighton",
         "Burnley" : "Burnley",
         "Chelsea" : "Chelsea",
         "Crystal Palace" : "Crystal Palace", 
@@ -136,3 +136,12 @@ def copy_premier_league_table():
             print("Table not found on the page.")
     else:
         print("Failed to fetch the webpage.")
+
+
+def get_player_roster(team_id):
+
+    # Load player_raw.csv
+    players_raw_csv = pd.read_csv("data/2023-2024/players_raw.csv")
+    player_roster = players_raw_csv[players_raw_csv["team"]== team_id]
+    player_roster = player_roster[["first_name", "second_name", "web_name", "id"]]
+    return player_roster
