@@ -45,7 +45,7 @@ def scrape_and_clean_player_data(api_link):
         2 : "Aston Villa",
         3 : "Bournemouth",
         4 : "Brentford",
-        5 : "Bighton",
+        5 : "Brighton",
         6 : "Burnley",
         7 : "Chelsea",
         8 : "Crystal Palace", 

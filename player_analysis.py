@@ -92,7 +92,7 @@ def gw_stats(player_id):
     return merged_df
 
 # Call the main function with desired player_id (308 = Mo Salah)
-df = gw_stats(308)
+#df = gw_stats(308)
 
 """
 The following functions are to be used to analyse a players performance using data analytics and basic statistics. 
@@ -114,3 +114,18 @@ def percentage_matches_started(player_id):
     gw = len(player_df["round"])
     pms = (starts/gw) * 100
     return pms
+
+def player_efficiency(player_id):
+    # Load player database
+    players_raw_csv = pd.read_csv("data/2023-2024/players_raw.csv")
+    player_df = players_raw_csv[players_raw_csv["id"] == int(player_id)].reset_index()
+
+    xg = player_df.at[0, "expected_goals"]
+    goals = player_df.at[0, "goals_scored"]
+    xa = player_df.at[0, "expected_assists"]
+    assists = player_df.at[0, "assists"]
+
+    goals_efficiency = goals / xg
+    assists_efficiency = assists / xa
+    
+    return goals_efficiency, assists_efficiency

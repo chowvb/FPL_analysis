@@ -4,14 +4,14 @@ from pprint import pprint
 URL = "https://fantasy.premierleague.com/api/fixtures/"
 
 fixtures_json = requests.get(URL).json()
-fixtures_df = pd.DataFrame(fixtures_json, index = False)
+fixtures_df = pd.DataFrame(fixtures_json)
 
 team_replace_dict = { 
         1 : "Arsenal",
         2 : "Aston Villa",
         3 : "Bournemouth",
         4 : "Brentford",
-        5 : "Bighton",
+        5 : "Brighton",
         6 : "Burnley",
         7 : "Chelsea",
         8 : "Crystal Palace", 
