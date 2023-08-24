@@ -129,3 +129,18 @@ def player_efficiency(player_id):
     assists_efficiency = assists / xa
     
     return goals_efficiency, assists_efficiency
+
+def player_contribution(player_id):
+    from clean_data import scrape_and_clean_player_data
+    from team_analysis import copy_premier_league_table
+
+    primary_df, secondary_df = scrape_and_clean_player_data(url + "bootstrap-static/")
+    primary_df = primary_df[primary_df["id"] == player_id].reset_index(drop = True)
+    goal_involvement = primary_df.at[0, "goals"] + primary_df.at[0, "assists"]
+    
+    table_df = copy_premier_league_table()
+    table_df = table_df[table_df["Team"] == primary_df.at[0, "team"]].reset_index(drop = True)
+    team_goals = table_df.at[0, "F"]
+    
+    percent_goal_involvement = (int(goal_involvement) / int(team_goals)) * 100
+    return percent_goal_involvement
