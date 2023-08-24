@@ -2,6 +2,9 @@ import requests
 import pandas as pd
 from pprint import pprint
 
+"""
+The following functions are to be utilised with main_function to retrieve statistics for a desired player based off their player id
+"""
 url = "https://fantasy.premierleague.com/api/"
 
 # Obtain the web_name of a player by inputting their player_id
@@ -91,3 +94,24 @@ def main_function(player_id):
 
 # Call the main function with desired player_id (308 = Mo Salah)
 df = main_function(308)
+
+"""
+The following functions are to be used to analyse a players performance using data analytics and basic statistics. 
+"""
+
+# Define economy function to calculate point per £1m
+def economy(player_id):
+    # Load player database
+    players_raw_csv = pd.read_csv("data/2023-2024/players_raw.csv")
+    player_df = players_raw_csv[players_raw_csv["id"] == int(player_id)].reset_index()
+    total_points = float(player_df.at[0, "total_points"])
+    player_value = (player_df.at[0, "value"]/ 10)
+    player_economy = total_points / player_value
+    return player_economy
+
+def percentage_matches_started(player_id):
+    player_df = main_function(player_id)
+    starts = sum(player_df["starts"])
+    gw = len(player_df["round"])
+    pms = (starts/gw) * 100
+    return pms
