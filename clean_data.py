@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np 
 import os
 
-def scrape_and_clean_player_data(api_link):
+def scrape_and_clean_player_data():
     # Define columns to delete and seperated into a seperate DataFrame
     other_columns = {
         "old_names": ["id", "first_name","second_name", "web_name", "team", "element_type", "chance_of_playing_next_round", "chance_of_playing_this_round","team_code","transfers_in", "transfers_in_event",
@@ -11,14 +11,14 @@ def scrape_and_clean_player_data(api_link):
                 "points_per_game_rank_type","code", "cost_change_event", "cost_change_event_fall", "dreamteam_count", "in_dreamteam", "news", "news_added",
                 "photo", "special", "squad_number", "status", "corners_and_indirect_freekicks_text", "direct_freekicks_text", "penalties_text", "selected_rank",
                 "selected_rank_type", "influence_rank", "influence_rank_type", "creativity_rank", "creativity_rank_type", "threat_rank", "threat_rank_type",
-                "ict_index_rank", "ict_index_rank_type"],
+                "ict_index_rank", "ict_index_rank_type", "corners_and_indirect_freekicks_order", "direct_freekicks_order", "penalties_order"],
         
         "new_names" : ["id", "first_name","second_name", "web_name", "team", "position", "chance_of_playing_next_round", "chance_of_playing_this_round","team_code","transfers_in", "transfers_in_event",
                 "transfers_out", "transfers_out_event", "now_cost_rank", "now_cost_rank_type", "form_rank", "form_rank_type","points_per_game_rank",
                 "points_per_game_rank_type","code", "cost_change_event", "cost_change_event_fall", "dreamteam_count", "in_dreamteam", "news", "news_added",
                 "photo", "special", "squad_number", "status", "corners_and_indirect_freekicks_text", "direct_freekicks_text", "penalties_text", "selected_rank",
                 "selected_rank_type", "influence_rank", "influence_rank_type", "creativity_rank", "creativity_rank_type", "threat_rank", "threat_rank_type",
-                "ict_index_rank", "ict_index_rank_type"]
+                "ict_index_rank", "ict_index_rank_type", "set_piece_order", "direct_freekicks_order", "penalties_order"]
 
     }
 
@@ -29,14 +29,14 @@ def scrape_and_clean_player_data(api_link):
                     "goals_scored", "expected_goals", "assists", "expected_assists", "expected_goal_involvements", "clean_sheets", "goals_conceded", "expected_goals_conceded",
                     "own_goals", "penalties_saved", "penalties_missed", "yellow_cards", "red_cards", "saves", "bonus", "influence", "creativity", "threat", "ict_index",
                     "expected_goals_per_90", "expected_assists_per_90", "clean_sheets_per_90", "expected_goal_involvements_per_90", "expected_goals_conceded_per_90", 
-                    "goals_conceded_per_90", "saves_per_90", "starts_per_90", "corners_and_indirect_freekicks_order", "direct_freekicks_order", "penalties_order"],
+                    "goals_conceded_per_90", "saves_per_90", "starts_per_90"],
 
         "new_names": ["id", "first_name","second_name", "web_name", "team", "position", "selected_by_percent", "price","cost_change_start", "cost_change_start_fall",
                     "value_form", "value_season", "total_points", "gw_points", "bps", "points_per_game", "expected_points_next", "expected_points_this", "form", "starts", "minutes",
                     "goals", "xg", "assists", "xa", "xgi", "clean_sheets", "goals_conceded", "xgc",
                     "own_goals", "penalties_saved", "penalties_missed", "yellow_cards", "red_cards", "saves", "bonus", "influence", "creativity", "threat", "ict_index",
                     "xg_per_90", "xa_per_90", "clean_sheets_per_90", "xgi_per_90", "xgc_per_90", 
-                    "goals_conceded_per_90", "saves_per_90", "starts_per_90", "set_piece_order", "direct_freekicks_order", "penalties_order"]
+                    "goals_conceded_per_90", "saves_per_90", "starts_per_90"]
     }
 
     # Create a dictionary of the teams and the correspoinding team codes for each of the players 
@@ -90,9 +90,12 @@ def scrape_and_clean_player_data(api_link):
         dataframe["team"].replace(team_replace_dict, inplace = True)
         return dataframe
 
+    # Define API endpoint
+    url = "https://fantasy.premierleague.com/api/bootstrap-static/"
+
     try:
         # Connect with the API and save the data as a .json()
-        response = requests.get(api_link)
+        response = requests.get(url)
         response.raise_for_status()
         data = response.json()
         # Filter through the .json() for "elements" == "players"
@@ -103,8 +106,6 @@ def scrape_and_clean_player_data(api_link):
 
         # Save the DataFrame to .csv file for offline analysis 
         players_df.to_csv("data/2023-2024/players_raw.csv", index = False)
-
-        
 
         # Create a new DataFrame that contains the wanted columns and unwanted columns
         cleaned_df = players_df[df_columns["old_names"]]
@@ -134,7 +135,7 @@ def scrape_and_clean_player_data(api_link):
 
         return useful_player_stats_df, other_stats_df
     
-
+    # If there is an error with the HTML request a previously saved DataFrame is loaded instead
     except requests.exceptions.RequestException as e:
         print("An error occured:", e )
 
