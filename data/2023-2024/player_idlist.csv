@@ -1,676 +1,679 @@
-first_name,second_name,id
-Folarin,Balogun,1
-Cédric,Alves Soares,2
-Mohamed,Elneny,3
-Fábio,Ferreira Vieira,4
-Gabriel,dos Santos Magalhães,5
-Kai,Havertz,6
-Rob,Holding,7
-Gabriel,Fernando de Jesus,8
-Jorge Luiz,Frello Filho,9
-Jakub,Kiwior,10
-Marcus,Oliveira Alencar,11
-Gabriel,Martinelli Silva,12
-Eddie,Nketiah,13
-Martin,Ødegaard,14
-Thomas,Partey,15
-Nicolas,Pépé,16
-Aaron,Ramsdale,17
-Rúnar Alex,Rúnarsson,18
-Bukayo,Saka,19
-William,Saliba,20
-Albert,Sambi Lokonga,21
-Emile,Smith Rowe,22
-Nuno,Varela Tavares,23
-Kieran,Tierney,24
-Takehiro,Tomiyasu,25
-Leandro,Trossard,26
-Benjamin,White,29
-Granit,Xhaka,30
-Oleksandr,Zinchenko,31
-David,Raya Martin,113
-Declan,Rice,540
-Reiss,Nelson,578
-Jurriën,Timber,585
-Karl,Hein,646
-Alexandre,Moreno Lopera,32
-Cameron,Archer,33
-Leon,Bailey,34
-Emiliano,Buendía Stati,35
-Matty,Cash,36
-Calum,Chambers,37
-Philippe,Coutinho Correia,38
-Keinan,Davis,39
-Leander,Dendoncker,40
-Diego Carlos,Santos Silva,41
-Lucas,Digne,42
-Douglas Luiz,Soares de Paulo,43
-Jhon,Durán,44
-Kortney,Hause,45
-Tim,Iroegbunam,46
-Boubacar,Kamara,47
-Ezri,Konsa Ngoyo,48
-Emiliano,Martínez Romero,49
-John,McGinn,50
-Tyrone,Mings,51
-Robin,Olsen,53
-Jaden,Philogene-Bidace,54
-Jacob,Ramsey,55
-Morgan,Sanson,56
-Viljami,Sinisalo,57
-Youri,Tielemans,58
-Bertrand,Traoré,59
-Ollie,Watkins,60
-Wesley,Moraes Ferreira da Silva,61
-Pau,Torres,584
-Moussa,Diaby,599
-Omari,Kellyman,618
-Filip,Marschall,670
-Nicolò,Zaniolo,672
-Jaidon,Anthony,62
-Philip,Billing,63
-David,Brooks,64
-Ryan,Christie,65
-Lewis,Cook,66
-Siriki,Dembélé,67
-Ryan,Fredericks,68
-James,Hill,69
-Lloyd,Kelly,70
-Gavin,Kilkenny,71
-Justin,Kluivert,72
-Jamal,Lowe,73
-Emiliano,Marcondes,74
-Chris,Mepham,75
-Kieffer,Moore,76
-Norberto,Murara Neto,77
-Dango,Ouattara,78
-Ben,Pearson,79
-Darren,Randolph,80
-Joe,Rothwell,81
-Antoine,Semenyo,82
-Marcos,Senesi,83
-Adam,Smith,84
-Dominic,Solanke,85
-Marcus,Tavernier,86
-Hamed,Traorè,87
-Mark,Travers,88
-Illia,Zabarnyi,89
-Milos,Kerkez,595
-Ionuț,Radu,607
-Ben,Greenwood,619
-Max,Aarons,643
-Alex,Scott,644
-Tyler,Adams,673
-Kristoffer,Ajer,90
-Ellery,Balcombe,91
-Shandon,Baptiste,92
-Mads,Bech Sørensen,93
-Mads,Bidstrup,94
-Sergi,Canós Tenés,95
-Nathan,Collins,96
-Matthew,Cox,97
-Mikkel,Damsgaard,98
-Josh,Dasilva,99
-Halil,Dervişoğlu,100
-Mark,Flekken,101
-Charlie,Goode,102
-Rico,Henry,103
-Aaron,Hickey,104
-Vitaly,Janelt,105
-Mathias,Jensen,106
-Keane,Lewis-Potter,107
-Bryan,Mbeumo,108
-Ben,Mee,109
-Christian,Nørgaard,110
-Frank,Onyeka,111
-Ethan,Pinnock,112
-Mads,Roerslev Rasmussen,114
-Kevin,Schade,115
-Thomas,Strakosha,116
-Ivan,Toney,117
-Ryan,Trevitt,118
-Yoane,Wissa,119
-Yegor,Yarmolyuk,120
-Mathias,Jorgensen,121
-Michale,Olakigbe,620
-Simon,Adingra,122
-Steven,Alzate,123
-Yasin,Ayari,124
-Facundo,Buonanotte,125
-Aaron,Connolly,127
-Mahmoud,Dahoud,128
-Lewis,Dunk,129
-Julio,Enciso,130
-Pervis,Estupiñán,131
-Evan,Ferguson,132
-Billy,Gilmour,133
-Pascal,Groß,134
-João Pedro,Junqueira de Jesus,135
-Michał,Karbownik,136
-Kacper,Kozłowski,137
-Adam,Lallana,138
-Tariq,Lamptey,139
-Solly,March,140
-Tom,McGill,141
-James,Milner,142
-Kaoru,Mitoma,143
-Jakub,Moder,144
-Jeremy,Sarmiento Morante,146
-Kjell,Scherpen,147
-Jason,Steele,148
-Deniz,Undav,149
-Jan Paul,van Hecke,150
-Joël,Veltman,151
-Bart,Verbruggen,152
-Adam,Webster,153
-Danny,Welbeck,154
-Andi,Zeqiri,155
-Igor Julio,dos Santos de Paulo,606
-Jack,Hinshelwood,621
-Enock,Agyei,156
-Ameen,Al-Dakhil,157
-Samuel,Bastien,158
-Manuel Benson,Hedilazio,159
-Jordan,Beyer,160
-Josh,Brownhill,161
-Darko,Churlinov,162
-Jack,Cork,163
-Dara,Costelloe,164
-Josh,Cullen,165
-CJ,Egan-Riley,166
-Hjalmar,Ekdal,167
-Lyle,Foster,168
-Denis,Franchi,169
-Jóhann Berg,Gudmundsson,170
-Luke,McNally,171
-Arijanet,Muric,172
-Dara,O'Shea,173
-Michael,Obafemi,174
-Bailey,Peacock-Farrell,175
-Connor,Roberts,176
-Jay,Rodriguez,177
-Charlie,Taylor,178
-Bobby,Thomas,179
-Scott,Twine,180
-Lawrence,Vigouroux,181
-Victor,da Silva,182
-Wout,Weghorst,183
-Anass,Zaroury,184
-Sander,Berge,475
-Zeki,Amdouni,594
-James,Trafford,596
-Nathan,Redmond,600
-Luca,Koleosho,605
-Jacob,Bruun Larsen,608
-Owen,Dodgson,622
-Wilson,Odobert,660
-Hannes,Delcroix,674
-Aaron,Ramsey,675
-Moisés,Caicedo Corozo,126
-Robert,Sánchez,145
-Ethan,Ampadu,185
-Andrey,Nascimento dos Santos,186
-Kepa,Arrizabalaga,187
-Pierre-Emerick,Aubameyang,188
-César,Azpilicueta,189
-Abdul Rahman,Baba,190
-Benoît,Badiashile,191
-Marcus,Bettinelli,192
-Armando,Broja,193
-Trevoh,Chalobah,194
-Ben,Chilwell,195
-Carney,Chukwuemeka,196
-Levi,Colwill,197
-Marc,Cucurella Saseta,198
-Enzo,Fernández,199
-David Datro,Fofana,200
-Wesley,Fofana,201
-Conor,Gallagher,202
-Malo,Gusto,203
-Callum,Hudson-Odoi,205
-Reece,James,206
-Romelu,Lukaku Bolingoli,207
-Noni,Madueke,208
-Mykhailo,Mudryk,210
-Nicolas,Jackson,211
-Christopher,Nkunku,212
-Christian,Pulisic,213
-Malang,Sarr,214
-Gabriel,Słonina,215
-Raheem,Sterling,216
-Thiago,Emiliano da Silva,217
-Hakim,Ziyech,218
-Ângelo Gabriel,Borges Damaceno,589
-Ian,Maatsen,609
-Axel,Disasi,611
-Lesley,Ugochukwu,613
-Mason,Burstow,623
-Lucas,Bergström,659
-Roméo,Lavia,667
-Bashir,Humphreys,671
-Naouirou,Ahamada,219
-Joachim,Andersen,220
-Jordan,Ayew,221
-Nathaniel,Clyne,222
-Cheick,Doucouré,223
-Malcolm,Ebiowei,224
-Odsonne,Edouard,225
-Eberechi,Eze,226
-Vicente,Guaita,227
-Marc,Guéhi,228
-Will,Hughes,229
-Sam,Johnstone,230
-Jefferson,Lerma Solís,231
-Jean-Philippe,Mateta,232
-Remi,Matthews,233
-Tyrick,Mitchell,234
-Jake,O'Brien,235
-Michael,Olise,236
-Luke,Plange,237
-Chris,Richards,238
-Jairo,Riedewald,239
-Jeffrey,Schlupp,240
-James,Tomkins,241
-Joel,Ward,242
-Joe,Whitworth,243
-Matheus,França de Oliveira,615
-Jesurun,Rak-Sakyi,657
-John-Kymani,Gordon,658
-André,Tavares Gomes,244
-Jarrad,Branthwaite,245
-Dominic,Calvert-Lewin,246
-Seamus,Coleman,247
-Dele,Alli,248
-Abdoulaye,Doucouré,249
-James,Garner,250
-Jean-Philippe,Gbamin,251
-Ben,Godfrey,252
-Demarai,Gray,253
-Idrissa,Gueye,254
-Mason,Holgate,255
-Alex,Iwobi,256
-Michael,Keane,257
-Neal,Maupay,258
-Dwight,McNeil,259
-Vitalii,Mykolenko,260
-Amadou,Onana,261
-Nathan,Patterson,262
-Jordan,Pickford,263
-Ellis,Simms,264
-James,Tarkowski,265
-João,Neves Virgínia,266
-Andy,Lonergan,579
-Ashley,Young,588
-Arnaut,Danjuma Groeneveld,601
-Lewis,Dobbin,624
-Youssef,Ramalho Chermiti,645
-Thomas,Cannon,649
-Tyler,Onyango,650
-Jack,Harrison,661
-Andreas,Hoelgebaum Pereira,267
-Tom,Cairney,268
-Ivan,Neves Abreu Cavaleiro,269
-Bobby,De Cordova-Reid,270
-Issa,Diop,271
-Tyrese,Francois,272
-Anthony,Knockaert,273
-Terence,Kongolo,274
-Bernd,Leno,275
-Saša,Lukić,276
-Kevin,Mbabu,277
-Aleksandar,Mitrović,278
-Rodrigo,Muniz Carvalho,279
-João,Palhinha Gonçalves,280
-Tim,Ream,281
-Harrison,Reed,282
-Antonee,Robinson,283
-Marek,Rodák,284
-Kenny,Tete,285
-Tosin,Adarabioyo,286
-Carlos Vinícius,Alves Morais,287
-Harry,Wilson,288
-Raúl,Jiménez,558
-Willian,Borges da Silva,591
-Calvin,Bassey,610
-Luc,De Fougerolles,625
-Jay,Stansfield,651
-Matthew,Dibley-Dias,652
-Adama,Traoré,662
-Adrián,San Miguel del Castillo,289
-Trent,Alexander-Arnold,290
-Alisson,Ramses Becker,291
-Stefan,Bajcetic,292
-Darwin,Núñez Ribeiro,293
-Diogo,Teixeira da Silva,294
-Harvey,Elliott,295
-Fabio Henrique,Tavares,296
-Cody,Gakpo,297
-Joe,Gomez,298
-Jordan,Henderson,299
-Curtis,Jones,300
-Caoimhin,Kelleher,301
-Ibrahima,Konaté,302
-Luis,Díaz,303
-Alexis,Mac Allister,304
-Joel,Matip,305
-Nathaniel,Phillips,306
-Andrew,Robertson,307
-Mohamed,Salah,308
-Dominik,Szoboszlai,309
-Thiago,Alcántara do Nascimento,310
-Konstantinos,Tsimikas,311
-Sepp,van den Berg,312
-Virgil,van Dijk,313
-Jarell,Quansah,626
-Bobby,Clark,627
-Ben,Doak,628
-James,McConnell,629
-Wataru,Endo,668
-Marvelous,Nakamba,52
-Elijah,Adebayo,314
-Mads Juel,Andersen,315
-Amari'i,Bell,316
-Luke,Berry,317
-Reece,Burke,318
-Allan,Campbell,319
-Jordan,Clark,320
-Alfie,Doughty,321
-Luke,Freeman,322
-Matt,Macey,323
-John,McAtee,324
-Carlos,Mendes Gomes,325
-Carlton,Morris,326
-Admiral,Muskwe,327
-Chiedozie,Ogbene,328
-Fred,Onyedinma,329
-Gabriel,Osho,330
-Aribim,Pepple,331
-Dion,Pereira,332
-Dan,Potts,333
-Glen,Rea,334
-James,Shea,335
-Joe,Taylor,336
-Elliot,Thorpe,337
-Jack,Walton,338
-Louie,Watson,339
-Cauley,Woodrow,340
-Ryan,Giles,553
-Tom,Lockyer,575
-Pelly Ruddock,Mpanzu,582
-Tahith,Chong,586
-Issa,Kaboré,602
-Thomas,Kaminski,614
-Ross,Barkley,630
-Jacob,Brown,631
-Aidan,Francis-Clarke,648
-Tim,Krul,665
-Manuel,Akanji,341
-Nathan,Aké,342
-Julián,Álvarez,343
-Bernardo,Veiga de Carvalho e Silva,344
-Oscar,Bobb,345
-João,Cancelo,346
-Scott,Carson,347
-Shea,Charles,348
-Kevin,De Bruyne,349
-Rúben,Gato Alves Dias,350
-Tommy,Doyle,351
-Ederson,Santana de Moraes,352
-Phil,Foden,353
-Jack,Grealish,354
-Erling,Haaland,355
-Mateo,Kovačić,356
-Aymeric,Laporte,357
-Rico,Lewis,358
-Riyad,Mahrez,359
-James,McAtee,360
-Stefan,Ortega Moreno,361
-Cole,Palmer,362
-Máximo,Perrone,363
-Kalvin,Phillips,364
-Rodrigo,Hernandez,365
-Sergio,Gómez,366
-Zack,Steffen,367
-John,Stones,368
-Kyle,Walker,369
-Joško,Gvardiol,616
-Mason,Mount,209
-Alex,Telles,370
-Amad,Diallo,371
-Antony Matheus,dos Santos,372
-Bruno,Borges Fernandes,373
-Brandon,Williams,374
-Eric,Bailly,375
-Carlos Henrique,Casimiro,376
-Diogo,Dalot Teixeira,377
-Christian,Eriksen,379
-Álvaro,Fernández Carreras,380
-Frederico,Rodrigues de Paula Santos,381
-Alejandro,Garnacho,382
-Hannibal,Mejbri,383
-Tom,Heaton,384
-Dean,Henderson,385
-Victor,Lindelöf,386
-Harry,Maguire,387
-Kobbie,Mainoo,388
-Tyrell,Malacia,389
-Anthony,Martial,390
-Lisandro,Martínez,391
-Scott,McTominay,392
-Teden,Mengi,393
-Facundo,Pellistri Rebollo,394
-Raphaël,Varane,395
-Marcus,Rashford,396
-Jadon,Sancho,397
-Luke,Shaw,398
-Shola,Shoretire,399
-Donny,van de Beek,400
-Aaron,Wan-Bissaka,401
-André,Onana,597
-Rasmus,Højlund,617
-Omari,Forson,632
-Radek,Vítek,669
-Lewis,Hall,204
-Miguel,Almirón Rejala,402
-Elliot,Anderson,403
-Harrison,Ashby,404
-Sven,Botman,405
-Bruno,Guimarães Rodriguez Moura,406
-Dan,Burn,407
-Karl,Darlow,408
-Martin,Dubravka,409
-Ryan,Fraser,410
-Mark,Gillespie,411
-Anthony,Gordon,412
-Isaac,Hayden,413
-Jeff,Hendrick,414
-Alexander,Isak,415
-Joelinton Cássio,Apolinário de Lira,416
-Emil,Krafth,417
-Garang,Kuol,418
-Jamaal,Lascelles,419
-Jamal,Lewis,420
-Sean,Longstaff,421
-Javier,Manquillo Gaitán,422
-Jacob,Murphy,423
-Nick,Pope,424
-Matt,Ritchie,425
-Allan,Saint-Maximin,426
-Fabian,Schär,427
-Matt,Targett,428
-Sandro,Tonali,429
-Kieran,Trippier,430
-Kell,Watts,431
-Joe,Willock,432
-Callum,Wilson,433
-Loris,Karius,580
-Paul,Dummett,581
-Harvey,Barnes,603
-Tino,Livramento,633
-Alex,Murphy,634
-Lewis,Miley,635
-Matt,Turner,28
-Anthony,Elanga,378
-Brandon,Aguilera Zamora,434
-Harry,Arter,435
-Serge,Aurier,436
-Taiwo,Awoniyi,437
-Giulian,Biancone,438
-Willy,Boly,439
-Josh,Bowler,440
-Steve,Cook,441
-Danilo,dos Santos de Oliveira,442
-Emmanuel,Dennis,443
-Mohamed,Dräger,444
-Felipe Augusto,de Almeida Monteiro,445
-Remo,Freuler,446
-Morgan,Gibbs-White,447
-Wayne,Hennessey,448
-Ethan,Horvath,449
-Brennan,Johnson,450
-Cheikhou,Kouyaté,451
-Richie,Laryea,452
-Orel,Mangala,453
-Loïc,Mbe Soh,454
-Scott,McKenna,455
-Alex,Mighten,456
-Moussa,Niakhaté,457
-Lewis,O'Brien,458
-Braian,Ojeda Rodríguez,459
-Jonathan,Panzo,460
-Omar,Richards,461
-Gustavo Henrique,Furtado Scarpa,462
-Jonjo,Shelvey,463
-Sam,Surridge,464
-Harry,Toffolo,465
-Hwang,Ui-jo,466
-Neco,Williams,467
-Chris,Wood,468
-Joe,Worrall,469
-Ryan,Yates,470
-Olu,Aina,604
-George,Shelvey,636
-Josh,Powell,637
-Auston,Trusty,27
-Anel,Ahmedhodžić,471
-Jordan,Amissah,472
-George,Baldock,473
-Chris,Basham,474
-Jayden,Bogle,476
-Rhian,Brewster,477
-Ismaila,Coulibaly,478
-Adam,Davies,479
-John,Egan,480
-John,Fleck,481
-Wes,Foderingham,482
-Daniel,Jebbison,483
-Max,Lowe,484
-Oliver,McBurnie,485
-Iliman,Ndiaye,486
-Rhys,Norrington-Davies,487
-Oliver,Norwood,488
-Ben,Osborn,489
-William,Osula,490
-Jack,Robinson,576
-Anis,Slimane,587
-Yasser,Larouci,592
-Bénie,Traoré,593
-Vini,de Souza Costa,638
-Femi,Seriki,653
-Louie,Marsh,654
-Andre,Brooks,655
-Antwoine,Hackford,656
-Gustavo,Hamer,663
-Tom,Davies,666
-Brandon,Austin,491
-Rodrigo,Bentancur,492
-Yves,Bissouma,493
-Bryan,Gil Salvatierra,494
-Ben,Davies,495
-Eric,Dier,496
-Emerson,Leite de Souza Junior,497
-Fraser,Forster,498
-Pierre-Emile,Højbjerg,499
-Harry,Kane,500
-Dejan,Kulusevski,501
-Hugo,Lloris,502
-Giovani,Lo Celso,503
-James,Maddison,504
-Tanguy,Ndombélé Alvaro,505
-Pedro,Porro,506
-Ivan,Perišić,507
-Sergio,Reguilón,508
-Richarlison,de Andrade,509
-Joe,Rodon,510
-Cristian,Romero,511
-Davinson,Sánchez,512
-Pape Matar,Sarr,513
-Ryan,Sessegnon,514
-Oliver,Skipp,515
-Son,Heung-min,516
-Djed,Spence,517
-Japhet,Tanganga,518
-Destiny,Udogie,519
-Guglielmo,Vicario,520
-Alfie,Whiteman,521
-Manor,Solomon,583
-Micky,van de Ven,639
-Dane,Scarlett,640
-Alejo,Véliz,641
-Nayef,Aguerd,522
-Michail,Antonio,523
-Alphonse,Areola,524
-Saïd,Benrahma,525
-Jarrod,Bowen,526
-Maxwel,Cornet,527
-Vladimír,Coufal,528
-Conor,Coventry,529
-Aaron,Cresswell,530
-Flynn,Downes,531
-Emerson,Palmieri dos Santos,532
-Lukasz,Fabianski,533
-Pablo,Fornals Malla,534
-Danny,Ings,535
-Ben,Johnson,536
-Thilo,Kehrer,537
-Divin,Mubama,538
-Lucas,Tolentino Coelho de Lima,539
-Gianluca,Scamacca,541
-Tomáš,Souček,542
-Nikola,Vlašić,543
-Kurt,Zouma,544
-Angelo,Ogbonna,577
-Edson,Álvarez Velázquez,642
-Joseph,Anang,647
-James,Ward-Prowse,664
-Konstantinos,Mavropanos,676
-Rayan,Aït-Nouri,545
-Daniel,Bentley,546
-Bendegúz,Bolla,547
-Hugo,Bueno López,548
-Francisco Jorge,Tomás Oliveira,549
-Luke,Cundle,550
-Craig,Dawson,551
-Fábio,Silva,552
-Gonçalo Manuel,Ganchinho Guedes,554
-Joe,Hodge,555
-Ki-Jana,Hoever,556
-Hwang,Hee-chan,557
-João Victor,Gomes da Silva,559
-Jonathan,Castro Otto,560
-Bruno,Cavaco Jordão,561
-Sasa,Kalajdzic,562
-Max,Kilman,563
-Tom,King,564
-Mario,Lemina,565
-Matheus Luiz,Nunes,566
-Pedro,Lomba Neto,567
-Daniel,Castelo Podence,568
-José,Malheiro de Sá,569
-Pablo,Sarabia,570
-Matija,Šarkić,571
-Nélson,Cabral Semedo,572
-Toti António,Gomes,573
-Boubacar,Traoré,574
-Matheus,Santos Carneiro Da Cunha,590
-Matt,Doherty,598
+first_name,second_name,id,team
+Folarin,Balogun,1,Arsenal
+Cédric,Alves Soares,2,Arsenal
+Mohamed,Elneny,3,Arsenal
+Fábio,Ferreira Vieira,4,Arsenal
+Gabriel,dos Santos Magalhães,5,Arsenal
+Kai,Havertz,6,Arsenal
+Rob,Holding,7,Arsenal
+Gabriel,Fernando de Jesus,8,Arsenal
+Jorge Luiz,Frello Filho,9,Arsenal
+Jakub,Kiwior,10,Arsenal
+Marcus,Oliveira Alencar,11,Arsenal
+Gabriel,Martinelli Silva,12,Arsenal
+Eddie,Nketiah,13,Arsenal
+Martin,Ødegaard,14,Arsenal
+Thomas,Partey,15,Arsenal
+Nicolas,Pépé,16,Arsenal
+Aaron,Ramsdale,17,Arsenal
+Rúnar Alex,Rúnarsson,18,Arsenal
+Bukayo,Saka,19,Arsenal
+William,Saliba,20,Arsenal
+Albert,Sambi Lokonga,21,Arsenal
+Emile,Smith Rowe,22,Arsenal
+Nuno,Varela Tavares,23,Arsenal
+Kieran,Tierney,24,Arsenal
+Takehiro,Tomiyasu,25,Arsenal
+Leandro,Trossard,26,Arsenal
+Benjamin,White,29,Arsenal
+Granit,Xhaka,30,Arsenal
+Oleksandr,Zinchenko,31,Arsenal
+David,Raya Martin,113,Arsenal
+Declan,Rice,540,Arsenal
+Reiss,Nelson,578,Arsenal
+Jurriën,Timber,585,Arsenal
+Karl,Hein,646,Arsenal
+Alexandre,Moreno Lopera,32,Aston Villa
+Cameron,Archer,33,Aston Villa
+Leon,Bailey,34,Aston Villa
+Emiliano,Buendía Stati,35,Aston Villa
+Matty,Cash,36,Aston Villa
+Calum,Chambers,37,Aston Villa
+Philippe,Coutinho Correia,38,Aston Villa
+Keinan,Davis,39,Aston Villa
+Leander,Dendoncker,40,Aston Villa
+Diego Carlos,Santos Silva,41,Aston Villa
+Lucas,Digne,42,Aston Villa
+Douglas Luiz,Soares de Paulo,43,Aston Villa
+Jhon,Durán,44,Aston Villa
+Kortney,Hause,45,Aston Villa
+Tim,Iroegbunam,46,Aston Villa
+Boubacar,Kamara,47,Aston Villa
+Ezri,Konsa Ngoyo,48,Aston Villa
+Emiliano,Martínez Romero,49,Aston Villa
+John,McGinn,50,Aston Villa
+Tyrone,Mings,51,Aston Villa
+Robin,Olsen,53,Aston Villa
+Jaden,Philogene-Bidace,54,Aston Villa
+Jacob,Ramsey,55,Aston Villa
+Morgan,Sanson,56,Aston Villa
+Viljami,Sinisalo,57,Aston Villa
+Youri,Tielemans,58,Aston Villa
+Bertrand,Traoré,59,Aston Villa
+Ollie,Watkins,60,Aston Villa
+Wesley,Moraes Ferreira da Silva,61,Aston Villa
+Pau,Torres,584,Aston Villa
+Moussa,Diaby,599,Aston Villa
+Omari,Kellyman,618,Aston Villa
+Filip,Marschall,670,Aston Villa
+Nicolò,Zaniolo,672,Aston Villa
+Jaidon,Anthony,62,Bournemouth
+Philip,Billing,63,Bournemouth
+David,Brooks,64,Bournemouth
+Ryan,Christie,65,Bournemouth
+Lewis,Cook,66,Bournemouth
+Siriki,Dembélé,67,Bournemouth
+Ryan,Fredericks,68,Bournemouth
+James,Hill,69,Bournemouth
+Lloyd,Kelly,70,Bournemouth
+Gavin,Kilkenny,71,Bournemouth
+Justin,Kluivert,72,Bournemouth
+Jamal,Lowe,73,Bournemouth
+Emiliano,Marcondes,74,Bournemouth
+Chris,Mepham,75,Bournemouth
+Kieffer,Moore,76,Bournemouth
+Norberto,Murara Neto,77,Bournemouth
+Dango,Ouattara,78,Bournemouth
+Ben,Pearson,79,Bournemouth
+Darren,Randolph,80,Bournemouth
+Joe,Rothwell,81,Bournemouth
+Antoine,Semenyo,82,Bournemouth
+Marcos,Senesi,83,Bournemouth
+Adam,Smith,84,Bournemouth
+Dominic,Solanke,85,Bournemouth
+Marcus,Tavernier,86,Bournemouth
+Hamed,Traorè,87,Bournemouth
+Mark,Travers,88,Bournemouth
+Illia,Zabarnyi,89,Bournemouth
+Milos,Kerkez,595,Bournemouth
+Ionuț,Radu,607,Bournemouth
+Ben,Greenwood,619,Bournemouth
+Max,Aarons,643,Bournemouth
+Alex,Scott,644,Bournemouth
+Tyler,Adams,673,Bournemouth
+Kristoffer,Ajer,90,Brentford
+Ellery,Balcombe,91,Brentford
+Shandon,Baptiste,92,Brentford
+Mads,Bech Sørensen,93,Brentford
+Mads,Bidstrup,94,Brentford
+Sergi,Canós Tenés,95,Brentford
+Nathan,Collins,96,Brentford
+Matthew,Cox,97,Brentford
+Mikkel,Damsgaard,98,Brentford
+Josh,Dasilva,99,Brentford
+Halil,Dervişoğlu,100,Brentford
+Mark,Flekken,101,Brentford
+Charlie,Goode,102,Brentford
+Rico,Henry,103,Brentford
+Aaron,Hickey,104,Brentford
+Vitaly,Janelt,105,Brentford
+Mathias,Jensen,106,Brentford
+Keane,Lewis-Potter,107,Brentford
+Bryan,Mbeumo,108,Brentford
+Ben,Mee,109,Brentford
+Christian,Nørgaard,110,Brentford
+Frank,Onyeka,111,Brentford
+Ethan,Pinnock,112,Brentford
+Mads,Roerslev Rasmussen,114,Brentford
+Kevin,Schade,115,Brentford
+Thomas,Strakosha,116,Brentford
+Ivan,Toney,117,Brentford
+Ryan,Trevitt,118,Brentford
+Yoane,Wissa,119,Brentford
+Yegor,Yarmolyuk,120,Brentford
+Mathias,Jorgensen,121,Brentford
+Michale,Olakigbe,620,Brentford
+Simon,Adingra,122,Brighton
+Steven,Alzate,123,Brighton
+Yasin,Ayari,124,Brighton
+Facundo,Buonanotte,125,Brighton
+Aaron,Connolly,127,Brighton
+Mahmoud,Dahoud,128,Brighton
+Lewis,Dunk,129,Brighton
+Julio,Enciso,130,Brighton
+Pervis,Estupiñán,131,Brighton
+Evan,Ferguson,132,Brighton
+Billy,Gilmour,133,Brighton
+Pascal,Groß,134,Brighton
+João Pedro,Junqueira de Jesus,135,Brighton
+Michał,Karbownik,136,Brighton
+Kacper,Kozłowski,137,Brighton
+Adam,Lallana,138,Brighton
+Tariq,Lamptey,139,Brighton
+Solly,March,140,Brighton
+Tom,McGill,141,Brighton
+James,Milner,142,Brighton
+Kaoru,Mitoma,143,Brighton
+Jakub,Moder,144,Brighton
+Jeremy,Sarmiento Morante,146,Brighton
+Kjell,Scherpen,147,Brighton
+Jason,Steele,148,Brighton
+Deniz,Undav,149,Brighton
+Jan Paul,van Hecke,150,Brighton
+Joël,Veltman,151,Brighton
+Bart,Verbruggen,152,Brighton
+Adam,Webster,153,Brighton
+Danny,Welbeck,154,Brighton
+Andi,Zeqiri,155,Brighton
+Igor Julio,dos Santos de Paulo,606,Brighton
+Jack,Hinshelwood,621,Brighton
+Enock,Agyei,156,Burnley
+Ameen,Al-Dakhil,157,Burnley
+Samuel,Bastien,158,Burnley
+Manuel Benson,Hedilazio,159,Burnley
+Jordan,Beyer,160,Burnley
+Josh,Brownhill,161,Burnley
+Darko,Churlinov,162,Burnley
+Jack,Cork,163,Burnley
+Dara,Costelloe,164,Burnley
+Josh,Cullen,165,Burnley
+CJ,Egan-Riley,166,Burnley
+Hjalmar,Ekdal,167,Burnley
+Lyle,Foster,168,Burnley
+Denis,Franchi,169,Burnley
+Jóhann Berg,Gudmundsson,170,Burnley
+Luke,McNally,171,Burnley
+Arijanet,Muric,172,Burnley
+Dara,O'Shea,173,Burnley
+Michael,Obafemi,174,Burnley
+Bailey,Peacock-Farrell,175,Burnley
+Connor,Roberts,176,Burnley
+Jay,Rodriguez,177,Burnley
+Charlie,Taylor,178,Burnley
+Bobby,Thomas,179,Burnley
+Scott,Twine,180,Burnley
+Lawrence,Vigouroux,181,Burnley
+Victor,da Silva,182,Burnley
+Wout,Weghorst,183,Burnley
+Anass,Zaroury,184,Burnley
+Sander,Berge,475,Burnley
+Zeki,Amdouni,594,Burnley
+James,Trafford,596,Burnley
+Nathan,Redmond,600,Burnley
+Luca,Koleosho,605,Burnley
+Jacob,Bruun Larsen,608,Burnley
+Owen,Dodgson,622,Burnley
+Wilson,Odobert,660,Burnley
+Hannes,Delcroix,674,Burnley
+Aaron,Ramsey,675,Burnley
+Moisés,Caicedo Corozo,126,Chelsea
+Robert,Sánchez,145,Chelsea
+Ethan,Ampadu,185,Chelsea
+Andrey,Nascimento dos Santos,186,Chelsea
+Kepa,Arrizabalaga,187,Chelsea
+Pierre-Emerick,Aubameyang,188,Chelsea
+César,Azpilicueta,189,Chelsea
+Abdul Rahman,Baba,190,Chelsea
+Benoît,Badiashile,191,Chelsea
+Marcus,Bettinelli,192,Chelsea
+Armando,Broja,193,Chelsea
+Trevoh,Chalobah,194,Chelsea
+Ben,Chilwell,195,Chelsea
+Carney,Chukwuemeka,196,Chelsea
+Levi,Colwill,197,Chelsea
+Marc,Cucurella Saseta,198,Chelsea
+Enzo,Fernández,199,Chelsea
+David Datro,Fofana,200,Chelsea
+Wesley,Fofana,201,Chelsea
+Conor,Gallagher,202,Chelsea
+Malo,Gusto,203,Chelsea
+Callum,Hudson-Odoi,205,Chelsea
+Reece,James,206,Chelsea
+Romelu,Lukaku Bolingoli,207,Chelsea
+Noni,Madueke,208,Chelsea
+Mykhailo,Mudryk,210,Chelsea
+Nicolas,Jackson,211,Chelsea
+Christopher,Nkunku,212,Chelsea
+Christian,Pulisic,213,Chelsea
+Malang,Sarr,214,Chelsea
+Gabriel,Słonina,215,Chelsea
+Raheem,Sterling,216,Chelsea
+Thiago,Emiliano da Silva,217,Chelsea
+Hakim,Ziyech,218,Chelsea
+Ângelo Gabriel,Borges Damaceno,589,Chelsea
+Ian,Maatsen,609,Chelsea
+Axel,Disasi,611,Chelsea
+Lesley,Ugochukwu,613,Chelsea
+Mason,Burstow,623,Chelsea
+Lucas,Bergström,659,Chelsea
+Roméo,Lavia,667,Chelsea
+Bashir,Humphreys,671,Chelsea
+Deivid Washington,de Souza Eugênio,677,Chelsea
+Naouirou,Ahamada,219,Crystal Palace
+Joachim,Andersen,220,Crystal Palace
+Jordan,Ayew,221,Crystal Palace
+Nathaniel,Clyne,222,Crystal Palace
+Cheick,Doucouré,223,Crystal Palace
+Malcolm,Ebiowei,224,Crystal Palace
+Odsonne,Edouard,225,Crystal Palace
+Eberechi,Eze,226,Crystal Palace
+Vicente,Guaita,227,Crystal Palace
+Marc,Guéhi,228,Crystal Palace
+Will,Hughes,229,Crystal Palace
+Sam,Johnstone,230,Crystal Palace
+Jefferson,Lerma Solís,231,Crystal Palace
+Jean-Philippe,Mateta,232,Crystal Palace
+Remi,Matthews,233,Crystal Palace
+Tyrick,Mitchell,234,Crystal Palace
+Jake,O'Brien,235,Crystal Palace
+Michael,Olise,236,Crystal Palace
+Luke,Plange,237,Crystal Palace
+Chris,Richards,238,Crystal Palace
+Jairo,Riedewald,239,Crystal Palace
+Jeffrey,Schlupp,240,Crystal Palace
+James,Tomkins,241,Crystal Palace
+Joel,Ward,242,Crystal Palace
+Joe,Whitworth,243,Crystal Palace
+Matheus,França de Oliveira,615,Crystal Palace
+Jesurun,Rak-Sakyi,657,Crystal Palace
+John-Kymani,Gordon,658,Crystal Palace
+André,Tavares Gomes,244,Everton
+Jarrad,Branthwaite,245,Everton
+Dominic,Calvert-Lewin,246,Everton
+Seamus,Coleman,247,Everton
+Dele,Alli,248,Everton
+Abdoulaye,Doucouré,249,Everton
+James,Garner,250,Everton
+Jean-Philippe,Gbamin,251,Everton
+Ben,Godfrey,252,Everton
+Demarai,Gray,253,Everton
+Idrissa,Gueye,254,Everton
+Mason,Holgate,255,Everton
+Alex,Iwobi,256,Everton
+Michael,Keane,257,Everton
+Neal,Maupay,258,Everton
+Dwight,McNeil,259,Everton
+Vitalii,Mykolenko,260,Everton
+Amadou,Onana,261,Everton
+Nathan,Patterson,262,Everton
+Jordan,Pickford,263,Everton
+Ellis,Simms,264,Everton
+James,Tarkowski,265,Everton
+João,Neves Virgínia,266,Everton
+Andy,Lonergan,579,Everton
+Ashley,Young,588,Everton
+Arnaut,Danjuma Groeneveld,601,Everton
+Lewis,Dobbin,624,Everton
+Youssef,Ramalho Chermiti,645,Everton
+Thomas,Cannon,649,Everton
+Tyler,Onyango,650,Everton
+Jack,Harrison,661,Everton
+Andreas,Hoelgebaum Pereira,267,Fulham
+Tom,Cairney,268,Fulham
+Ivan,Neves Abreu Cavaleiro,269,Fulham
+Bobby,De Cordova-Reid,270,Fulham
+Issa,Diop,271,Fulham
+Tyrese,Francois,272,Fulham
+Anthony,Knockaert,273,Fulham
+Terence,Kongolo,274,Fulham
+Bernd,Leno,275,Fulham
+Saša,Lukić,276,Fulham
+Kevin,Mbabu,277,Fulham
+Aleksandar,Mitrović,278,Fulham
+Rodrigo,Muniz Carvalho,279,Fulham
+João,Palhinha Gonçalves,280,Fulham
+Tim,Ream,281,Fulham
+Harrison,Reed,282,Fulham
+Antonee,Robinson,283,Fulham
+Marek,Rodák,284,Fulham
+Kenny,Tete,285,Fulham
+Tosin,Adarabioyo,286,Fulham
+Carlos Vinícius,Alves Morais,287,Fulham
+Harry,Wilson,288,Fulham
+Raúl,Jiménez,558,Fulham
+Willian,Borges da Silva,591,Fulham
+Calvin,Bassey,610,Fulham
+Luc,De Fougerolles,625,Fulham
+Jay,Stansfield,651,Fulham
+Matthew,Dibley-Dias,652,Fulham
+Adama,Traoré,662,Fulham
+Adrián,San Miguel del Castillo,289,Liverpool
+Trent,Alexander-Arnold,290,Liverpool
+Alisson,Ramses Becker,291,Liverpool
+Stefan,Bajcetic,292,Liverpool
+Darwin,Núñez Ribeiro,293,Liverpool
+Diogo,Teixeira da Silva,294,Liverpool
+Harvey,Elliott,295,Liverpool
+Fabio Henrique,Tavares,296,Liverpool
+Cody,Gakpo,297,Liverpool
+Joe,Gomez,298,Liverpool
+Jordan,Henderson,299,Liverpool
+Curtis,Jones,300,Liverpool
+Caoimhin,Kelleher,301,Liverpool
+Ibrahima,Konaté,302,Liverpool
+Luis,Díaz,303,Liverpool
+Alexis,Mac Allister,304,Liverpool
+Joel,Matip,305,Liverpool
+Nathaniel,Phillips,306,Liverpool
+Andrew,Robertson,307,Liverpool
+Mohamed,Salah,308,Liverpool
+Dominik,Szoboszlai,309,Liverpool
+Thiago,Alcántara do Nascimento,310,Liverpool
+Konstantinos,Tsimikas,311,Liverpool
+Sepp,van den Berg,312,Liverpool
+Virgil,van Dijk,313,Liverpool
+Jarell,Quansah,626,Liverpool
+Bobby,Clark,627,Liverpool
+Ben,Doak,628,Liverpool
+James,McConnell,629,Liverpool
+Wataru,Endo,668,Liverpool
+Marvelous,Nakamba,52,Luton
+Elijah,Adebayo,314,Luton
+Mads Juel,Andersen,315,Luton
+Amari'i,Bell,316,Luton
+Luke,Berry,317,Luton
+Reece,Burke,318,Luton
+Allan,Campbell,319,Luton
+Jordan,Clark,320,Luton
+Alfie,Doughty,321,Luton
+Luke,Freeman,322,Luton
+Matt,Macey,323,Luton
+John,McAtee,324,Luton
+Carlos,Mendes Gomes,325,Luton
+Carlton,Morris,326,Luton
+Admiral,Muskwe,327,Luton
+Chiedozie,Ogbene,328,Luton
+Fred,Onyedinma,329,Luton
+Gabriel,Osho,330,Luton
+Aribim,Pepple,331,Luton
+Dion,Pereira,332,Luton
+Dan,Potts,333,Luton
+Glen,Rea,334,Luton
+James,Shea,335,Luton
+Joe,Taylor,336,Luton
+Elliot,Thorpe,337,Luton
+Jack,Walton,338,Luton
+Louie,Watson,339,Luton
+Cauley,Woodrow,340,Luton
+Ryan,Giles,553,Luton
+Tom,Lockyer,575,Luton
+Pelly Ruddock,Mpanzu,582,Luton
+Tahith,Chong,586,Luton
+Issa,Kaboré,602,Luton
+Thomas,Kaminski,614,Luton
+Ross,Barkley,630,Luton
+Jacob,Brown,631,Luton
+Aidan,Francis-Clarke,648,Luton
+Tim,Krul,665,Luton
+Manuel,Akanji,341,Man City
+Nathan,Aké,342,Man City
+Julián,Álvarez,343,Man City
+Bernardo,Veiga de Carvalho e Silva,344,Man City
+Oscar,Bobb,345,Man City
+João,Cancelo,346,Man City
+Scott,Carson,347,Man City
+Shea,Charles,348,Man City
+Kevin,De Bruyne,349,Man City
+Rúben,Gato Alves Dias,350,Man City
+Tommy,Doyle,351,Man City
+Ederson,Santana de Moraes,352,Man City
+Phil,Foden,353,Man City
+Jack,Grealish,354,Man City
+Erling,Haaland,355,Man City
+Mateo,Kovačić,356,Man City
+Aymeric,Laporte,357,Man City
+Rico,Lewis,358,Man City
+Riyad,Mahrez,359,Man City
+James,McAtee,360,Man City
+Stefan,Ortega Moreno,361,Man City
+Cole,Palmer,362,Man City
+Máximo,Perrone,363,Man City
+Kalvin,Phillips,364,Man City
+Rodrigo,Hernandez,365,Man City
+Sergio,Gómez,366,Man City
+Zack,Steffen,367,Man City
+John,Stones,368,Man City
+Kyle,Walker,369,Man City
+Joško,Gvardiol,616,Man City
+Jérémy,Doku,678,Man City
+Mason,Mount,209,Man Utd
+Alex,Telles,370,Man Utd
+Amad,Diallo,371,Man Utd
+Antony Matheus,dos Santos,372,Man Utd
+Bruno,Borges Fernandes,373,Man Utd
+Brandon,Williams,374,Man Utd
+Eric,Bailly,375,Man Utd
+Carlos Henrique,Casimiro,376,Man Utd
+Diogo,Dalot Teixeira,377,Man Utd
+Christian,Eriksen,379,Man Utd
+Álvaro,Fernández Carreras,380,Man Utd
+Frederico,Rodrigues de Paula Santos,381,Man Utd
+Alejandro,Garnacho,382,Man Utd
+Hannibal,Mejbri,383,Man Utd
+Tom,Heaton,384,Man Utd
+Dean,Henderson,385,Man Utd
+Victor,Lindelöf,386,Man Utd
+Harry,Maguire,387,Man Utd
+Kobbie,Mainoo,388,Man Utd
+Tyrell,Malacia,389,Man Utd
+Anthony,Martial,390,Man Utd
+Lisandro,Martínez,391,Man Utd
+Scott,McTominay,392,Man Utd
+Teden,Mengi,393,Man Utd
+Facundo,Pellistri Rebollo,394,Man Utd
+Raphaël,Varane,395,Man Utd
+Marcus,Rashford,396,Man Utd
+Jadon,Sancho,397,Man Utd
+Luke,Shaw,398,Man Utd
+Shola,Shoretire,399,Man Utd
+Donny,van de Beek,400,Man Utd
+Aaron,Wan-Bissaka,401,Man Utd
+André,Onana,597,Man Utd
+Rasmus,Højlund,617,Man Utd
+Omari,Forson,632,Man Utd
+Radek,Vítek,669,Man Utd
+Lewis,Hall,204,Newcastle
+Miguel,Almirón Rejala,402,Newcastle
+Elliot,Anderson,403,Newcastle
+Harrison,Ashby,404,Newcastle
+Sven,Botman,405,Newcastle
+Bruno,Guimarães Rodriguez Moura,406,Newcastle
+Dan,Burn,407,Newcastle
+Karl,Darlow,408,Newcastle
+Martin,Dubravka,409,Newcastle
+Ryan,Fraser,410,Newcastle
+Mark,Gillespie,411,Newcastle
+Anthony,Gordon,412,Newcastle
+Isaac,Hayden,413,Newcastle
+Jeff,Hendrick,414,Newcastle
+Alexander,Isak,415,Newcastle
+Joelinton Cássio,Apolinário de Lira,416,Newcastle
+Emil,Krafth,417,Newcastle
+Garang,Kuol,418,Newcastle
+Jamaal,Lascelles,419,Newcastle
+Jamal,Lewis,420,Newcastle
+Sean,Longstaff,421,Newcastle
+Javier,Manquillo Gaitán,422,Newcastle
+Jacob,Murphy,423,Newcastle
+Nick,Pope,424,Newcastle
+Matt,Ritchie,425,Newcastle
+Allan,Saint-Maximin,426,Newcastle
+Fabian,Schär,427,Newcastle
+Matt,Targett,428,Newcastle
+Sandro,Tonali,429,Newcastle
+Kieran,Trippier,430,Newcastle
+Kell,Watts,431,Newcastle
+Joe,Willock,432,Newcastle
+Callum,Wilson,433,Newcastle
+Loris,Karius,580,Newcastle
+Paul,Dummett,581,Newcastle
+Harvey,Barnes,603,Newcastle
+Tino,Livramento,633,Newcastle
+Alex,Murphy,634,Newcastle
+Lewis,Miley,635,Newcastle
+Matt,Turner,28,Nott'm Forrest
+Anthony,Elanga,378,Nott'm Forrest
+Brandon,Aguilera Zamora,434,Nott'm Forrest
+Harry,Arter,435,Nott'm Forrest
+Serge,Aurier,436,Nott'm Forrest
+Taiwo,Awoniyi,437,Nott'm Forrest
+Giulian,Biancone,438,Nott'm Forrest
+Willy,Boly,439,Nott'm Forrest
+Josh,Bowler,440,Nott'm Forrest
+Steve,Cook,441,Nott'm Forrest
+Danilo,dos Santos de Oliveira,442,Nott'm Forrest
+Emmanuel,Dennis,443,Nott'm Forrest
+Mohamed,Dräger,444,Nott'm Forrest
+Felipe Augusto,de Almeida Monteiro,445,Nott'm Forrest
+Remo,Freuler,446,Nott'm Forrest
+Morgan,Gibbs-White,447,Nott'm Forrest
+Wayne,Hennessey,448,Nott'm Forrest
+Ethan,Horvath,449,Nott'm Forrest
+Brennan,Johnson,450,Nott'm Forrest
+Cheikhou,Kouyaté,451,Nott'm Forrest
+Richie,Laryea,452,Nott'm Forrest
+Orel,Mangala,453,Nott'm Forrest
+Loïc,Mbe Soh,454,Nott'm Forrest
+Scott,McKenna,455,Nott'm Forrest
+Alex,Mighten,456,Nott'm Forrest
+Moussa,Niakhaté,457,Nott'm Forrest
+Lewis,O'Brien,458,Nott'm Forrest
+Braian,Ojeda Rodríguez,459,Nott'm Forrest
+Jonathan,Panzo,460,Nott'm Forrest
+Omar,Richards,461,Nott'm Forrest
+Gustavo Henrique,Furtado Scarpa,462,Nott'm Forrest
+Jonjo,Shelvey,463,Nott'm Forrest
+Sam,Surridge,464,Nott'm Forrest
+Harry,Toffolo,465,Nott'm Forrest
+Hwang,Ui-jo,466,Nott'm Forrest
+Neco,Williams,467,Nott'm Forrest
+Chris,Wood,468,Nott'm Forrest
+Joe,Worrall,469,Nott'm Forrest
+Ryan,Yates,470,Nott'm Forrest
+Olu,Aina,604,Nott'm Forrest
+George,Shelvey,636,Nott'm Forrest
+Josh,Powell,637,Nott'm Forrest
+Gonzalo,Montiel,679,Nott'm Forrest
+Auston,Trusty,27,Sheffield Utd
+Anel,Ahmedhodžić,471,Sheffield Utd
+Jordan,Amissah,472,Sheffield Utd
+George,Baldock,473,Sheffield Utd
+Chris,Basham,474,Sheffield Utd
+Jayden,Bogle,476,Sheffield Utd
+Rhian,Brewster,477,Sheffield Utd
+Ismaila,Coulibaly,478,Sheffield Utd
+Adam,Davies,479,Sheffield Utd
+John,Egan,480,Sheffield Utd
+John,Fleck,481,Sheffield Utd
+Wes,Foderingham,482,Sheffield Utd
+Daniel,Jebbison,483,Sheffield Utd
+Max,Lowe,484,Sheffield Utd
+Oliver,McBurnie,485,Sheffield Utd
+Iliman,Ndiaye,486,Sheffield Utd
+Rhys,Norrington-Davies,487,Sheffield Utd
+Oliver,Norwood,488,Sheffield Utd
+Ben,Osborn,489,Sheffield Utd
+William,Osula,490,Sheffield Utd
+Jack,Robinson,576,Sheffield Utd
+Anis,Slimane,587,Sheffield Utd
+Yasser,Larouci,592,Sheffield Utd
+Bénie,Traoré,593,Sheffield Utd
+Vini,de Souza Costa,638,Sheffield Utd
+Femi,Seriki,653,Sheffield Utd
+Louie,Marsh,654,Sheffield Utd
+Andre,Brooks,655,Sheffield Utd
+Antwoine,Hackford,656,Sheffield Utd
+Gustavo,Hamer,663,Sheffield Utd
+Tom,Davies,666,Sheffield Utd
+Brandon,Austin,491,Spurs
+Rodrigo,Bentancur,492,Spurs
+Yves,Bissouma,493,Spurs
+Bryan,Gil Salvatierra,494,Spurs
+Ben,Davies,495,Spurs
+Eric,Dier,496,Spurs
+Emerson,Leite de Souza Junior,497,Spurs
+Fraser,Forster,498,Spurs
+Pierre-Emile,Højbjerg,499,Spurs
+Harry,Kane,500,Spurs
+Dejan,Kulusevski,501,Spurs
+Hugo,Lloris,502,Spurs
+Giovani,Lo Celso,503,Spurs
+James,Maddison,504,Spurs
+Tanguy,Ndombélé Alvaro,505,Spurs
+Pedro,Porro,506,Spurs
+Ivan,Perišić,507,Spurs
+Sergio,Reguilón,508,Spurs
+Richarlison,de Andrade,509,Spurs
+Joe,Rodon,510,Spurs
+Cristian,Romero,511,Spurs
+Davinson,Sánchez,512,Spurs
+Pape Matar,Sarr,513,Spurs
+Ryan,Sessegnon,514,Spurs
+Oliver,Skipp,515,Spurs
+Son,Heung-min,516,Spurs
+Djed,Spence,517,Spurs
+Japhet,Tanganga,518,Spurs
+Destiny,Udogie,519,Spurs
+Guglielmo,Vicario,520,Spurs
+Alfie,Whiteman,521,Spurs
+Manor,Solomon,583,Spurs
+Micky,van de Ven,639,Spurs
+Dane,Scarlett,640,Spurs
+Alejo,Véliz,641,Spurs
+Nayef,Aguerd,522,West Ham
+Michail,Antonio,523,West Ham
+Alphonse,Areola,524,West Ham
+Saïd,Benrahma,525,West Ham
+Jarrod,Bowen,526,West Ham
+Maxwel,Cornet,527,West Ham
+Vladimír,Coufal,528,West Ham
+Conor,Coventry,529,West Ham
+Aaron,Cresswell,530,West Ham
+Flynn,Downes,531,West Ham
+Emerson,Palmieri dos Santos,532,West Ham
+Lukasz,Fabianski,533,West Ham
+Pablo,Fornals Malla,534,West Ham
+Danny,Ings,535,West Ham
+Ben,Johnson,536,West Ham
+Thilo,Kehrer,537,West Ham
+Divin,Mubama,538,West Ham
+Lucas,Tolentino Coelho de Lima,539,West Ham
+Gianluca,Scamacca,541,West Ham
+Tomáš,Souček,542,West Ham
+Nikola,Vlašić,543,West Ham
+Kurt,Zouma,544,West Ham
+Angelo,Ogbonna,577,West Ham
+Edson,Álvarez Velázquez,642,West Ham
+Joseph,Anang,647,West Ham
+James,Ward-Prowse,664,West Ham
+Konstantinos,Mavropanos,676,West Ham
+Rayan,Aït-Nouri,545,Wolves
+Daniel,Bentley,546,Wolves
+Bendegúz,Bolla,547,Wolves
+Hugo,Bueno López,548,Wolves
+Francisco Jorge,Tomás Oliveira,549,Wolves
+Luke,Cundle,550,Wolves
+Craig,Dawson,551,Wolves
+Fábio,Silva,552,Wolves
+Gonçalo Manuel,Ganchinho Guedes,554,Wolves
+Joe,Hodge,555,Wolves
+Ki-Jana,Hoever,556,Wolves
+Hwang,Hee-chan,557,Wolves
+João Victor,Gomes da Silva,559,Wolves
+Jonathan,Castro Otto,560,Wolves
+Bruno,Cavaco Jordão,561,Wolves
+Sasa,Kalajdzic,562,Wolves
+Max,Kilman,563,Wolves
+Tom,King,564,Wolves
+Mario,Lemina,565,Wolves
+Matheus Luiz,Nunes,566,Wolves
+Pedro,Lomba Neto,567,Wolves
+Daniel,Castelo Podence,568,Wolves
+José,Malheiro de Sá,569,Wolves
+Pablo,Sarabia,570,Wolves
+Matija,Šarkić,571,Wolves
+Nélson,Cabral Semedo,572,Wolves
+Toti António,Gomes,573,Wolves
+Boubacar,Traoré,574,Wolves
+Matheus,Santos Carneiro Da Cunha,590,Wolves
+Matt,Doherty,598,Wolves
