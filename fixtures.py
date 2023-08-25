@@ -1,10 +1,18 @@
 import requests, json
 import pandas as pd
 from pprint import pprint
-
+"""
+Retrieve fixture list for all 380 fixtures in the premier league season, this fuction returns the list however, there is not much analysis to be done on this. 
+"""
 # Function to retrieve and clean fixture list data
 def get_fixture_list():
+    """
+    Args:
 
+    Returns:
+
+    Example:
+    """
     # Define url endpoint
     URL = "https://fantasy.premierleague.com/api/fixtures/"
 

@@ -5,10 +5,10 @@ from bs4 import BeautifulSoup
 
 def update_bootstrap_data():
     """
-Request current season stats from FPL api.
-It then filters the scraped results into display stats regarding teams. 
-Saves the database into a .csv file for locally stored data for offline analysis. 
-""" 
+    Request current season stats from FPL api.
+    It then filters the scraped results into display stats regarding teams. 
+    Saves the database into a .csv file for locally stored data for offline analysis. 
+    """ 
     # Set the base URL for Fantasy football api
     base_link = "https://fantasy.premierleague.com/api/"
 
@@ -28,7 +28,9 @@ Saves the database into a .csv file for locally stored data for offline analysis
 # Data for the 2022-2023 season can be pulled from the following GHub Repo https://github.com/vaastav/Fantasy-Premier-League/tree/master/data/2022-23
 # Season parameter should be inputted as "20XX-20XX" dependent on the users preference
 def clean_team_data(season):
-
+    """
+    
+    """
     # Using pandas read the saved dataframe data from the .csv file. The inputted season in the function will dictate which seasons data is cleaned
     team_df = pd.read_csv("data/"+ season + "/team_data.csv")
 
@@ -62,7 +64,9 @@ def clean_team_data(season):
 
 # Define a function to copy and process the Premier League table from SkySports returns the league table as a DataFrame
 def copy_premier_league_table():
+    """
     
+    """
     # Define the URL of Skysports premier league table
     url = "https://www.skysports.com/premier-league-table"
     
@@ -142,6 +146,12 @@ def get_player_roster(team_id):
 
     # Load player_raw.csv
     players_raw_csv = pd.read_csv("data/2023-2024/players_raw.csv")
+
+    # Filters the DataFrame to show players that play for requested club
     player_roster = players_raw_csv[players_raw_csv["team"]== team_id]
+
+    # Filter the DataFrame to only the following columns
     player_roster = player_roster[["first_name", "second_name", "web_name", "id"]]
+    
+    # Return the roster to the user
     return player_roster
