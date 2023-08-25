@@ -8,7 +8,8 @@ https://fantasy.premierleague.com/api/element-summary/{player_id}
 Scraping the league table SO forum 
 https://stackoverflow.com/questions/71978659/multiple-errors-when-scraping-premier-league-tables
 
-
+Historical data taken from:
+https://github.com/vaastav/Fantasy-Premier-League/tree/master
 
 Reference to the different endpoints in the api: https://www.oliverlooney.com/blogs/FPL-APIs-Explained
 List of endpoints:
