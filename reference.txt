@@ -1,9 +1,13 @@
 https://towardsdatascience.com/python-for-fpl-data-analytics-dadb414ccefd
 https://www.game-change.co.uk/2023/02/10/a-complete-guide-to-the-fantasy-premier-league-fpl-api/
-
+https://www.markdownguide.org/
 
 to get individual indepth statistics use the following endpoint link:
 https://fantasy.premierleague.com/api/element-summary/{player_id}
+
+Scraping the league table SO forum 
+https://stackoverflow.com/questions/71978659/multiple-errors-when-scraping-premier-league-tables
+
 
 
 Reference to the different endpoints in the api: https://www.oliverlooney.com/blogs/FPL-APIs-Explained
@@ -24,6 +28,7 @@ Player performance prediction, ML?
     - Opposition to face? (Team Strength)
     - ICT index? 
 
+Player analysis 
 
 Team data visualisation?
     - Strength stats Octodiagram?

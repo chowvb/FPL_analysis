@@ -1,5 +1,7 @@
 Scrape fpl database for generic team and individual statistics (clean_data.py) and save useful stats to .csv for offline viewing 
 
+
+
 ==FPL Team_ID==
 |ID|Team|
 |---|---|
@@ -30,3 +32,5 @@ Scrape fpl database for generic team and individual statistics (clean_data.py) a
 |---|---|---|---|
 |scrape_and_clean_player_data() | Takes data from FPL api, saves a local copy. Cleans the data replacing column names, team id -> names and removes unwanted columns | None | Two DataFrames: useful_player_stats dataframe, other_stats dataframe|
 
+==Historical Player Stats==
+![Mo Salah Historical FPL Stats](image.png)

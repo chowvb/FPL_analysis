@@ -161,3 +161,14 @@ def scrape_and_clean_player_data():
         
         else:
             print("No offline player Database available to load")
+
+
+
+def format_historical_csv():
+    season_list = ["2016-2017", "2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
+    for season in season_list:
+        df = pd.read_csv("data/" + season + "/merged_gw.csv", encoding="latin-1")
+        df["name"].replace("_", " ", regex=True, inplace= True)
+        df["name"].replace("\d", "", regex= True, inplace=True)
+        df["name"] = df["name"].str.rstrip(" ")
+        df.to_csv("data/" + season + "/merged_gw.csv", index=False)
