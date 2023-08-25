@@ -81,8 +81,16 @@ def get_gw_data(player_id):
         # Add the team that the player play for into the dataframe, some historical data doesn't have this but the most recent seasons do. 
         df["team"] = team_name
 
+        # Replace Opponent team from id number to name
+        team_id = pd.DataFrame(utility.team_replace_dict2)
+        team_id = team_id.rename(columns={"team_id": "opponent_team", "Team": "opponent"})
+
+        result_df = pd.merge(df, team_id, on = "opponent_team")
+        result_df.drop("opponent_team", axis = 1, inplace = True)
+        result_df = result_df.rename(columns={"opponent": "opponent_team"})
+
         # Return the DataFrame back to the user.
-        return df 
+        return result_df
 
 """"""
 def get_extended_gw_data(player_id, GW_number):
