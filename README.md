@@ -24,6 +24,7 @@ Scrape fpl database for generic team and individual statistics (clean_data.py) a
 
 
 ==individual_player_statistics.py==
+
 The figure below is a combination of the FPL_history function from individual_player_statistics.py . A players name (First + Second name) is passed through the function. Data is collated through all of the merged_gw.csv files in the repo, producing the figure below that shows the number of goals/assists/value of a player for all seasons. (Note: Player names with accents are returning an error. A fix will be introduced at some point).
 ![Mo Salah Historical FPL Stats](image.png)
 
@@ -64,9 +65,11 @@ The figure below is a combination of the FPL_history function from individual_pl
 |20|Wolverhampton Wanderers|
 
 ==fixtures.py==
+
 contains a single function, that returns the full premier league fixture list for the current season, with names of teams, kickoff time, difficuty, score and match details.
 
 ==data_visualisation_tools.py==
+
 File containing all the functions for different types of data visualisation plots.
 |Name|Description|Arguments|Return|
 |---|---|---|---|
