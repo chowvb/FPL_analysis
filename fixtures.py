@@ -52,8 +52,8 @@ def get_fixture_list():
 
     # Define the columns that we want to keep along with the new name of each of the columns for easier reading
     df_columns = {
-        "current_name": ["id","team_h", "team_h_score", "team_a_score", "team_a", "event", "kickoff_time","stats"],
-        "new_name": ["Match_ID","Home", "Home_goals", "Away_goals", "Away", "GW", "kickoff_time", "Match_stats"]
+        "current_name": ["id","team_h", "team_h_score", "team_a_score", "team_a", "event", "kickoff_time","stats", "team_h_difficulty", "team_a_difficulty"],
+        "new_name": ["Match_ID","Home", "Home_goals", "Away_goals", "Away", "GW", "kickoff_time", "Match_stats", "team_h_difficulty", "team_a_difficulty"]
     }
 
     # Define a function that changes te names of the columns from current names to new names and reorder the dataframe to a more user friendly layout 
