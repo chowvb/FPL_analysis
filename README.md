@@ -36,6 +36,8 @@ The figure below is a combination of the FPL_history function from individual_pl
 |clean_team_data()|Used in conjunction with update_bootstrap_data() this function adds a attacking_overall and defence_overall stat to each of the teams and reinserts them into the dataframe|season (eg., "2023-2024")|None (saves a new csv file containing each teams strength)|
 |copy_premier_league_table()|Scrapes the premier league table of SkySports website and converts it into a usable dataframe|None|DataFrame containing the current Premier League Table|
 |get_player_roster()|Returns all players for the requested club.|Team ID number (Found in the talbe below)|DataFrame containing players in a single club|
+|h2h_results()|Takes two teams and retrieves recent matches in Premier League dating back to 2020 (Limited by fpl data downloaded), returns the score and who won |team(string) - Team you want to analyse 
+opp_teams(string) - opponent team you want to compare results with|Returns DataFrame with containing kickoff_time, was_home, team, team_score, opp_score, opp_team_name, result|
 
 
 ==FPL Team_ID==
@@ -61,3 +63,15 @@ The figure below is a combination of the FPL_history function from individual_pl
 |18|Tottenham Hotspur|
 |19|West Ham United|
 |20|Wolverhampton Wanderers|
+
+==fixtures.py==
+contains a single function, that returns the full premier league fixture list for the current season, with names of teams, kickoff time, difficuty, score and match details.
+
+==data_visualisation_tools.py==
+File containing all the functions for different types of data visualisation plots.
+|Name|Description|Arguments|Return|
+|---|---|---|---|
+|get_team_strength_stats()|Takes stored strength stats from the .csv file for two teams and creates a octagon plot overlaying the differences in strength areas|team_name(string), opponent_name(string)|Returns an octagon plot (shown below)|
+
+![Alt text](Liv_vs_New_strength_comparison.png)
+
