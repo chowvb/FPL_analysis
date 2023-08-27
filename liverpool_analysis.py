@@ -2,96 +2,55 @@ import clean_data as cd
 import team_analysis as ta
 import player_analysis as pa
 import pandas as pd
-
-
-
-
+from fixtures import get_fixture_list
+import utility
+from IPython.display import display
+from data_visualisation_tools import get_team_strength_stats
 team_name = "Liverpool"
 team_id = 11
 
-def main_function(team_id, team_name):
-    player_roster_df = ta.get_player_roster(team_id).reset_index(drop=True)
 
-    primary_df, secondary_df = cd.scrape_and_clean_player_data()
+fixture_list = get_fixture_list()
+team_fixtures_h = fixture_list[fixture_list["Home"] == team_name]
+team_fixtures_a = fixture_list[fixture_list["Away"] == team_name]
+team_fixtures = pd.concat([team_fixtures_h,team_fixtures_a])
+team_fixtures = team_fixtures.sort_values(by= "GW", ascending= True).reset_index(drop=True)
+for i, value in enumerate(team_fixtures["Home_goals"]):
+    if pd.notna(team_fixtures.at[i, "Home_goals"]):
+        team_fixtures = team_fixtures.drop(i)
+    else:
+        pass
 
-    squad_stats = (primary_df[primary_df["team"] == team_name]).reset_index(drop=True)
-    squad_stats = squad_stats.sort_values(by= "total_points", ascending = False)
+team_fixtures= team_fixtures.reset_index(drop = True)
 
+if team_fixtures.at[0, "Home"] == team_name:
+    opponent_team = team_fixtures.at[0, "Away"]
+    next_match_difficulty = team_fixtures.at[0, "team_h_difficulty"]
+else:
+    opponent_team = team_fixtures.at[0, "Home"]
+    next_match_difficulty = team_fixtures.at[0, "team_a_difficulty"]
 
-    economy = {"id": [],
-    "economy":[] }
+print("Next match is against " + opponent_team + "\nOn: " + team_fixtures.at[0,"kickoff_time"] + "\nDifficulty rating: " + str(next_match_difficulty) + "/5\n")
 
-    player_efficiency = {"id": [] ,
-    "player_efficiency_goals":[] ,
-    "player_efficiency_assists": []}
+h2h_results = ta.h2h_results(team= team_name, opp_team= opponent_team)
 
-    player_contributions = {"id":[], 
-    "%_goal_involvement": []}
+print("Recent results in the Premier League ")
 
-    for player in squad_stats["id"]:
-        print(player)
-        economy["id"].append(player)
-        economy["economy"].append(pa.economy(player))
+display(h2h_results)
 
-        player_efficiency["id"].append(player)
-        player_efficiency_goals, player_efficiency_assists = pa.player_efficiency(player)
-        player_efficiency["player_efficiency_goals"].append(player_efficiency_goals)
-        player_efficiency["player_efficiency_assists"].append(player_efficiency_assists)
+print("\n\nOnes To Watch")
+player_database = pd.read_csv("data/2023-2024/players_raw.csv")
 
-        player_contributions["id"].append(player)
-        player_contributions["%_goal_involvement"].append(pa.player_contribution(player))
+team_id = pd.DataFrame(utility.team_replace_dict2)
+selected_team = team_id[team_id["Team"] == team_name].reset_index(drop = True)
+opp_team = team_id[team_id["Team"] == opponent_team].reset_index(drop = True)
 
-    df = pd.DataFrame(economy)
-    df = pd.merge(df, pd.DataFrame(player_efficiency), on="id")
-    df = pd.merge(df, pd.DataFrame(player_contributions), on = "id")
-    summary_df = pd.merge(squad_stats[["id","web_name","team", "position","price", "total_points","goals", "assists"]],df, on="id")
-    return summary_df
+selected_team_players = player_database[player_database["team"] == selected_team.at[0, "team_id"]]
+opposition_team_players = player_database[player_database["team"] == opp_team.at[0, "team_id"]]
 
-def full_db_analysis():
-    team_id_dict = pd.DataFrame({"id": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
-                            "team": 
-                            ["Arsenal",
-                                "Aston Villa",
-                                "Bournemouth",
-                                "Brentford",
-                                "Brighton",
-                                "Burnley",
-                                "Chelsea",
-                                "Crystal Palace", 
-                                "Everton",
-                                "Fulham",
-                                "Liverpool",
-                                "Luton",
-                                "Man City",
-                                "Man Utd",
-                                "Newcastle",
-                                "Nott'm Forrest",
-                                "Sheffield Utd",
-                                "Spurs",
-                                "West Ham",
-                                "Wolves"]})
+player_df = pd.concat([selected_team_players, opposition_team_players])
+player_df = player_df.sort_values(by = "form", ascending= False)
+player_df = player_df[["web_name", "total_points", "goals_scored", "assists", "form"]]
 
-    df1 = pd.DataFrame({"id":[],
-                    "web_name":[],
-                    "team":[],
-                    "position":[],
-                    "price": [], 
-                    "total_points": [],
-                    "goals": [],
-                    "assists":[],
-                    "economy":[],
-                    "player_efficiency_goals":[],
-                    "player_efficiency_assists":[],
-                    "%_goal_involvement": []
-                    })
-
-    for team in range(len(team_id_dict["id"])):
-        df1 = pd.concat([df1, main_function(team_id= team_id_dict["id"][team], team_name= team_id_dict["team"][team])], axis=0)
-
-    df1 = df1.fillna(0)
-    return df1
-
-
-# Analyse Liverpool Performance
-df = main_function(team_name=team_name, team_id=team_id)
-df.fillna(0)
+display(player_df.head(5))
+get_team_strength_stats(team_name, opponent_team)
