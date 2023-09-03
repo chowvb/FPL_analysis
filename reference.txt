@@ -19,7 +19,8 @@ List of endpoints:
 - element_summary/{element_id}/
 - event/{event_id}/live/
 
-
+More historical Data can be found on this site:
+https://fbref.com/en/comps/9/2022-2023/2022-2023-Premier-League-Stats
 
 Player performance prediction, ML?
     - Team strength (away and home: taken from "teams" filter?)
