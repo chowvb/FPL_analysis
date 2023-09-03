@@ -25,12 +25,14 @@ team_fixtures= team_fixtures.reset_index(drop = True)
 
 if team_fixtures.at[0, "Home"] == team_name:
     opponent_team = team_fixtures.at[0, "Away"]
+    location = "Home"
     next_match_difficulty = team_fixtures.at[0, "team_h_difficulty"]
 else:
     opponent_team = team_fixtures.at[0, "Home"]
+    location = "Away"
     next_match_difficulty = team_fixtures.at[0, "team_a_difficulty"]
 
-print("Next match is against " + opponent_team + "\nOn: " + team_fixtures.at[0,"kickoff_time"] + "\nDifficulty rating: " + str(next_match_difficulty) + "/5\n")
+print("Next match is " + location + " against " + opponent_team + "\nOn: " + team_fixtures.at[0,"kickoff_time"] + "\nDifficulty rating: " + str(next_match_difficulty) + "/5\n")
 
 h2h_results = ta.h2h_results(team= team_name, opp_team= opponent_team)
 
