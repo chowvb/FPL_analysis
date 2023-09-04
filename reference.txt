@@ -19,28 +19,5 @@ List of endpoints:
 - element_summary/{element_id}/
 - event/{event_id}/live/
 
-More historical Data can be found on this site:
-https://fbref.com/en/comps/9/2022-2023/2022-2023-Premier-League-Stats
-
-Player performance prediction, ML?
-    - Team strength (away and home: taken from "teams" filter?)
-    - Difficulty? (From "fixtures" filter?)
-    - Current Form (Taken from "elements" filter?)
-    - Last seasons performance? (Scraped of github.)
-    - Opposition to face? (Team Strength)
-    - ICT index? 
-
-Player analysis 
-
-Team data visualisation?
-    - Strength stats Octodiagram?
-
-                    Overall_attack (3)
-
-                (4)Home_attack     Away_attack (2)
-
-        (5)Home_Overall                Away_Overall (1)
-
-                (6)Home_defence    Away_defence(8)
-                
-                    Overall_defence(7)
+More historical Data can be found on this site: (Teams unique id codes can be found in "fbref_data/team_id.csv")
+https://fbref.com/en/comps/9/Premier-League-Stats
