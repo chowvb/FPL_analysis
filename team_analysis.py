@@ -225,3 +225,4 @@ def h2h_results(team, opp_team):
     test_df = test_df.reindex(columns=df_order)
     h2h = test_df[test_df["opp_team_name"] == opp_team]
     return h2h
+
