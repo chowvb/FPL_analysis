@@ -17,7 +17,10 @@ List of endpoints:
 - fixtures/
 - fixtures/?event={event_id}
 - element_summary/{element_id}/
-- event/{event_id}/live/
+- event/{event_id}/live/ 
 
 More historical Data can be found on this site: (Teams unique id codes can be found in "fbref_data/team_id.csv")
 https://fbref.com/en/comps/9/Premier-League-Stats
+
+
+A spider plot to be used for visualising get_team_strength_stats()
