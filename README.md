@@ -1,17 +1,6 @@
 Scrape fpl database for generic team and individual statistics (clean_data.py) and save useful stats to .csv for offline viewing 
 
 
-==clean_data.py ==
-
-
-|Name|Description|Arguments|Return|
-|---|---|---|---|
-|scrape_data() | Takes data from FPL api, saves a local copy. (players_raw.csv, player_idlist.csv, cleaned_players.csv) | None | None |
-|get_gw_data()|Requests data for a single player and returns player performance for each gameweek|player_id (can be found in player_idlist.csv)|Stats for each gameweek|
-|get_extended_gw_data()|Requests for additional stats (xg, xa, etc) for each gw|player_id ()found in player_idlist.csv|DataFrame with additional stats for each gameweek|
-|get_all_gw_data()|Gets all GW stats for all players|None| Saves a merged_gw.csv to local directory|
-|format_historical_csv()|Formats player names in old FPL merged_gw.csv files from vaasav#s github repo, changes the player names column so the names are cosistent for data analysis. This function is very rarely used|None|None|
-
 ==player_analysis==
 
 
@@ -26,7 +15,7 @@ Scrape fpl database for generic team and individual statistics (clean_data.py) a
 ==individual_player_statistics.py==
 
 The figure below is a combination of the FPL_history function from individual_player_statistics.py . A players name (First + Second name) is passed through the function. Data is collated through all of the merged_gw.csv files in the repo, producing the figure below that shows the number of goals/assists/value of a player for all seasons. (Note: Player names with accents are returning an error. A fix will be introduced at some point).
-![Mo Salah Historical FPL Stats](image.png)
+![Mo Salah Historical FPL Stats](images/image.png)
 
 ==team_analysis.py==
 
@@ -75,5 +64,5 @@ File containing all the functions for different types of data visualisation plot
 |---|---|---|---|
 |get_team_strength_stats()|Takes stored strength stats from the .csv file for two teams and creates a octagon plot overlaying the differences in strength areas|team_name(string), opponent_name(string)|Returns an octagon plot (shown below)|
 
-![Alt text](Liv_vs_New_strength_comparison.png)
+![Alt text](images/Liv_vs_New_strength_comparison.png)
 
