@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 *** Notes ***
 - 
 """
-team_name = "Liverpool"
+team_name = "Manchester City"
 # Liverpool defence_index = 50.2
 # Arsenal defence_index = 135
 # Manchester City defence_index = 117.5
@@ -43,25 +43,28 @@ def get_passing_stats():
     
     return passing_df
 
-#def get_defence_stats():
-csv_df = pd.read_csv("fbref_data/team_data/defence.csv", header = [0, 1], index_col= 0)
-tackles = csv_df["Tackles"]
-challenges = csv_df["Challenges"]
-blocks = csv_df["Blocks"]
-other_columns = csv_df.drop(["Tackles","Challenges","Blocks"], axis = 1).droplevel(0, axis = 1)
+def get_defence_stats(team):
+    team_name = team
+    csv_df = pd.read_csv("fbref_data/team_data/defence.csv", header = [0, 1], index_col= 0)
+    tackles = csv_df["Tackles"]
+    challenges = csv_df["Challenges"]
+    blocks = csv_df["Blocks"]
+    other_columns = csv_df.drop(["Tackles","Challenges","Blocks"], axis = 1).droplevel(0, axis = 1)
 
-defence_df = pd.concat([other_columns, tackles["Tkl"], blocks["Blocks"], challenges["Tkl%"]], axis = 1)
-defence_df = defence_df[["Squad", "Tkl", "Int", "Blocks", "Clr", "Err", "Tkl%"]]
+    defence_df = pd.concat([other_columns, tackles["Tkl"], blocks["Blocks"], challenges["Tkl%"]], axis = 1)
+    defence_df = defence_df[["Squad", "Tkl", "Int", "Blocks", "Clr", "Err", "Tkl%"]]
 
-team_defence = defence_df[defence_df["Squad"] == team_name]
+    team_defence = defence_df[defence_df["Squad"] == team_name]
 
-pl_table = pd.read_csv("fbref_data/team_data/pl_table.csv")
-team_ga = pl_table[["Squad", "GA"]]
-team_ga = team_ga[team_ga["Squad"] == team_name]
+    pl_table = pd.read_csv("fbref_data/team_data/pl_table.csv")
+    team_ga = pl_table[["Squad", "GA"]]
+    team_ga = team_ga[team_ga["Squad"] == team_name]
 
-team_defence = pd.merge(team_defence, team_ga, on = "Squad")
+    team_defence = pd.merge(team_defence, team_ga, on = "Squad")
 
-defence_index = team_defence["Tkl"] + team_defence["Int"] + team_defence["Blocks"] + team_defence["Clr"] - team_defence["Err"]
-goals_conceded_multiplier = (team_defence["GA"] /2 ) + 3
+    defence_index = team_defence["Tkl"] + team_defence["Int"] + team_defence["Blocks"] + team_defence["Clr"] - (team_defence["Err"] - (1 / team_defence["Err"]))
+    goals_conceded_multiplier = (team_defence["GA"] /2 )
 
-defence_index =  defence_index / goals_conceded_multiplier
+    defence_index =  defence_index / goals_conceded_multiplier
+    
+    print(defence_index)
