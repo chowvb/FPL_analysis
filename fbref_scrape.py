@@ -83,3 +83,25 @@ def update_team_statistics():
             file_name = pl_stats_df["stats_type"][i]
             df.to_csv(f"fbref_data/team_data/{file_name}.csv")
 
+def player_stats(team_name):
+    team_id = unique_team_id()
+    team_name_df = team_id[team_id["Team"] == team_name].reset_index(drop = True)
+    url = team_name_df["Link"][0]
+
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text, "html.parser")
+
+    table_id = "stats_standard_9"
+    table = soup.find("table", {"id" : table_id})
+
+    if table:
+        df = pd.read_html(str(table))[0]
+        df = df.drop(df.index[-2:], axis = 0)
+        df = df.drop(columns= "Per 90 Minutes")
+        df = df.droplevel(0, axis = 1)
+        df = df.drop(columns = "Matches")
+        
+    else:
+        print("Error: No Table Found")
+
+    return df 
