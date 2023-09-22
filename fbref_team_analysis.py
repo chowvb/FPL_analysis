@@ -6,7 +6,10 @@ import matplotlib.pyplot as plt
 
 """
 *** Notes ***
-- 
+Passing: Done
+Defence: Done
+Attack: 
+Goalkeeping:
 """
 team_name = "Manchester City"
 # Liverpool defence_index = 50.2
@@ -68,3 +71,4 @@ def get_defence_stats(team):
     defence_index =  defence_index / goals_conceded_multiplier
     
     print(defence_index)
+
