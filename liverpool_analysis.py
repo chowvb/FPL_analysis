@@ -1,7 +1,6 @@
 import team_analysis as ta
 import player_analysis as pa
 import pandas as pd
-from fixtures import get_fixture_list
 import utility
 from IPython.display import display
 from data_visualisation_tools import get_team_strength_stats
@@ -11,7 +10,7 @@ team_name = "Liverpool"
 team_id = 11
 
 # request the full fixture list for premier league mathes using get_fixture_list from fixtures python file 
-fixture_list = get_fixture_list()
+fixture_list = utility.get_fixture_list()
 # Create two new dataframes which store the fixtures that contain the team_name where they are either home or away.
 team_fixtures_h = fixture_list[fixture_list["Home"] == team_name]
 team_fixtures_a = fixture_list[fixture_list["Away"] == team_name]
