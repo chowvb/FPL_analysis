@@ -5,8 +5,8 @@ from urllib.parse import urlparse
 from utility import team_replace_dict_fbref, team_replace_dict2
 
 def unique_team_id():
-    r = requests.get("https://fbref.com/en/comps/9/Premier-League-Stats/")
-    soup = BeautifulSoup(r.text)
+    r = requests.get("https://fbref.com/en/comps/9/Premier-League-Stats")
+    soup = BeautifulSoup(r.text, "html.parser")
     standings_table = soup.select("table.stats_table")[0]
     teams = standings_table.find_all("a")
     links = [l.get("href") for l in teams]
@@ -29,8 +29,8 @@ def unique_team_id():
     merged_team_df = team_df.merge(fpl_team_id, on= "Team")
     merged_team_df = merged_team_df.merge(fpl_team_name, left_on = "fpl_team_id", right_on= "team_id")
     merged_team_df = merged_team_df.drop(columns=["team_id"]).rename(columns={"Team_x" : "Team","Team_y": "fpl_team"})
-
-    return merged_team_df 
+    merged_team_df.to_csv("fbref_data/team_data/team_id.csv", index= False)
+    #return merged_team_df
 
 def unique_player_id():
     r = requests.get("https://fbref.com/en/comps/9//wages/Premier-League-Wages/")
@@ -91,7 +91,7 @@ def player_stats(team_name):
     r = requests.get(url)
     soup = BeautifulSoup(r.text, "html.parser")
 
-    table_id = "stats_standard_9"
+    table_id = "stats_keeper_adv_9"
     table = soup.find("table", {"id" : table_id})
 
     if table:
@@ -105,3 +105,36 @@ def player_stats(team_name):
         print("Error: No Table Found")
 
     return df 
+
+def get_stats():
+    """
+    Note: FBref's anti bot system will cause the function to break and return empyty csv files as the system will only allow for 
+    """
+    team_stats = {
+    "stats_type" : ["general_stats", "goalkeeping" , "shooting", "passing", "passing_type", "creativity", "defence", "possession", "playing_time", "other_stats"],
+    "html_table_id" : ["stats_standard_9", "stats_keeper_adv_9", "stats_shooting_9", "stats_passing_9", "stats_passing_types_9", "stats_gca_9", "stats_defense_9", "stats_possession_9", "stats_playing_time_9", "stats_misc_9"]
+    }
+    #teams_list = unique_team_id()
+    teams_list = pd.read_csv("fbref_data/team_data/team_id.csv")
+    
+    for i, table_link in enumerate(team_stats["html_table_id"]):
+        player_stats = pd.DataFrame()
+        print(table_link)
+        for team_link in teams_list["Link"]:
+            print(team_link + "\n")
+
+            r = requests.get(team_link)
+            soup = BeautifulSoup(r.text, "html.parser")
+
+            table = soup.find("table", id = table_link)
+            try:
+                stats_df = pd.read_html(str(table))[0]
+
+                player_stats = pd.concat([player_stats, stats_df], axis = 0).reset_index(drop = True)
+
+                file_name = team_stats["stats_type"][i]
+                #player_stats.to_csv(f"fbref_data/player_data/{file_name}.csv")
+            except:
+                print(f"Table Error for {team_link}")
+        
+    
