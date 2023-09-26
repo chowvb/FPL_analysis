@@ -29,7 +29,7 @@ scrape_data() - collects player data from FPL bootstrap and saves three seperate
 def scrape_data():
     # Create a dictionary of the position of the players in the raw format and the corrosponding position that that the players play in. 
     position_replace_dict = { 1: "GLK", 2: "DEF", 3 : "MID", 4: "FWD"}   
-    
+    team_replace_dict = utility.team_replace_dict
     # Define API endpoint
     url = "https://fantasy.premierleague.com/api/bootstrap-static/"
 
@@ -52,13 +52,14 @@ def scrape_data():
     player_id_df.to_csv("data/2023-2024/player_idlist.csv", index=False)
 
     # Create a DataFrame to the same format as 2022-2023/cleaned_players.csv format for easy analysis and comparison to previous season.
-    cleaned_players_df = players_df[["first_name", "second_name", "goals_scored", "assists", "total_points",
+    cleaned_players_df = players_df[["first_name", "second_name", "team", "goals_scored", "assists", "total_points",
                                 "minutes", "goals_conceded", "creativity", "influence", "threat", "bonus",
                                 "bps", "ict_index", "clean_sheets", "red_cards", "yellow_cards", "selected_by_percent",
                                 "now_cost", "element_type"]]
 
     # Replace element_type numbers with corresponding positions
     cleaned_players_df["element_type"].replace(position_replace_dict, inplace = True)
+    cleaned_players_df["team"].replace(team_replace_dict, inplace = True)
 
     # Save the cleaned_players_df to a .csv file for offline analysis
     cleaned_players_df.to_csv("data/2023-2024/cleaned_players.csv", index = False)
