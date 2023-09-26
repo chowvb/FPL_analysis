@@ -20,6 +20,8 @@ Script function -
     - Displays the difficulty level of the next fixture 1-5 (1 = Easy / 5 = Difficult)
     
     - Using fbrefs statistics. Head-to-head stats are generated.
+
+Requires internet connection as functions used within this script requires scraping tables of fbref.com and requesting data from the fpl endpoint.
 """
 # Select the team name and id number.
 team_name = "Liverpool"
@@ -161,3 +163,8 @@ h2h_fpl_points_df = h2h_fpl_points_df.rename(index = {"total_points" : "FPL Poin
 h2h_season_stats = pd.concat([h2h_season_stats, h2h_fpl_points_df], axis = 0) # Concat to h2h_season_stats dataframe.
 
 display(h2h_season_stats) # Display the dataframe
+
+# Get the players with the most yellow cards.
+y_card_df = cleaned_player_df[["first_name", "second_name", "team", "yellow_cards"]].loc[cleaned_player_df["team"].isin([team_name, opponent_team])]
+y_card_df = y_card_df.sort_values(by = "yellow_cards", ascending = False).head(5)
+
