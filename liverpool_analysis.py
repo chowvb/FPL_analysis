@@ -6,7 +6,21 @@ from IPython.display import display
 from data_visualisation_tools import get_team_strength_stats
 import numpy as np
 
+"""
+***Notes***
 
+Script function - 
+    - Updates fpl player data
+    - Updates fbref statistics for team data
+    
+    - Gets Liverpools Next Opponent
+    - Gets recent premier league matches between Liverpool and their next opponent. Uses historical FPL datasets.
+    - Displays top 5 players based on form as "ones to watch" (Both teams players are included)
+    - Spider plot displaying team strengths (Attack/Defence ratings made by fpl)
+    - Displays the difficulty level of the next fixture 1-5 (1 = Easy / 5 = Difficult)
+    
+    - Using fbrefs statistics. Head-to-head stats are generated.
+"""
 # Select the team name and id number.
 team_name = "Liverpool"
 team_id = 11
