@@ -4,6 +4,11 @@ from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 from utility import team_replace_dict_fbref, team_replace_dict2
 
+"""
+Scrapes all of the Premier League Teams unique id (to scrape further data from fbref), extension and the team names (fbref version).
+The fpl team id and fpl team name is merged to the dataframe. 
+Dataframe is saved into a .csv file on the local drive.
+"""
 def unique_team_id():
     r = requests.get("https://fbref.com/en/comps/9/Premier-League-Stats")
     soup = BeautifulSoup(r.text, "html.parser")
@@ -32,6 +37,10 @@ def unique_team_id():
     merged_team_df.to_csv("fbref_data/team_data/team_id.csv", index= False)
     #return merged_team_df
 
+"""
+Scrapes all the unique id numbers for all Premier League players on the fbref database.
+Returns a table with the player name and their unique extension.
+"""
 def unique_player_id():
     r = requests.get("https://fbref.com/en/comps/9//wages/Premier-League-Wages/")
     soup = BeautifulSoup(r.text)
@@ -54,18 +63,9 @@ def unique_player_id():
 
     return players_df
 
-def get_table():
-    r = requests.get("https://fbref.com/en/comps/9/Premier-League-Stats")
-    soup = BeautifulSoup(r.text, "html.parser")
-
-    table_id = "stats_squads_standard_for"
-    table = soup.find("table", {"id": table_id})
-
-    if table:
-        df = pd.read_html(str(table))[0]
-
-    print(df.head())
-
+"""
+Scrapes tables of team data from fbref website for different tables and saves them in individual .csv files. For offline analysis.
+"""
 def update_team_statistics():
     pl_stats = {
     "stats_type": ["pl_table","general_stats","goalkeeping", "goalkeeping_adv", "shooting", "passing", "creativity", "defence", "possession", "other"],
@@ -83,32 +83,12 @@ def update_team_statistics():
             file_name = pl_stats_df["stats_type"][i]
             df.to_csv(f"fbref_data/team_data/{file_name}.csv")
 
-def player_stats(team_name):
-    team_id = unique_team_id()
-    team_name_df = team_id[team_id["Team"] == team_name].reset_index(drop = True)
-    url = team_name_df["Link"][0]
-
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text, "html.parser")
-
-    table_id = "stats_keeper_adv_9"
-    table = soup.find("table", {"id" : table_id})
-
-    if table:
-        df = pd.read_html(str(table))[0]
-        df = df.drop(df.index[-2:], axis = 0)
-        df = df.drop(columns= "Per 90 Minutes")
-        df = df.droplevel(0, axis = 1)
-        df = df.drop(columns = "Matches")
-        
-    else:
-        print("Error: No Table Found")
-
-    return df 
 
 def get_stats():
     """
-    Note: FBref's anti bot system will cause the function to break and return empyty csv files as the system will only allow for 
+    Scrape fbref websites and obtain data for player statistics based on different tables. ***FUNCTION NOT OPERATIONAL SEE NOTE BELOW***
+    
+    Note: FBref's anti bot system will cause the function to break and return empyty csv files as the system will only allow for a certain number of webscrapes within a timeframe.
     """
     team_stats = {
     "stats_type" : ["general_stats", "goalkeeping" , "shooting", "passing", "passing_type", "creativity", "defence", "possession", "playing_time", "other_stats"],
