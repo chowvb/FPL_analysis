@@ -2,6 +2,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from statistics import mean
 
+"""
+Gets a players historic FPL price/goals/assists per season in the Premier League. 
+The player name inputted must be a complete match to the player name in the FPL database 
+    ***Note***
+    Some of the player names in FPL are the players fullname (E.g., Brazilian players will usually play under an alias rather than their actual name).
+    A fix to replace these names to match the player names from the website fbref.
+"""
 def FPL_history(player_name):
     season_list = ["2016-2017", "2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     player_name = player_name
