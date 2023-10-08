@@ -2,6 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+"""
+Creates a spider plot that compares two teams fpl strength thats is created be FPL. 
+"""
 def get_team_strength_stats(team_name, opponent_name):
     # Load the teams_strength_stat.csv file
     team_strength = pd.read_csv("data/2023-2024/teams_strength_stat.csv", index_col=None)
