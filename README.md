@@ -23,9 +23,12 @@ There are two data folders within this repository:
 
 ## FPL Analysis 
 Using FBref as a source of football data should be able to enhance decision making when changing players during the FPL season, as FBref contains more indepth performance statistics that the FPL endpoint doesn't provide.
-###### Top Performers
+##### Top Performers
 ![Expected Goal Contribution vs Actual Goal Contributions!](images/Attacking_Performance.png)
-###### History
+(Figure based off player performance upto GW7)
+From the graphic above you can see the high performing players depeding on their goal contributions against their expected goal contribitions. Suprisingly Ollie Watkins has the most goal contributions (Goals + Assists) up to gameweek 7. Erling Haaland understandably has a high number of expected goal contributions but he also has converted alot of those chances. J.Alvarez might be a player to watch throughout the season as similar to Ollie Watkins he has a high goal contribution output in comparison to his actual goal contributions. 
+From this figure we are looking to find players who overperform against their expected goal contributions. 
+##### History
 By visualising a players historical performance in the Premier League can give a slight insight into how they might perform in the current season - For example look at Mohamed Salah (Below). Since he joined the premier league hes consistantly scored ~ 20 goals per season.
 ![Mohamed Salah FPL History!](images/player_performance_example.png)
 
