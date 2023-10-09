@@ -23,6 +23,11 @@ There are two data folders within this repository:
 
 ## FPL Analysis 
 Using FBref as a source of football data should be able to enhance decision making when changing players during the FPL season, as FBref contains more indepth performance statistics that the FPL endpoint doesn't provide.
+###### Top Performers
+![Expected Goal Contribution vs Actual Goal Contributions!](images/Attacking_Performance.png)
+###### History
+By visualising a players historical performance in the Premier League can give a slight insight into how they might perform in the current season - For example look at Mohamed Salah (Below). Since he joined the premier league hes consistantly scored ~ 20 goals per season.
+![Mohamed Salah FPL History!](images/player_performance_example.png)
 
 ## Fbref Analysis
 
