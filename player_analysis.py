@@ -60,7 +60,7 @@ def summary_att_stats():
 
     gw_data_gc = gw_data[["web_name", "expected_goal_contribution", "goal_contribution"]]
     gw_data_gc = gw_data_gc.sort_values(by = "goal_contribution", ascending= False)
-    gw_data_gc = gw_data_gc.head(15).reset_index()
+    gw_data_gc = gw_data_gc.head(10).reset_index()
     # Create a scatter plot
     plt.figure(figsize=(12, 8))
     sns.scatterplot(x='expected_goal_contribution', y='goal_contribution', data=gw_data_gc, hue='web_name', legend=False, s=100)
@@ -72,9 +72,11 @@ def summary_att_stats():
 
     # Add player labels
     for i, player in enumerate(gw_data_gc['web_name']):
-        plt.annotate(player, (gw_data_gc['expected_goal_contribution'][i], gw_data_gc['goal_contribution'][i]), fontsize=12, rotation = 90)
+        plt.annotate(player, (gw_data_gc['expected_goal_contribution'][i], gw_data_gc['goal_contribution'][i]), fontsize=12, rotation = 45)
 
     # Show the plot
     plt.grid(True)
+    # Save the plot
+    #plt.savefig("images/Attacking_Performance.png", dpi = 300, bbox_inches = "tight")
     plt.show()
     
