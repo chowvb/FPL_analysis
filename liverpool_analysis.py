@@ -72,10 +72,11 @@ print("Recent results in the Premier League ") #Print a statement
 display(h2h_results) # Print/Display the table of recent results between the two teams 
 
 # Save h2h_results df as a png image to put onto GitHub page.
-fig, ax = plt.subplots(figsize=(10,10))
+fig, ax = plt.subplots(figsize=(4,4))
 ax.axis("off")
 table = ax.table(cellText=h2h_results.values, colLabels=h2h_results.columns, cellLoc = "center", loc= "center", colColours=["#f5f5f5"]*h2h_results.shape[1])
 table.auto_set_column_width(range(0, len(h2h_results.columns)))
+fig.tight_layout()
 plt.savefig("images/h2h_results.png", dpi = 300, bbox_inches = "tight")
 
 print("\n\nOnes To Watch") 
@@ -92,10 +93,11 @@ player_df = player_df[["web_name", "total_points", "goals_scored", "assists", "f
 # Print the top 5 players based off form.
 display(player_df.head(5))
 one_2_watch = player_df.head(5)
-fig, ax = plt.subplots(figsize=(10,10))
+fig, ax = plt.subplots(figsize=(4,4))
 ax.axis("off")
 table = ax.table(cellText=one_2_watch.values, colLabels=one_2_watch.columns, cellLoc = "center", loc= "center", colColours=["#f5f5f5"]*one_2_watch.shape[1])
 table.auto_set_column_width(range(0, len(one_2_watch.columns)))
+fig.tight_layout()
 plt.savefig("images/one_2_watch.png", dpi = 300, bbox_inches = "tight")
 
 
@@ -146,8 +148,9 @@ summary_stats = summary_stats.tail(-1)
 display(summary_stats)
 
 summary_stats.reset_index(inplace =True)
-fig, ax = plt.subplots(figsize=(10,10))
+fig, ax = plt.subplots(figsize=(4,4))
 ax.axis("off")
 table = ax.table(cellText=summary_stats.values, colLabels=summary_stats.columns, cellLoc = "center", loc= "center", colColours=["#f5f5f5"]*summary_stats.shape[1])
 table.auto_set_column_width(range(0, len(summary_stats.columns)))
+fig.tight_layout()
 plt.savefig("images/summary_stats.png", dpi = 300, bbox_inches = "tight")
