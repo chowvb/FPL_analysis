@@ -37,9 +37,9 @@ By visualising a players historical performance in the Premier League can give a
 
 
 ## Liverpool FC Analysis
-![h2h_results]!(images/h2h_results.png)
-![one_2_watch]!(images/one_2_watch.png)
-![summary_stats]!(images/summary_stats.png)
+![h2h_results!](images/h2h_results.png)
+![one_2_watch!](images/one_2_watch.png)
+![summary_stats!](images/summary_stats.png)
 
 
 
