@@ -38,12 +38,15 @@ By visualising a players historical performance in the Premier League can give a
 
 ## Liverpool FC Analysis
 All analysis is found within liverpool_analysis.py. This script aims to identify Liverpool Fc's next opponent in the Premier League, the date/time the game kicks off as well as FPL's difficulty rating for the upcoming game between 1-5 (1 = Easier, 5 = Tough). 
-Recent head to head matchups in the Premier League are then queried from FPL's historical games. Showing the result, score and whether Liverpool were playing at Anfield or away from home (See Figure below). 
+Recent head to head matchups in the Premier League are then queried from FPL's historical games. Showing the result, score and whether Liverpool were playing at Anfield or away from home (See Figure below).   
+
 ![h2h_results!](images/h2h_results.png)
 
-A table of players to watch during the game is then generated, by filtering FPL's players database for players either playing for Liverpool or for the away team. With the table displaying the top 5 inform players (Based of FPL points). The table displays the Players to watch, the total fpl points the player has accumulated as well as the goals/assists and form (Average points scored in recent FPL games). (See Figure below)
+A table of players to watch during the game is then generated, by filtering FPL's players database for players either playing for Liverpool or for the away team. With the table displaying the top 5 inform players (Based of FPL points). The table displays the Players to watch, the total fpl points the player has accumulated as well as the goals/assists and form (Average points scored in recent FPL games). (See Figure below)  
+
 ![one_2_watch!](images/one_2_watch.png)
 
-From the football database FBref. The team stats for both the teams are collated with the most useful/interesting stats being inserted into the table below
+From the football database FBref. The team stats for both the teams are collated with the most useful/interesting stats being inserted into the table below  
+
 ![summary_stats!](images/summary_stats.png)
 
