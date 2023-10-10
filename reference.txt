@@ -1,5 +1,12 @@
+
+A couple of links to similar projects done by other people
 https://towardsdatascience.com/python-for-fpl-data-analytics-dadb414ccefd
 https://www.game-change.co.uk/2023/02/10/a-complete-guide-to-the-fantasy-premier-league-fpl-api/
+https://keytodatascience.com/fpl-machine-learning/
+https://www.dtsquared.co.uk/money-football-how-will-our-virtual-football-team-selected-entirely-by-machine-learning-compete-in-the-big-leagues/
+https://www.splunk.com/en_us/blog/tips-and-tricks/how-to-win-at-fantasy-football-with-splunk-and-machine-learning-part-1.html?301=/en_us/blog/machine-learning/how-to-win-at-fantasy-football-with-splunk-and-machine-learning-part-1.html
+
+Helpful guide to making markdown files
 https://www.markdownguide.org/
 
 to get individual indepth statistics use the following endpoint link:
