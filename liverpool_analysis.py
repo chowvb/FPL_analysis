@@ -77,7 +77,7 @@ ax.axis("off")
 table = ax.table(cellText=h2h_results.values, colLabels=h2h_results.columns, cellLoc = "center", loc= "center", colColours=["#f5f5f5"]*h2h_results.shape[1])
 table.auto_set_column_width(range(0, len(h2h_results.columns)))
 fig.tight_layout()
-plt.savefig("images/h2h_results.png", dpi = 300, bbox_inches = "tight")
+plt.savefig("images/h2h_results.png", dpi = 50, bbox_inches = "tight")
 
 print("\n\nOnes To Watch") 
 player_database = pd.read_csv("data/2023-2024/players_raw.csv") # Open the players database 
@@ -98,7 +98,7 @@ ax.axis("off")
 table = ax.table(cellText=one_2_watch.values, colLabels=one_2_watch.columns, cellLoc = "center", loc= "center", colColours=["#f5f5f5"]*one_2_watch.shape[1])
 table.auto_set_column_width(range(0, len(one_2_watch.columns)))
 fig.tight_layout()
-plt.savefig("images/one_2_watch.png", dpi = 300, bbox_inches = "tight")
+plt.savefig("images/one_2_watch.png", dpi = 50, bbox_inches = "tight")
 
 
 # Show fpl team strength statistics by calling the get_team_strength_stats from data_visualiation.py
@@ -147,10 +147,11 @@ summary_stats = h2h_season_stats.T.rename(columns= h2h_season_stats["Squad"])
 summary_stats = summary_stats.tail(-1)
 display(summary_stats)
 
+
 summary_stats.reset_index(inplace =True)
 fig, ax = plt.subplots(figsize=(4,4))
 ax.axis("off")
 table = ax.table(cellText=summary_stats.values, colLabels=summary_stats.columns, cellLoc = "center", loc= "center", colColours=["#f5f5f5"]*summary_stats.shape[1])
 table.auto_set_column_width(range(0, len(summary_stats.columns)))
 fig.tight_layout()
-plt.savefig("images/summary_stats.png", dpi = 300, bbox_inches = "tight")
+plt.savefig("images/summary_stats.png", dpi = 50, bbox_inches = "tight")
