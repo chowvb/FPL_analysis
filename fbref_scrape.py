@@ -68,8 +68,8 @@ Scrapes tables of team data from fbref website for different tables and saves th
 """
 def update_team_statistics():
     pl_stats = {
-    "stats_type": ["pl_table","general_stats","goalkeeping", "goalkeeping_adv", "shooting", "passing", "creativity", "defence", "possession", "other"],
-    "html_table_id": ["results2023-202491_overall", "stats_squads_standard_for" ,"stats_squads_keeper_for", "stats_squads_keeper_adv_for", "stats_squads_shooting_for", "stats_squads_passing_for",
+    "stats_type": ["possession","pl_table","general_stats","goalkeeping", "goalkeeping_adv", "shooting", "passing", "creativity", "defence", "possession", "other"],
+    "html_table_id": ["stats_squads_possession_for","results2023-202491_overall", "stats_squads_standard_for" ,"stats_squads_keeper_for", "stats_squads_keeper_adv_for", "stats_squads_shooting_for", "stats_squads_passing_for",
                       "stats_squads_gca_for", "stats_squads_defense_for", "stats_squads_posession_for", "stats_squads_misc_for"]
                       }
     
