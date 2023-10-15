@@ -52,3 +52,4 @@ From the football database FBref. The team stats for both the teams are collated
 
 The head to head matchup can be seen in the figure below. Liverpool can be compared to the oppoenent team as well as the league average.
 ![next_opponent_comparison!](images/attacking_h2h_radar_chart.png)
+![next_opponent_comparison_test!](images/attacking_h2h_radar_chart.html)
