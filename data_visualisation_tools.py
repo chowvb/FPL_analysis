@@ -96,59 +96,70 @@ def attacking_radar_plot(team1, team2):
     other_df = pd.read_csv("fbref_data/team_data/other.csv", header = [0, 1], index_col= 0)
     possession_df = pd.read_csv("fbref_data/team_data/possession.csv", header = [0,1], index_col= 0)
 
+    # Filter general_df for only the desired variables.
     general_df = general_df[[("Unnamed: 0_level_0", "Squad"),("Performance", "Gls"), ("Expected", "xG")]]
+    # Drop the first level of the multi-index columns
     general_df = general_df.droplevel(0, axis = 1)
 
+    # Create a new dataframe that uses general_df as a template.
     attacking_df = general_df
 
+    # Filter shootin_df for desired variables
     shooting_df = shooting_df[[("Unnamed: 0_level_0", "Squad"), ("Standard", "Sh/90"), ("Standard", "SoT%")]]
-    shooting_df = shooting_df.droplevel(0, axis = 1)
-    attacking_df = pd.merge(attacking_df, shooting_df, on = "Squad")
+    shooting_df = shooting_df.droplevel(0, axis = 1) # Drop the first multi-index level
+    attacking_df = pd.merge(attacking_df, shooting_df, on = "Squad") # Merge filtered shooting_df to attacking_df
 
+    # Filter possession for desired variables (Number of dribbles)
     possession_df = possession_df[[("Unnamed: 0_level_0", "Squad"), ("Take-Ons", "Att")]]
-    possession_df = possession_df.droplevel(0, axis = 1)
-    possession_df["Dribbles per 90"] = possession_df["Att"] / pl_table["MP"][0]
-    possession_df = possession_df.drop(columns= "Att")
-    attacking_df = pd.merge(attacking_df, possession_df, on = "Squad")
+    possession_df = possession_df.droplevel(0, axis = 1) # Drop the first level of the multi-index
+    possession_df["Dribbles per 90"] = possession_df["Att"] / pl_table["MP"][0] # Divide the number of attempted dribbles by the number of matches played to get dribbles per 90 (Match)
+    possession_df = possession_df.drop(columns= "Att") # Drop the old attempted dribbles from the dataframe
+    attacking_df = pd.merge(attacking_df, possession_df, on = "Squad") # Merge the updated possession_df to attacking_df
 
-
-
+    # Filter other_df for the desired variables (Crosses and Fouls Committed)
     other_df = other_df[[("Unnamed: 0_level_0", "Squad"), ("Performance", "Crs"), ("Performance", "Fls")]]
-    other_df = other_df.droplevel(0, axis = 1)
-    other_df["Crs per 90"] = other_df["Crs"] / pl_table["MP"][0]
-    other_df["Fls per 90"] = other_df["Fls"] / pl_table["MP"][0]
-    other_df = other_df.drop(columns=["Crs", "Fls"])
-    attacking_df = pd.merge(attacking_df, other_df, on = "Squad")
+    other_df = other_df.droplevel(0, axis = 1) # Drop the first level of the multi-index
+    other_df["Crs per 90"] = other_df["Crs"] / pl_table["MP"][0] # Calculate the number of crosses attempted per 90 minutes (per match)
+    other_df["Fls per 90"] = other_df["Fls"] / pl_table["MP"][0] # Calculate the number of fouls committed per 90 minutes (per match)
+    other_df = other_df.drop(columns=["Crs", "Fls"]) # Drop the old attempted crosses and number of fouls committed
+    attacking_df = pd.merge(attacking_df, other_df, on = "Squad") # Merge other_df onto attacking_df 
 
-    attacking_df = attacking_df.loc[attacking_df["Squad"].isin([team1,team2])]
-
+    # Filter attacking_df to only show the two desired teams
     radar_chart_df = attacking_df.loc[attacking_df["Squad"].isin([team1,team2])]
-    radar_chart_df = radar_chart_df.T.rename(columns=radar_chart_df["Squad"])
-    radar_chart_df = radar_chart_df.tail(-1)
+    radar_chart_df = radar_chart_df.T.rename(columns=radar_chart_df["Squad"]) # Transpose the data and rename the columns as the team names. 
+    radar_chart_df = radar_chart_df.tail(-1) # remove the first row of the transposed dataframe (Squad name)
 
+    # Create a dataframe to calculate the league average stats that can be used to compare the two teams to. 
     league_average = attacking_df
-    league_average.set_index("Squad", inplace = True)
-    league_average_stats = league_average.mean()
+    league_average.set_index("Squad", inplace = True) # Set the team names as the index. 
+    league_average_stats = league_average.mean() # Create an average of all of the stats
 
-    categories = radar_chart_df.index.tolist()
-    team1_data = radar_chart_df[team1].values
-    team2_data = radar_chart_df[team2].values
+    categories = radar_chart_df.index.tolist() # Make a list of all of the variables (To be used when making the radar plot)
+    team1_data = radar_chart_df[team1].values # Store the first teams values in a list
+    team2_data = radar_chart_df[team2].values # Store the second teams values into a list
 
-    import plotly.graph_objects as go
+    import plotly.graph_objects as go # import the graph_objects from plotly
+    
+    # Define the figure
     fig = go.Figure()
 
+    # Add the trace for the first team
     fig.add_trace(go.Scatterpolar(
         r = team1_data,
         theta= categories,
         fill = "toself",
         name = team1
     ))
+
+    # Add the trace for the second team
     fig.add_trace(go.Scatterpolar(
         r = team2_data,
         theta= categories,
         fill = "toself",
         name = team2
     ))
+
+    # Add the trace for the Premier League Average
     fig.add_trace(go.Scatterpolar(
         r = league_average_stats,
         theta= categories,
@@ -156,8 +167,10 @@ def attacking_radar_plot(team1, team2):
         name = "League Average"
     ))
     
-    import plotly.io as pio
+    # Show the figure in the output
     fig.show()
+
+    # Save the figure as a png image (For the README.md file) and as an interactive HTML file. 
     fig.write_image("images/attacking_h2h_radar_chart.png")
     fig.write_html("interactive_plots/attacking_h2h_radar_chart.html")
     return 

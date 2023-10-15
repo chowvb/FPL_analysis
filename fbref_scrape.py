@@ -10,19 +10,32 @@ The fpl team id and fpl team name is merged to the dataframe.
 Dataframe is saved into a .csv file on the local drive.
 """
 def unique_team_id():
+    # Request Premier League Stats from fbref
     r = requests.get("https://fbref.com/en/comps/9/Premier-League-Stats")
+
+    # Read the requested html and parser it. 
     soup = BeautifulSoup(r.text, "html.parser")
+
+    # Select the stats table within the html parser
     standings_table = soup.select("table.stats_table")[0]
+
+    #
     teams = standings_table.find_all("a")
+    
+    # For each of the teams there is a href corresponding to them
     links = [l.get("href") for l in teams]
-    team_urls = [f"https://fbref.com{l}" for l in links]
+    team_urls = [f"https://fbref.com{l}" for l in links] # Get the url for each of the Premier League teams individual fbref web pages 
     teams_list = []
     for i, team in enumerate(teams):
         teams_list.append(teams[i].text)
+    
+    # Create a dataframe to store the Team names and the corresponding links. 
     team_df = pd.DataFrame({
         "Team": teams_list,
         "Link": team_urls
         })
+    
+    # 
     team_df = team_df[team_df["Link"].str.contains("/squads/")]
     team_df["Path"] = [urlparse(url).path for url in team_df["Link"]]
     team_df = team_df.join(team_df["Path"].str.split("/", expand = True).add_prefix("Path_"))
@@ -67,21 +80,33 @@ def unique_player_id():
 Scrapes tables of team data from fbref website for different tables and saves them in individual .csv files. For offline analysis.
 """
 def update_team_statistics():
+    # Create a dictionary for the names, of the different tables found on fbref and the corresponding table_id tags within the html file.
     pl_stats = {
     "stats_type": ["possession","pl_table","general_stats","goalkeeping", "goalkeeping_adv", "shooting", "passing", "creativity", "defence", "possession", "other"],
     "html_table_id": ["stats_squads_possession_for","results2023-202491_overall", "stats_squads_standard_for" ,"stats_squads_keeper_for", "stats_squads_keeper_adv_for", "stats_squads_shooting_for", "stats_squads_passing_for",
                       "stats_squads_gca_for", "stats_squads_defense_for", "stats_squads_posession_for", "stats_squads_misc_for"]
                       }
     
+    # Turn the dictionary into a dataframe
     pl_stats_df = pd.DataFrame(pl_stats)
+
+    # enumerate through each html tag
     for i, id in enumerate(pl_stats["html_table_id"]):
+        
+        # Send a HTML request to fbref's website
         r = requests.get("https://fbref.com/en/comps/9/Premier-League-Stats")
+
+        # Use BeautifulSoup to parse the data from the web request
         soup = BeautifulSoup(r.text, "html.parser")
+        
+        # Using the id in the eunmerate (each of the html table id's.)
         table = soup.find("table", {"id": id})
+        
+        # if there is a table present continue to save the table as a .csv file using pandas to read the html text. 
         if table:
             df = pd.read_html(str(table))[0]
-            file_name = pl_stats_df["stats_type"][i]
-            df.to_csv(f"fbref_data/team_data/{file_name}.csv")
+            file_name = pl_stats_df["stats_type"][i] # using the index for the enumerate loop find the name of the fbref table 
+            df.to_csv(f"fbref_data/team_data/{file_name}.csv") # Save the table as a .csv file.
 
 
 def get_stats():

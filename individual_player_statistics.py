@@ -10,20 +10,12 @@ The player name inputted must be a complete match to the player name in the FPL 
     A fix to replace these names to match the player names from the website fbref.
 """
 def FPL_history(player_name):
+    # Define the list of historical fpl data that contains player names.
     season_list = ["2016-2017", "2017-2018", "2018-2019", "2019-2020", "2020-2021", "2021-2022", "2022-2023", "2023-2024"]
     player_name = player_name
     #player_name = "Mohamed Salah"
 
-    player_profile = pd.DataFrame({
-        "name": [],
-        "season": [],
-        "round": [],
-        "value": [],
-        "goals_scored": [],
-        "assists": [],
-        "total_points": []
-    })
-
+    # Create a player profile to store each of the seasonal data into. This will be used to produce the final graph/figure
     player_profile_season = pd.DataFrame({
         "name": [],
         "season": [],
@@ -35,20 +27,25 @@ def FPL_history(player_name):
 
 
     print(player_name)
+    
+    # Loop through each of the season in the season list defined at the start of the function
     for season in season_list:
         
-        gw_df = pd.read_csv("data/" + season + "/merged_gw.csv", encoding= "latin-1")
-        gw_df = gw_df[gw_df["name"] == player_name]
-        gw_df["value"] = (gw_df["value"] / 10)
-        gw_df = gw_df[["name", "round", "goals_scored", "assists", "total_points", "value"]]
-        gw_df["season"] = season
-        gw_df.fillna(0)
+        # Read all of the gameweek data
+        gw_df = pd.read_csv("data/" + season + "/merged_gw.csv", encoding= "latin-1") # inputting the different seasons as the loop progresses
+        gw_df = gw_df[gw_df["name"] == player_name] # Filter the gameweek dataframe to only show the desired.
+        gw_df["value"] = (gw_df["value"] / 10) # Divide the value by 10 to match the same value as the fpl website. 
+        gw_df = gw_df[["name", "round", "goals_scored", "assists", "total_points", "value"]] # Further filter the dataframe to only include the variables wanted in player_profile.
+        gw_df["season"] = season # Add the season as a column
+        gw_df.fillna(0) # Replace any N/A values with a zero.
         
+        # Try and average the value of the player over the gameweek (FPL will often change the player value throughout the season dependent on the players performance)
         try:
             avg_value = mean(gw_df["value"])
         except:
             avg_value = 0
 
+        # Create a dataframe that stores the season-by-season data
         season_stats_df = pd.DataFrame({
             "name": player_name,
             "season": season,
@@ -58,7 +55,7 @@ def FPL_history(player_name):
             "total_points": sum(gw_df["total_points"])
         }, index =[0])
 
-        player_profile = pd.concat([player_profile, gw_df])
+        # Concat seasons_stats_df to the player_profile_season. The new dataframe will show the player stats for each of the seasons in season_list list. 
         player_profile_season = pd.concat([player_profile_season, season_stats_df])
     
     plt.figure(figsize= (10, 6))
