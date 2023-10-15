@@ -147,7 +147,7 @@ summary_stats = h2h_season_stats.T.rename(columns= h2h_season_stats["Squad"])
 summary_stats = summary_stats.tail(-1)
 display(summary_stats)
 
-
+# Summary Statistics: generates a dataframe that contains the key stats for each team. 
 summary_stats.reset_index(inplace =True)
 fig, ax = plt.subplots(figsize=(4,4))
 ax.axis("off")
@@ -155,3 +155,8 @@ table = ax.table(cellText=summary_stats.values, colLabels=summary_stats.columns,
 table.auto_set_column_width(range(0, len(summary_stats.columns)))
 fig.tight_layout()
 plt.savefig("images/summary_stats.png", dpi = 50, bbox_inches = "tight")
+
+from data_visualisation_tools import attacking_radar_plot
+
+# Call and make a radar plot for the two teams comparing attacking stats to the opponent team as well as the league average.
+attacking_radar_plot(fbref_team_name, fbref_opponent_team_name)
