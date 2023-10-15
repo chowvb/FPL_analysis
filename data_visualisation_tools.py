@@ -74,3 +74,89 @@ def get_team_strength_stats(team_name, opponent_name):
     # Show the plot
     plt.axis("off")
     plt.show()
+
+"""
+Creates a spider plot comparing a teams attacking statistics to the league average. 
+Alternatively compare a teams attacking statistics against an opponent team."""
+#def att_stats_comparison():
+
+def attacking_radar_plot(team1, team2):
+    import numpy as np 
+    import plotly.graph_objects as go
+
+    team1 = team1
+    team2 = team2
+
+    # Get the number of matches played (This will be needed when calculating the number of crosses and number of fouls per game a team has)
+    pl_table = pd.read_csv("fbref_data/team_data/pl_table.csv", index_col = 0)
+
+    # Read in all the csv files that contain the variables that we want. 
+    general_df = pd.read_csv("fbref_data/team_data/general_stats.csv", header = [0,1], index_col= 0)
+    shooting_df = pd.read_csv("fbref_data/team_data/shooting.csv", header = [0,1], index_col= 0)
+    other_df = pd.read_csv("fbref_data/team_data/other.csv", header = [0, 1], index_col= 0)
+    possession_df = pd.read_csv("fbref_data/team_data/possession.csv", header = [0,1], index_col= 0)
+
+    general_df = general_df[[("Unnamed: 0_level_0", "Squad"),("Performance", "Gls"), ("Expected", "xG")]]
+    general_df = general_df.droplevel(0, axis = 1)
+
+    attacking_df = general_df
+
+    shooting_df = shooting_df[[("Unnamed: 0_level_0", "Squad"), ("Standard", "Sh/90"), ("Standard", "SoT%")]]
+    shooting_df = shooting_df.droplevel(0, axis = 1)
+    attacking_df = pd.merge(attacking_df, shooting_df, on = "Squad")
+
+    possession_df = possession_df[[("Unnamed: 0_level_0", "Squad"), ("Take-Ons", "Att")]]
+    possession_df = possession_df.droplevel(0, axis = 1)
+    possession_df["Dribbles per 90"] = possession_df["Att"] / pl_table["MP"][0]
+    possession_df = possession_df.drop(columns= "Att")
+    attacking_df = pd.merge(attacking_df, possession_df, on = "Squad")
+
+
+
+    other_df = other_df[[("Unnamed: 0_level_0", "Squad"), ("Performance", "Crs"), ("Performance", "Fls")]]
+    other_df = other_df.droplevel(0, axis = 1)
+    other_df["Crs per 90"] = other_df["Crs"] / pl_table["MP"][0]
+    other_df["Fls per 90"] = other_df["Fls"] / pl_table["MP"][0]
+    other_df = other_df.drop(columns=["Crs", "Fls"])
+    attacking_df = pd.merge(attacking_df, other_df, on = "Squad")
+
+    attacking_df = attacking_df.loc[attacking_df["Squad"].isin([team1,team2])]
+
+    radar_chart_df = attacking_df.loc[attacking_df["Squad"].isin([team1,team2])]
+    radar_chart_df = radar_chart_df.T.rename(columns=radar_chart_df["Squad"])
+    radar_chart_df = radar_chart_df.tail(-1)
+
+    league_average = attacking_df
+    league_average.set_index("Squad", inplace = True)
+    league_average_stats = league_average.mean()
+
+    categories = radar_chart_df.index.tolist()
+    team1_data = radar_chart_df[team1].values
+    team2_data = radar_chart_df[team2].values
+
+    import plotly.graph_objects as go
+    fig = go.Figure()
+
+    fig.add_trace(go.Scatterpolar(
+        r = team1_data,
+        theta= categories,
+        fill = "toself",
+        name = team1
+    ))
+    fig.add_trace(go.Scatterpolar(
+        r = team2_data,
+        theta= categories,
+        fill = "toself",
+        name = team2
+    ))
+    fig.add_trace(go.Scatterpolar(
+        r = league_average_stats,
+        theta= categories,
+        fill = "toself",
+        name = "League Average"
+    ))
+    
+    import plotly.io as pio
+    fig.show()
+    pio.write_image(fig, "images/attacking_h2h_radar_chart.png")
+    return 
