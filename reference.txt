@@ -31,5 +31,6 @@ https://fbref.com/en/comps/9/Premier-League-Stats
 
 
 A spider plot to be used for visualising get_team_strength_stats()
+https://plotly.com/python/radar-chart/#multiple-trace-radar-chart
 
 Betfair Data Analysis ML (https://betfair-datascientists.github.io/modelling/EPLmlPython/)
