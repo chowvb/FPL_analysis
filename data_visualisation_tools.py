@@ -158,5 +158,6 @@ def attacking_radar_plot(team1, team2):
     
     import plotly.io as pio
     fig.show()
-    fig.write_html("images/attacking_h2h_radar_chart.html")
+    fig.write_image("images/attacking_h2h_radar_chart.png")
+    fig.write_html("interactive_plots/attacking_h2h_radar_chart.html")
     return 
