@@ -8,6 +8,8 @@ The player name inputted must be a complete match to the player name in the FPL 
     ***Note***
     Some of the player names in FPL are the players fullname (E.g., Brazilian players will usually play under an alias rather than their actual name).
     A fix to replace these names to match the player names from the website fbref.
+
+An example of the output of FPL_history() can be found in /images/player_performance_example.png
 """
 def FPL_history(player_name):
     # Define the list of historical fpl data that contains player names.
@@ -87,3 +89,5 @@ def FPL_history(player_name):
     #plt.savefig("player_performance_example.png", dpi = 300, bbox_inches = "tight")
     # Display the plot
     plt.show()
+
+def 

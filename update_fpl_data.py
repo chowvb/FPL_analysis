@@ -47,7 +47,7 @@ def scrape_data():
     players_df.to_csv("data/2023-2024/players_raw.csv", index = False)
 
     # Create a DataFrame with only the id, Name, team and position and save to a .csv file for offline analysis
-    player_id_df = players_df[["first_name", "second_name", "id", "team"]]
+    player_id_df = players_df[["first_name", "second_name","web_name", "id", "team"]]
     player_id_df["team"].replace(utility.team_replace_dict, inplace = True)
     player_id_df.to_csv("data/2023-2024/player_idlist.csv", index=False)
 
@@ -116,13 +116,14 @@ def get_gw_data(player_id):
 
     # Return the DataFrame back to the user.
     return result_df
+
 """
 get_all_gw_data() - takes the prerequisite function (get_gw_data()) and loops through all of the players in the player_idlist.csv file.
     - The function returns every game week data for each player.
     - Saves the collated data into a csv file (merged_gw.csv)
 
 *** Note ***
-This function can take a long time to run, especially as the season progresses and more fixtures are played.
+This function can take a long time to run, especially as the season progresses and more fixtures are played. 
 """
 def get_all_gw_data():
     # Load player_idlist.csv
@@ -144,3 +145,11 @@ def get_all_gw_data():
     
     # Save the dataframe as a csv file on the local machine for data analysis. 
     merged_gw.to_csv("data/2023-2024/merged_gw.csv", index = False)
+
+def update_all():
+    print("Updating FPL Data")
+    scrape_data()
+
+    print("Updating GW data")
+    get_all_gw_data()
+    

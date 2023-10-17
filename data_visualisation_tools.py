@@ -174,3 +174,33 @@ def attacking_radar_plot(team1, team2):
     fig.write_image("images/attacking_h2h_radar_chart.png")
     fig.write_html("interactive_plots/attacking_h2h_radar_chart.html")
     return 
+
+def radar_plot(categories, team1, team1_name, team2, team2_name, league_average):
+    import plotly.graph_objects as go 
+
+    # Define Figure
+    fig = go.Figure()
+
+    # Add the plot for team1
+    fig.add_trace(go.scatterpolar(
+        r = team1,
+        theta = categories,
+        fill = "toself",
+        name = team1_name
+    ))
+
+    # Add the plot for team2
+    fig.add_trace(go.scatterpolar(
+        r = team2,
+        theta = categories,
+        fill = "toself",
+        name = team2_name
+    ))
+
+    # Add the plot for the league average
+    fig.add_trace(go.scatterpolar(
+        r = league_average,
+        theta = categories, 
+        fill = "toself",
+        name = "League Average"
+    ))

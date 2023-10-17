@@ -73,8 +73,8 @@ def unique_player_id():
     players_df = players_df.join(players_df["Path"].str.split("/", expand=True).add_prefix("Path_"))
     players_df = players_df.rename(columns={"Path_3": "unique_player_id", "Path_4": "extension"})
     players_df = players_df[["Player", "unique_player_id", "extension", "Link"]]
-
-    return players_df
+    
+    players_df.to_csv("fbref_data/player_data/player_endpoints.csv", index= False)
 
 """
 Scrapes tables of team data from fbref website for different tables and saves them in individual .csv files. For offline analysis.
