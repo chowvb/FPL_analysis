@@ -31,7 +31,7 @@ Sh - Shots that lead to a goal
 Fld - Fouls drawn that leads to a goal 
 Def - Defensive actions that lead to a goal
 """
-creativity = pd.read_csv("team_data/creativity.csv", header= [0,1], index_col= 0)
+creativity = pd.read_csv("fbref_data/team_data/creativity.csv", header= [0,1], index_col= 0)
 
 # Filter creativity df for only Shot Creating Actions
 creativity_SCA = creativity[["Unnamed: 0_level_0", "SCA", "SCA Types"]].droplevel(0, axis= 1)
@@ -64,7 +64,7 @@ Tkl+Int - Number of players tackled pluss the number of interrceptions
 Clr - Clearances 
 Err - Mistakes leading to an opponent shot 
 """
-defence = pd.read_csv("team_data/defence.csv", header = [0,1], index_col= 0)
+defence = pd.read_csv("fbref_data/team_data/defence.csv", header = [0,1], index_col= 0)
 
 # Filter defence df for only Tackles 
 defence_tackles = defence[["Unnamed: 0_level_0", "Tackles"]].droplevel(0, axis= 1)
@@ -110,7 +110,7 @@ Sweeper
 #OPA/90 - Number of defensive actions outside the penalty area per 90 minutes 
 AvgDist - Average distance from goal (in yards) of all defensive actions
 """
-goalkeeping = pd.read_csv("team_data/goalkeeping_adv.csv", header = [0,1], index_col= 0)
+goalkeeping = pd.read_csv("fbref_data/team_data/goalkeeping_adv.csv", header = [0,1], index_col= 0)
 
 # Filter goalkeeping df for Goals
 goalkeeping_goals = goalkeeping[["Unnamed: 0_level_0", "Goals"]].droplevel(0, axis = 1)
@@ -167,7 +167,7 @@ Rec - Number of times player receives the ball successfully
 PrgR - Number of passes that move the ball towards the oppoenents goal.
 """
 
-possession = pd.read_csv("team_data/possession.csv", header = [0,1], index_col= 0)
+possession = pd.read_csv("fbref_data/team_data/possession.csv", header = [0,1], index_col= 0)
 
 # Filter possession df for only touches
 possession_touches = possession[["Unnamed: 0_level_0", "Touches"]].droplevel(0, axis = 1)
@@ -205,7 +205,7 @@ npxG/Sh - Non-Penalty Expected goals per shot
 G-xG - Goals - Expected goals (Goals scored against expected goals scored)
 np:G-xG - Non-penalty Goals - Non-Penalty expected goals (Non-penalty goals against expected non-penalty goals)
 """
-shooting = pd.read_csv("team_data/shooting.csv", header = [0,1], index_col= 0)
+shooting = pd.read_csv("fbref_data/team_data/shooting.csv", header = [0,1], index_col= 0)
 
 # Filter shooting stats for standard stats only 
 shooting_standard = shooting[["Unnamed: 0_level_0", "Standard"]].droplevel(0, axis = 1)
@@ -252,7 +252,7 @@ CrsPA - Crosses into the penalty area
 ProgP - Total progressive passes (Total Passes forward towards the opponent goal)
 """
 
-passing = pd.read_csv("team_data/passing.csv", header = [0,1], index_col= 0)
+passing = pd.read_csv("fbref_data/team_data/passing.csv", header = [0,1], index_col= 0)
 
 passing_overall = passing[["Unnamed: 0_level_0", "Total"]].droplevel(0, axis = 1)
 passing_short = passing[["Unnamed: 0_level_0", "Short"]].droplevel(0, axis = 1)
