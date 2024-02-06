@@ -163,3 +163,8 @@ from data_visualisation_tools import attacking_radar_plot
 
 # Call and make a radar plot for the two teams comparing attacking stats to the opponent team as well as the league average.
 attacking_radar_plot(fbref_team_name, fbref_opponent_team_name)
+
+import data_clean
+
+creativity = data_clean.creativity_GCA
+creativity = creativity.loc[creativity["Squad"].isin([team_name, opponent_team])]
