@@ -30,24 +30,27 @@ team_id = 11
 
 # Update fbref_data/team_data/ files before reading them.
 from fbref_scrape import update_team_statistics
-update_team_statistics() # Update all file names for most recent stats.
+update_team_statistics() # Update all file names for most recent stats. This funciton scrapes data from fbref.com website
 
 # request the full fixture list for premier league mathes using get_fixture_list from fixtures python file 
-fixture_list = utility.get_fixture_list()
+fixture_list = utility.get_fixture_list() # Fixture list is taken from Fantasy Premier League Database
+
 # Create two new dataframes which store the fixtures that contain the team_name where they are either home or away.
 team_fixtures_h = fixture_list[fixture_list["Home"] == team_name]
 team_fixtures_a = fixture_list[fixture_list["Away"] == team_name]
+
 # Concatinate the two dataframes together.
 team_fixtures = pd.concat([team_fixtures_h,team_fixtures_a])
+
 # Reorder the data by the game week number so that the fixtures are in cronological order.
 team_fixtures = team_fixtures.sort_values(by= "GW", ascending= True).reset_index(drop=True)
 
 # ennumerate through the "Home_goals" and drop the fixtures that have already been played
 for i, value in enumerate(team_fixtures["Home_goals"]):
     if pd.notna(team_fixtures.at[i, "Home_goals"]):
-        team_fixtures = team_fixtures.drop(i)
+        team_fixtures = team_fixtures.drop(i) # drop(i) removes the row that contains a value.
     else:
-        pass
+        pass # Skip the rows that contain N/A values in them for remaining fixtures
 
 # Reset the index values 
 team_fixtures= team_fixtures.reset_index(drop = True)
@@ -69,7 +72,7 @@ print("Next match is " + location + " against " + opponent_team + "\nOn: " + tea
 h2h_results = ta.h2h_results(team= team_name, opp_team= opponent_team)
 
 print("Recent results in the Premier League ") #Print a statement
-display(h2h_results) # Print/Display the table of recent results between the two teams 
+#display(h2h_results) # Print/Display the table of recent results between the two teams 
 
 # Save h2h_results df as a png image to put onto GitHub page.
 fig, ax = plt.subplots(figsize=(4,4))
@@ -91,7 +94,7 @@ player_df = player_df.sort_values(by = "form", ascending= False) # Reorder the d
 player_df = player_df[["web_name", "total_points", "goals_scored", "assists", "form"]] # Filter the fields to be shown to display the most important variables.
 
 # Print the top 5 players based off form.
-display(player_df.head(5))
+#display(player_df.head(5))
 one_2_watch = player_df.head(5)
 fig, ax = plt.subplots(figsize=(4,4))
 ax.axis("off")
@@ -102,7 +105,7 @@ plt.savefig("images/one_2_watch.png", dpi = 50, bbox_inches = "tight")
 
 
 # Show fpl team strength statistics by calling the get_team_strength_stats from data_visualiation.py
-get_team_strength_stats(team_name, opponent_team)
+#get_team_strength_stats(team_name, opponent_team)
 
 
 csv_df = pd.read_csv("fbref_data/team_data/general_stats.csv", header = [0,1], index_col= 0) # Read general stats .csv file
@@ -145,7 +148,7 @@ h2h_season_stats = pd.merge(h2h_season_stats, filtered_passing_df, on = "Squad")
 # Create a dataframe called summary stats where h2h_season_stats are transposed for the "Squad" allowing for easier comparison between the two clubs.
 summary_stats = h2h_season_stats.T.rename(columns= h2h_season_stats["Squad"])
 summary_stats = summary_stats.tail(-1)
-display(summary_stats)
+#display(summary_stats)
 
 # Summary Statistics: generates a dataframe that contains the key stats for each team. 
 summary_stats.reset_index(inplace =True)

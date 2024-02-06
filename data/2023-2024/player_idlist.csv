@@ -30,6 +30,11 @@ Declan,Rice,Rice,540,Arsenal
 Reiss,Nelson,Nelson,578,Arsenal
 Jurriën,Timber,J.Timber,585,Arsenal
 Karl,Hein,Hein,646,Arsenal
+Charles,Sagoe,Sagoe,735,Arsenal
+Reuell,Walters,Walters,736,Arsenal
+Bradley,Ibrahim,Ibrahim,737,Arsenal
+Myles,Lewis-Skelly,Lewis-Skelly,764,Arsenal
+Ethan,Nwaneri,Nwaneri,772,Arsenal
 Alexandre,Moreno Lopera,Alex Moreno,32,Aston Villa
 Leon,Bailey,Bailey,34,Aston Villa
 Emiliano,Buendía Stati,Buendia,35,Aston Villa
@@ -65,6 +70,11 @@ Filip,Marschall,Marschall,670,Aston Villa
 Nicolò,Zaniolo,Zaniolo,672,Aston Villa
 Oliwier,Zych,Zych,686,Aston Villa
 Clément,Lenglet,Lenglet,699,Aston Villa
+Sam,Proctor,Proctor,765,Aston Villa
+Tommi,O'Reilly,O'Reilly,767,Aston Villa
+James,Wright,Wright,778,Aston Villa
+Kaine,Kesler-Hayden,Kesler-Hayden,793,Aston Villa
+Morgan,Rogers,Rogers,803,Aston Villa
 Jaidon,Anthony,Anthony,62,Bournemouth
 Philip,Billing,Billing,63,Bournemouth
 David,Brooks,Brooks,64,Bournemouth
@@ -100,6 +110,9 @@ Max,Aarons,Aarons,643,Bournemouth
 Alex,Scott,Scott,644,Bournemouth
 Tyler,Adams,Adams,673,Bournemouth
 Luis,Sinisterra,Sinisterra,705,Bournemouth
+Romain,Faivre,Faivre,799,Bournemouth
+Max,Kinsey-Wellings,Kinsey-Wellings,802,Bournemouth
+Enes,Ünal,Enes Ünal,804,Bournemouth
 Kristoffer,Ajer,Ajer,90,Brentford
 Ellery,Balcombe,Balcombe,91,Brentford
 Shandon,Baptiste,Baptiste,92,Brentford
@@ -129,13 +142,19 @@ Thomas,Strakosha,Strakosha,116,Brentford
 Ivan,Toney,Toney,117,Brentford
 Ryan,Trevitt,Trevitt,118,Brentford
 Yoane,Wissa,Wissa,119,Brentford
-Yegor,Yarmolyuk,Yarmolyuk,120,Brentford
+Yegor,Yarmoliuk,Yarmoliuk,120,Brentford
 Mathias,Jorgensen,Zanka,121,Brentford
 Neal,Maupay,Maupay,258,Brentford
+Sergio,Reguilón,Reguilón,508,Brentford
 Michael,Olakigbe,Olakigbe,620,Brentford
 Ethan,Brierley,Brierley,684,Brentford
 Saman,Ghoddos,Ghoddos,701,Brentford
 Ji-Soo,Kim,Kim Ji-Soo,725,Brentford
+Valintino,Adedokun,Adedokun,733,Brentford
+Myles,Peart-Harris,Peart-Harris,744,Brentford
+Vincent,Angelini,Angelini,752,Brentford
+Hákon,Valdimarsson,Valdimarsson,789,Brentford
+Benjamin,Fredrick,Fredrick,797,Brentford
 Simon,Adingra,Adingra,122,Brighton
 Steven,Alzate,Alzate,123,Brighton
 Yasin,Ayari,Ayari,124,Brighton
@@ -172,6 +191,13 @@ Igor Julio,dos Santos de Paulo,Igor,606,Brighton
 Jack,Hinshelwood,Hinshelwood,621,Brighton
 Carlos,Baleba,Baleba,690,Brighton
 Anssumane,Fati Vieira,Ansu Fati,700,Brighton
+Mark,O’Mahony,O’Mahony,741,Brighton
+Benicio,Baker-Boaitey,Baker-Boaitey,742,Brighton
+Ben,Jackson,Jackson,746,Brighton
+Joshua,Duffus,Duffus,747,Brighton
+Leigh,Kavanagh,Kavanagh,753,Brighton
+Luca,Barrington,Barrington,755,Brighton
+Cameron,Peupion,Peupion,786,Brighton
 Enock,Agyei,Agyei,156,Burnley
 Ameen,Al-Dakhil,Al-Dakhil,157,Burnley
 Samuel,Bastien,Bastien,158,Burnley
@@ -201,6 +227,7 @@ Lawrence,Vigouroux,Vigouroux,181,Burnley
 Victor,da Silva,Vitinho,182,Burnley
 Wout,Weghorst,Weghorst,183,Burnley
 Anass,Zaroury,Zaroury,184,Burnley
+David Datro,Fofana,D.D.Fofana,200,Burnley
 Sander,Berge,Berge,475,Burnley
 Zeki,Amdouni,Amdouni,594,Burnley
 James,Trafford,Trafford,596,Burnley
@@ -213,23 +240,24 @@ Hannes,Delcroix,Delcroix,674,Burnley
 Aaron,Ramsey,A.Ramsey,675,Burnley
 Han-Noah,Massengo,Massengo,694,Burnley
 Mike,Trésor,M.Trésor,706,Burnley
+Lorenz,Assignon,Assignon,805,Burnley
+Maxime,Esteve,Estève,806,Burnley
 Moisés,Caicedo Corozo,Caicedo,126,Chelsea
 Robert,Sánchez,Sanchez,145,Chelsea
 Ethan,Ampadu,Ampadu,185,Chelsea
+Andrey,Nascimento dos Santos,Andrey,186,Chelsea
 Kepa,Arrizabalaga,Arrizabalaga,187,Chelsea
 Pierre-Emerick,Aubameyang,Aubameyang,188,Chelsea
 César,Azpilicueta,Azpilicueta,189,Chelsea
 Abdul Rahman,Baba,Baba,190,Chelsea
 Benoît,Badiashile,B.Badiashile,191,Chelsea
 Marcus,Bettinelli,Bettinelli,192,Chelsea
-Armando,Broja,Broja,193,Chelsea
 Trevoh,Chalobah,Chalobah,194,Chelsea
 Ben,Chilwell,Chilwell,195,Chelsea
 Carney,Chukwuemeka,Chukwuemeka,196,Chelsea
 Levi,Colwill,Colwill,197,Chelsea
 Marc,Cucurella Saseta,Cucurella,198,Chelsea
 Enzo,Fernández,Enzo,199,Chelsea
-David Datro,Fofana,D.D.Fofana,200,Chelsea
 Wesley,Fofana,W.Fofana,201,Chelsea
 Conor,Gallagher,Gallagher,202,Chelsea
 Malo,Gusto,Gusto,203,Chelsea
@@ -257,11 +285,13 @@ Bashir,Humphreys,Humphreys,671,Chelsea
 Deivid Washington,de Souza Eugênio,Deivid,677,Chelsea
 Eddie,Beach,Beach,680,Chelsea
 Diego Manuel Jadon,da Silva Moreira,Diego Moreira,681,Chelsea
-Djordje,Petrovic,Petrovic,687,Chelsea
+Đorđe,Petrović,Petrović,687,Chelsea
 Alfie,Gilchrist,Gilchrist,716,Chelsea
 Ronnie,Stutter,Stutter,717,Chelsea
 Alex,Matos,Matos,718,Chelsea
 Josh,Brooking,Brooking,723,Chelsea
+Leo,Castledine,Castledine,758,Chelsea
+Cesare,Casadei,Casadei,791,Chelsea
 Rob,Holding,Holding,7,Crystal Palace
 Naouirou,Ahamada,Ahamada,219,Crystal Palace
 Joachim,Andersen,Andersen,220,Crystal Palace
@@ -295,6 +325,9 @@ John-Kymani,Gordon,Gordon,658,Crystal Palace
 Ademola,Ola-Adebomi,Ola-Adebomi,720,Crystal Palace
 David,Ozoh,Ozoh,721,Crystal Palace
 Jadan,Raymond,Raymond,724,Crystal Palace
+Tayo,Adaramola,Adaramola,763,Crystal Palace
+Daniel,Muñoz,Muñoz,792,Crystal Palace
+Adam,Wharton,Wharton,807,Crystal Palace
 André,Tavares Gomes,André Gomes,244,Everton
 Jarrad,Branthwaite,Branthwaite,245,Everton
 Dominic,Calvert-Lewin,Calvert-Lewin,246,Everton
@@ -306,7 +339,6 @@ Jean-Philippe,Gbamin,Gbamin,251,Everton
 Ben,Godfrey,Godfrey,252,Everton
 Demarai,Gray,Gray,253,Everton
 Idrissa,Gueye,Gana,254,Everton
-Mason,Holgate,Holgate,255,Everton
 Michael,Keane,Keane,257,Everton
 Dwight,McNeil,McNeil,259,Everton
 Vitalii,Mykolenko,Mykolenko,260,Everton
@@ -326,6 +358,9 @@ Tyler,Onyango,Onyango,650,Everton
 Jack,Harrison,Harrison,661,Everton
 Norberto Bercique,Gomes Betuncal,Beto,691,Everton
 Mackenzie,Hunt,Hunt,719,Everton
+Jenson,Metcalfe,Metcalfe,760,Everton
+Elijah,Campbell,Campbell,761,Everton
+Armando,Broja,Broja,193,Fulham
 Alex,Iwobi,Iwobi,256,Fulham
 Andreas,Hoelgebaum Pereira,Andreas,267,Fulham
 Tom,Cairney,Cairney,268,Fulham
@@ -360,6 +395,9 @@ Luke,Harris,Harris,683,Fulham
 Timothy,Castagne,Castagne,688,Fulham
 Steven,Benda,Benda,692,Fulham
 Fodé,Ballo-Touré,Ballo-Touré,707,Fulham
+Devan,Tanton,Tanton,732,Fulham
+Kristian,Sekularac,Sekularac,796,Fulham
+Joshua,King,King,810,Fulham
 Adrián,San Miguel del Castillo,Adrián,289,Liverpool
 Trent,Alexander-Arnold,Alexander-Arnold,290,Liverpool
 Alisson,Ramses Becker,A.Becker,291,Liverpool
@@ -392,6 +430,12 @@ James,McConnell,McConnell,629,Liverpool
 Wataru,Endo,Endo,668,Liverpool
 Ryan,Gravenberch,Gravenberch,708,Liverpool
 Luke,Chambers,Chambers,726,Liverpool
+Callum,Scanlon,Scanlon,728,Liverpool
+Treymaurice,Nyoni,Nyoni,743,Liverpool
+Marcelo,de Araújo Pitaluga Filho,Pitaluga,756,Liverpool
+Conor,Bradley,Bradley,757,Liverpool
+Owen,Beck,Beck,782,Liverpool
+Kaide,Gordon,Gordon,783,Liverpool
 Albert,Sambi Lokonga,Sambi,21,Luton
 Marvelous,Nakamba,Nakamba,52,Luton
 Elijah,Adebayo,Adebayo,314,Luton
@@ -433,6 +477,10 @@ Jacob,Brown,Brown,631,Luton
 Aidan,Francis-Clarke,Francis-Clarke,648,Luton
 Tim,Krul,Krul,665,Luton
 Joseph,Johnson,Johnson,682,Luton
+Andros,Townsend,Townsend,727,Luton
+Jayden,Luker,Luker,729,Luton
+Zack,Nelson,Nelson,734,Luton
+Daiki,Hashioka,Hashioka,798,Luton
 Manuel,Akanji,Akanji,341,Man City
 Nathan,Aké,Aké,342,Man City
 Julián,Álvarez,J.Alvarez,343,Man City
@@ -453,7 +501,6 @@ Rico,Lewis,R.Lewis,358,Man City
 Riyad,Mahrez,Mahrez,359,Man City
 Stefan,Ortega Moreno,Ortega Moreno,361,Man City
 Máximo,Perrone,Perrone,363,Man City
-Kalvin,Phillips,Phillips,364,Man City
 Rodrigo,Hernandez,Rodrigo,365,Man City
 Sergio,Gómez,Sergio Gómez,366,Man City
 Zack,Steffen,Steffen,367,Man City
@@ -462,6 +509,8 @@ Kyle,Walker,Walker,369,Man City
 Matheus Luiz,Nunes,Matheus N.,566,Man City
 Joško,Gvardiol,Gvardiol,616,Man City
 Jérémy,Doku,Doku,678,Man City
+Mahamadou,Susoho,Susoho,762,Man City
+Micah,Hamilton,Hamilton,771,Man City
 Mason,Mount,Mount,209,Man Utd
 Alex,Telles,Alex Telles,370,Man Utd
 Amad,Diallo,Amad,371,Man Utd
@@ -492,7 +541,6 @@ Luke,Shaw,Shaw,398,Man Utd
 Shola,Shoretire,Shoretire,399,Man Utd
 Donny,van de Beek,Van de Beek,400,Man Utd
 Aaron,Wan-Bissaka,Wan-Bissaka,401,Man Utd
-Sergio,Reguilón,Reguilón,508,Man Utd
 André,Onana,Onana,597,Man Utd
 Rasmus,Højlund,Højlund,617,Man Utd
 Omari,Forson,Forson,632,Man Utd
@@ -501,6 +549,9 @@ Daniel,Gore,Gore,685,Man Utd
 Altay,Bayindir,Altay,695,Man Utd
 Jonny,Evans,Evans,703,Man Utd
 Sofyan,Amrabat,Amrabat,709,Man Utd
+Joe,Hugill,Hugill,748,Man Utd
+Willy,Kambwala,Kambwala,766,Man Utd
+Rhys,Bennett,Bennett,768,Man Utd
 Lewis,Hall,Hall,204,Newcastle
 Miguel,Almirón Rejala,Almirón,402,Newcastle
 Elliot,Anderson,Anderson,403,Newcastle
@@ -540,9 +591,13 @@ Harvey,Barnes,Barnes,603,Newcastle
 Tino,Livramento,Livramento,633,Newcastle
 Alex,Murphy,A.Murphy,634,Newcastle
 Lewis,Miley,Miley,635,Newcastle
+Amadou,Diallo,Diallo,738,Newcastle
+Ben,Parkinson,Parkinson,739,Newcastle
+Michael,Ndiweni,Ndiweni,745,Newcastle
+Joe,White,White,794,Newcastle
+Travis,Hernes,Hernes,795,Newcastle
 Nuno,Varela Tavares,Tavares,23,Nott'm Forest
 Matt,Turner,Turner,28,Nott'm Forest
-Andrey,Nascimento dos Santos,Andrey,186,Nott'm Forest
 Callum,Hudson-Odoi,Hudson-Odoi,205,Nott'm Forest
 Anthony,Elanga,Elanga,378,Nott'm Forest
 Brandon,Aguilera Zamora,B.Aguilera,434,Nott'm Forest
@@ -591,8 +646,15 @@ Andrew,Omobamidele,Omobamidele,711,Nott'm Forest
 Nicolás,Domínguez,Dominguez,712,Nott'm Forest
 Ibrahim,Sangaré,Sangaré,713,Nott'm Forest
 Divock,Origi,Origi,714,Nott'm Forest
+Jamie,McDonnell,McDonnell,779,Nott'm Forest
+Detlef Esapa,Osong,Osong,780,Nott'm Forest
+Joe,Gardner,Gardner,781,Nott'm Forest
+Giovanni,Reyna,Reyna,801,Nott'm Forest
+Matz,Sels,Sels,808,Nott'm Forest
+Rodrigo,Duarte Ribeiro,Ribeiro,809,Nott'm Forest
 Auston,Trusty,Trusty,27,Sheffield Utd
 Cameron,Archer,Archer,33,Sheffield Utd
+Mason,Holgate,Holgate,255,Sheffield Utd
 James,McAtee,McAtee,360,Sheffield Utd
 Anel,Ahmedhodžić,Ahmedhodžić,471,Sheffield Utd
 Jordan,Amissah,Amissah,472,Sheffield Utd
@@ -625,6 +687,11 @@ Antwoine,Hackford,Hackford,656,Sheffield Utd
 Gustavo,Hamer,Hamer,663,Sheffield Utd
 Tom,Davies,T.Davies,666,Sheffield Utd
 Luke,Thomas,Thomas,693,Sheffield Utd
+Ryan,Oné,Oné,730,Sheffield Utd
+Jili,Buyabu,Buyabu,731,Sheffield Utd
+Sydie,Peck,Peck,759,Sheffield Utd
+Ben,Brereton,Brereton Díaz,775,Sheffield Utd
+Ivo,Grbic,Grbić,790,Sheffield Utd
 Brennan,Johnson,Johnson,450,Spurs
 Brandon,Austin,Austin,491,Spurs
 Rodrigo,Bentancur,Bentancur,492,Spurs
@@ -662,6 +729,11 @@ Dane,Scarlett,Scarlett,640,Spurs
 Alejo,Véliz,Veliz,641,Spurs
 Ashley,Phillips,Phillips,702,Spurs
 Jamie,Donley,Donley,722,Spurs
+Alfie,Dorrington,Dorrington,740,Spurs
+Yago,de Santiago Alonso,Yago Santiago,754,Spurs
+Timo,Werner,Werner,776,Spurs
+Radu,Dragusin,Drăgușin,777,Spurs
+Kalvin,Phillips,Phillips,364,West Ham
 Nayef,Aguerd,N.Aguerd,522,West Ham
 Michail,Antonio,Antonio,523,West Ham
 Alphonse,Areola,Areola,524,West Ham
@@ -690,6 +762,10 @@ Joseph,Anang,Anang,647,West Ham
 James,Ward-Prowse,Ward-Prowse,664,West Ham
 Konstantinos,Mavropanos,Mavropanos,676,West Ham
 Mohammed,Kudus,Kudus,689,West Ham
+Lewis,Orford,Orford,773,West Ham
+Kaelan,Casey,Casey,774,West Ham
+Oliver,Scarles,Scarles,784,West Ham
+Callum,Marshall,Marshall,785,West Ham
 Tommy,Doyle,Doyle,351,Wolves
 Rayan,Aït-Nouri,Aït-Nouri,545,Wolves
 Daniel,Bentley,Bentley,546,Wolves
@@ -709,7 +785,7 @@ Bruno,Cavaco Jordão,Jordão,561,Wolves
 Sasa,Kalajdzic,Kalajdžić,562,Wolves
 Max,Kilman,Kilman,563,Wolves
 Tom,King,King,564,Wolves
-Mario,Lemina,Lemina,565,Wolves
+Mario,Lemina,Mario Jr.,565,Wolves
 Pedro,Lomba Neto,Neto,567,Wolves
 Daniel,Castelo Podence,Podence,568,Wolves
 José,Malheiro de Sá,José Sá,569,Wolves
@@ -724,3 +800,11 @@ Santiago,Bueno,S.Bueno,697,Wolves
 Enso,González,González,698,Wolves
 Nathan,Fraser,Fraser,704,Wolves
 Jean-Ricner,Bellegarde,Bellegarde,715,Wolves
+Matthew,Whittingham,Whittingham,749,Wolves
+Tawanda,Chirewa,Chirewa,750,Wolves
+Justin,Hubner,Hubner,751,Wolves
+Owen,Hesketh,Hesketh,769,Wolves
+Ty,Barnett,Barnett,770,Wolves
+Harvey,Griffiths,Griffiths,787,Wolves
+Yerson,Mosquera,Mosquera,788,Wolves
+Noha,Lemina,N.Lemina,800,Wolves

@@ -89,5 +89,3 @@ def FPL_history(player_name):
     #plt.savefig("player_performance_example.png", dpi = 300, bbox_inches = "tight")
     # Display the plot
     plt.show()
-
-def 
