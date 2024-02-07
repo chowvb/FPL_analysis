@@ -175,32 +175,47 @@ def attacking_radar_plot(team1, team2):
     fig.write_html("interactive_plots/attacking_h2h_radar_chart.html")
     return 
 
-def radar_plot(categories, team1, team1_name, team2, team2_name, league_average):
+
+"""
+radar_plot(categories, team1_data, team1_name, team2_data, team2_name, league_average_data)
+
+The following funciton takes the core concepts of the attacking_radar_plot() function above and makes it usable with any data
+
+args:
+    categories - the names of the data variables (e.g., Gls, Sh, SoT, etc)
+    team1_data - values for each of the categories stored into a list
+    team1_name - name of team1 (as a string)
+    team2_data - values for each of the categories stored into a list for the second team
+    team2_name - name of team2 (as a string)
+    league_average_data - average values for each of the categories stored into a list 
+"""
+def radar_plot(categories, team1_data, team1_name, team2_data, team2_name, league_average_data):
     import plotly.graph_objects as go 
 
     # Define Figure
     fig = go.Figure()
 
     # Add the plot for team1
-    fig.add_trace(go.scatterpolar(
-        r = team1,
+    fig.add_trace(go.Scatterpolar(
+        r = team1_data,
         theta = categories,
         fill = "toself",
         name = team1_name
     ))
 
     # Add the plot for team2
-    fig.add_trace(go.scatterpolar(
-        r = team2,
+    fig.add_trace(go.Scatterpolar(
+        r = team2_data,
         theta = categories,
         fill = "toself",
         name = team2_name
     ))
 
     # Add the plot for the league average
-    fig.add_trace(go.scatterpolar(
-        r = league_average,
+    fig.add_trace(go.Scatterpolar(
+        r = league_average_data,
         theta = categories, 
         fill = "toself",
         name = "League Average"
     ))
+    fig.show()
