@@ -30,10 +30,23 @@ team_id = 11
 
 # Update fbref_data/team_data/ files before reading them.
 from fbref_scrape import update_team_statistics
-update_team_statistics() # Update all file names for most recent stats. This funciton scrapes data from fbref.com website
 
-# request the full fixture list for premier league mathes using get_fixture_list from fixtures python file 
-fixture_list = utility.get_fixture_list() # Fixture list is taken from Fantasy Premier League Database
+# Use a try statement to update local data files. 
+try:
+    update_team_statistics() # Update all file names for most recent stats. This funciton scrapes data from fbref.com website
+
+    # request the full fixture list for premier league mathes using get_fixture_list from fixtures python file 
+    fixture_list = utility.get_fixture_list() # Fixture list is taken from Fantasy Premier League Database
+
+except Exception: # If there is an error eg., No internet connection, script will continue with data stored locally on machine.
+    # Print error statement
+    print("There was an error requesting data. System using local data storage")
+    
+    # Read previous fixture list data
+    fixture_list = pd.read_csv("data/2023-2024/fixtures.csv")
+
+    # Continue with the code in the rest of the script.
+    pass
 
 # Create two new dataframes which store the fixtures that contain the team_name where they are either home or away.
 team_fixtures_h = fixture_list[fixture_list["Home"] == team_name]
