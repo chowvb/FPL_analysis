@@ -177,6 +177,6 @@ def get_fixture_list():
 
     # Filter fixtures_df to only contain the columns in df_columns and sort by the game week (GW) 
     fixtures_df = fixtures_df[df_columns["new_name"]].sort_values(by="GW", ascending=True)
-
+    fixtures_df.to_csv("data/2023-2024/fixtures.csv")
     # Return the Data Frame
     return fixtures_df
