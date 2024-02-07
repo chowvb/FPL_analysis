@@ -188,6 +188,9 @@ args:
     team2_data - values for each of the categories stored into a list for the second team
     team2_name - name of team2 (as a string)
     league_average_data - average values for each of the categories stored into a list 
+
+the function outputs a figure visualising the data for each of the categories, figure can be interacted with to see actual
+values by hovering cursor over each of the points. 
 """
 def radar_plot(categories, team1_data, team1_name, team2_data, team2_name, league_average_data):
     import plotly.graph_objects as go 
