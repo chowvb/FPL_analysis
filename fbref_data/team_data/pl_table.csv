@@ -1,6 +1,6 @@
 ,Rk,Squad,MP,W,D,L,GF,GA,GD,Pts,Pts/MP,xG,xGA,xGD,xGD/90,Last 5,Attendance,Top Team Scorer,Goalkeeper,Notes
 0,1,Liverpool,23,15,6,2,52,22,30,51,2.22,48.9,28.1,20.9,0.91,W W W W L,53065,Mohamed Salah - 14,Alisson,
-1,2,Manchester City,22,15,4,3,54,25,29,49,2.23,43.6,21.6,22.0,1.0,W W W W W,53182,Erling Haaland - 14,Ederson,
+1,2,Manchester City,22,15,4,3,54,25,29,49,2.23,43.6,21.6,21.9,1.0,W W W W W,53182,Erling Haaland - 14,Ederson,
 2,3,Arsenal,23,15,4,4,47,22,25,49,2.13,44.3,17.5,26.8,1.16,L L W W W,60196,Bukayo Saka - 8,David Raya,
 3,4,Aston Villa,23,14,4,5,49,30,19,46,2.0,40.8,30.7,10.1,0.44,L W D L W,41558,Ollie Watkins - 11,Emiliano Martínez,
 4,5,Tottenham,23,13,5,5,49,35,14,44,1.91,40.3,39.7,0.6,0.03,L W D W D,61586,Son Heung-min - 12,Guglielmo Vicario,
@@ -13,7 +13,7 @@
 11,12,Bournemouth,22,7,6,9,30,41,-11,27,1.23,30.9,34.8,-3.9,-0.18,W L L D D,11061,Dominic Solanke - 13,Neto,
 12,13,Fulham,23,7,5,11,30,38,-8,26,1.13,28.4,40.2,-11.8,-0.51,L W L D D,24255,Raúl Jiménez - 5,Bernd Leno,
 13,14,Crystal Palace,23,6,6,11,26,40,-14,24,1.04,26.4,34.0,-7.6,-0.33,L W L W L,24891,"Odsonne Édouard, Michael Olise - 6",Sam Johnstone,
-14,15,Brentford,22,6,4,12,32,39,-7,22,1.0,36.4,31.5,4.9,0.22,L L W L L,17062,Bryan Mbeumo - 7,Mark Flekken,
+14,15,Brentford,22,6,4,12,32,39,-7,22,1.0,36.4,31.4,5.0,0.23,L L W L L,17062,Bryan Mbeumo - 7,Mark Flekken,
 15,16,Nott'ham Forest,23,5,6,12,28,41,-13,21,0.91,26.0,34.3,-8.3,-0.36,W W L L D,29298,Chris Wood - 8,Matt Turner,
 16,17,Luton Town,22,5,5,12,32,42,-10,20,0.91,25.6,42.9,-17.3,-0.78,W L D W D,10921,Elijah Adebayo - 9,Thomas Kaminski,
 17,18,Everton,23,8,5,10,26,30,-4,19,0.83,35.7,31.5,4.2,0.18,L L D D D,39122,Abdoulaye Doucouré - 6,Jordan Pickford,10-point deduction 1
