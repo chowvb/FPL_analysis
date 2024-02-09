@@ -109,3 +109,34 @@ fig.add_trace(go.Scatterpolar(
     name = opponent_team
 ))
 fig.show()
+
+import seaborn as sns
+import matplotlib as mpl 
+sns.set()
+
+font_color = '#525252'
+hfont = {'fontname':'Calibri'}
+facecolor = '#eaeaf2'
+color_red = '#fd625e'
+color_blue = '#01b8aa'
+index = h2h_summary.index
+column0 = h2h_summary[team_name]
+column1 = h2h_summary[opponent_team]
+title0 = team_name
+title1 = opponent_team
+
+fig, axes = plt.subplots(figsize=(10,5), facecolor=facecolor, ncols=2, sharey=True)
+fig.tight_layout()
+axes[0].barh(index, column0, align='center', color=color_red, zorder=10)
+axes[0].set_title(title0, fontsize=18, pad=15, color=color_red, **hfont)
+axes[1].barh(index, column1, align='center', color=color_blue, zorder=10)
+axes[1].set_title(title1, fontsize=18, pad=15, color=color_blue, **hfont)
+# If you have positive numbers and want to invert the x-axis of the left plot
+axes[0].invert_xaxis() 
+
+# To show data from highest to lowest
+plt.gca().invert_yaxis()
+
+axes[0].set(yticks=h2h_summary.index, yticklabels=h2h_summary.index)
+axes[0].yaxis.tick_left()
+axes[0].tick_params(axis='y', colors='Black') # tick color
