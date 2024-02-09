@@ -181,3 +181,7 @@ import data_clean
 
 creativity = data_clean.creativity_GCA
 creativity = creativity.loc[creativity["Squad"].isin([team_name, opponent_team])]
+
+defence_tackles = data_clean.defence_tackles
+from data_visualisation_tools import radar_plot
+radar_plot(defence_tackles, team_name, opponent_team)
