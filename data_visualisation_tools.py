@@ -192,7 +192,14 @@ args:
 the function outputs a figure visualising the data for each of the categories, figure can be interacted with to see actual
 values by hovering cursor over each of the points. 
 """
-def radar_plot(categories, team1_data, team1_name, team2_data, team2_name, league_average_data):
+def radar_plot(DataFrame, team_name, opponent_team_name):
+    import numpy as np 
+    filtered_data = DataFrame[DataFrame["Squad"].isin([team_name, opponent_team_name])]
+    filtered_data = filtered_data.T.rename(columns= filtered_data["Squad"])
+    h2h_data = filtered_data.tail(-1)
+    categories = h2h_data.index.to_list()
+    team_data = h2h_data[team_name].values
+    opponent_team_data = h2h_data[opponent_team_name].values
     import plotly.graph_objects as go 
 
     # Define Figure
@@ -200,25 +207,18 @@ def radar_plot(categories, team1_data, team1_name, team2_data, team2_name, leagu
 
     # Add the plot for team1
     fig.add_trace(go.Scatterpolar(
-        r = team1_data,
+        r = team_data,
         theta = categories,
         fill = "toself",
-        name = team1_name
+        name = team_name
     ))
 
     # Add the plot for team2
     fig.add_trace(go.Scatterpolar(
-        r = team2_data,
+        r = opponent_team_data,
         theta = categories,
         fill = "toself",
-        name = team2_name
+        name = opponent_team_name
     ))
 
-    # Add the plot for the league average
-    fig.add_trace(go.Scatterpolar(
-        r = league_average_data,
-        theta = categories, 
-        fill = "toself",
-        name = "League Average"
-    ))
     fig.show()
