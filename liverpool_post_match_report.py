@@ -8,12 +8,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 """
+Currently a broken python file, the script does not take into consideration games in other competitions. And therefor may break and return error if a game other than a premier league game was the most recent.
+Working around a fix for this bug.
+
 ***Notes***
 
 Script function -
     - Takes the latest result in the premier league and creates post match analysis. 
 
 Requires internet connection as functions used within this script utilises web scraping to obtain match data from fbref.com and FantasyPremierLeague.com
+
 
 """
 
