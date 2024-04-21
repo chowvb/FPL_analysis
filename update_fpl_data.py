@@ -47,8 +47,9 @@ def scrape_data():
     players_df.to_csv("data/2023-2024/players_raw.csv", index = False)
 
     # Create a DataFrame with only the id, Name, team and position and save to a .csv file for offline analysis
-    player_id_df = players_df[["first_name", "second_name","web_name", "id", "team"]]
+    player_id_df = players_df[["first_name", "second_name","web_name", "id", "team", "element_type"]]
     player_id_df["team"].replace(utility.team_replace_dict, inplace = True)
+    player_id_df["element_type"].replace(position_replace_dict, inplace = True)
     player_id_df.to_csv("data/2023-2024/player_idlist.csv", index=False)
 
     # Create a DataFrame to the same format as 2022-2023/cleaned_players.csv format for easy analysis and comparison to previous season.
@@ -91,28 +92,34 @@ def get_gw_data(player_id):
     player_first_name = player_id.at[0,"first_name"]
     player_second_name = player_id.at[0,"second_name"]
 
+    # Obtain player position
+    player_position = player_id.at[0, "element_type"]
+
     # Join the first name and second name (we do this because all the previous merged_gw.csv files have the player name in this format)
     player_name = player_first_name + " " + player_second_name
 
     # Retrieve the team that the requested player plays for 
     team_name = player_id.at[0,"team"]
 
+    # Add the player position into the df
+    df["position"] = player_position
+
     # Change all the names in the column "element" to the requested players first and second name combined 
-    df["element"] = player_name
+    df["name"] = player_name
 
     # Change the elements columns name to "name" so it is consisten to the other merged_gw files.
-    df.rename(columns={"element":"name"}, inplace=True)
+    df.rename(columns={"element":"id"}, inplace=True)
 
     # Add the team that the player play for into the dataframe, some historical data doesn't have this but the most recent seasons do. 
     df["team"] = team_name
 
     # Replace Opponent team from id number to name
     team_id = pd.DataFrame(utility.team_replace_dict2)
-    team_id = team_id.rename(columns={"team_id": "opponent_team", "Team": "opponent"})
+    team_id = team_id.rename(columns={"team_id": "opponent_team", "Team": "opp_team_name"})
 
     result_df = pd.merge(df, team_id, on = "opponent_team")
-    result_df.drop("opponent_team", axis = 1, inplace = True)
-    result_df = result_df.rename(columns={"opponent": "opponent_team"})
+    #result_df.drop("opponent_team", axis = 1, inplace = True)
+    #result_df = result_df.rename(columns={"opponent": "opponent_team"})
 
     # Return the DataFrame back to the user.
     return result_df
@@ -146,10 +153,42 @@ def get_all_gw_data():
     # Save the dataframe as a csv file on the local machine for data analysis. 
     merged_gw.to_csv("data/2023-2024/merged_gw.csv", index = False)
 
+def update_cleaned_merged_seasons():
+
+    # Call the merged_gw dataset containing all the data for each players matches this current season
+    current_merged_data = pd.read_csv("data/2023-2024/merged_gw.csv")
+
+    # Add an extra column where all the values are 2023-24 - This is done for compatibility and consistency to concat this data set to the historic dataset later.
+    current_merged_data["season_x"] = "2023-24"
+
+    # Rename columns in current_merged_data for consistency with historic dataset
+    current_merged_data = current_merged_data.rename(columns={"team":"team_x", "id": "element"})
+
+    # Copy "round" column into a new "GW" column, again for consistency. These values are the same regardless.
+    current_merged_data["GW"] = current_merged_data["round"]
+
+    # Read the historic player/match dataset
+    historic_merged_data = pd.read_csv("data/cleaned_merged_seasons.csv")
+    
+    # Store all the common columns between the two dataframe into a list
+    variables = current_merged_data.columns.intersection(historic_merged_data.columns)
+
+    # Create a new dataframe filtering the current_merged_data into the same format as the historic dataset
+    new_current_merged_data = current_merged_data[variables]
+
+    # Concat the two dataframes together
+    full_df = pd.concat([historic_merged_data, new_current_merged_data])
+
+    # Save the dataset as a .csv file for later use in analysis
+    full_df.to_csv("data/complete_gw_dataset.csv", index = False)
+
 def update_all():
     print("Updating FPL Data")
     scrape_data()
 
     print("Updating GW data")
     get_all_gw_data()
-    
+
+    print("Updating Historic Dataset")
+    update_cleaned_merged_seasons()
+     
