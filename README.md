@@ -7,7 +7,7 @@
 3) [FBref Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#fbref-analysis)
 4) [Liverpool FC Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#liverpool-fc-analysis)
 5) [Post-Season Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#post-season-analysis)
-   1) [Set Pieces](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#set-pieces)
+   1) [Set Pieces](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#set-pieces-anlysis)
 
 
 ## Introduction
@@ -71,8 +71,8 @@ An interactive version of this image can be found in [Interactive Plots](interac
 ## Post Season Analysis
 Following the conclusion of 
 
-### Set Pieces analysis
-| Squad           |   PassDead_x |   PassDead_y |   Efficiency (%) |
+### Set Pieces Analysis
+| Squad           |   Shots From Set Pieces |   Goals From Set Pieces |   Efficiency (%) |
 |:----------------|-------------:|-------------:|-----------------:|
 | Arsenal         |           82 |           16 |               20 |
 | Aston Villa     |           77 |            8 |               10 |
@@ -94,3 +94,27 @@ Following the conclusion of
 | Spurs           |           60 |            7 |               12 |
 | West Ham        |           91 |           11 |               12 |
 | Wolves          |           67 |            7 |               10 |
+
+### Build-up Play Analysis
+| Squad           |   Short_Passes_% |   Medium_Passes_% |   Long_Passes_% |
+|:----------------|-----------------:|------------------:|----------------:|
+| Arsenal         |               47 |                39 |              10 |
+| Aston Villa     |               41 |                43 |              12 |
+| Bournemouth     |               37 |                39 |              19 |
+| Brentford       |               39 |                38 |              17 |
+| Brighton        |               50 |                36 |               9 |
+| Burnley         |               40 |                39 |              15 |
+| Chelsea         |               47 |                39 |              10 |
+| Crystal Palace  |               41 |                38 |              16 |
+| Everton         |               39 |                35 |              20 |
+| Fulham          |               39 |                41 |              14 |
+| Liverpool       |               44 |                40 |              12 |
+| Luton Town      |               38 |                36 |              19 |
+| Manchester City |               49 |                37 |               9 |
+| Manchester Utd  |               45 |                36 |              13 |
+| Newcastle Utd   |               43 |                39 |              13 |
+| Nott'ham Forest |               41 |                37 |              16 |
+| Sheffield Utd   |               40 |                35 |              19 |
+| Tottenham       |               48 |                39 |               8 |
+| West Ham        |               42 |                35 |              17 |
+| Wolves          |               45 |                37 |              13 |
