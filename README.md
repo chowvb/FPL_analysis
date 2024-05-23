@@ -2,12 +2,12 @@
 
 ## Contents
 
-1) [Introduction](https://github.com/chowvb/FPL_analysis#introduction)
-2) [FPL Analysis](https://github.com/chowvb/FPL_analysis#fpl-analysis)
-3) [FBref Analysis](https://github.com/chowvb/FPL_analysis#fbref-analysis)
-4) [Liverpool FC Analysis](https://github.com/chowvb/FPL_analysis#liverpool-fc-analysis)
-5) [Post-Season Analysis](https://github.com/chowvb/FPL_analysis#post-season-analysis)
-   1) [Set Pieces](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#introduction)
+1) [Introduction](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#introduction)
+2) [FPL Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#fpl-analysis)
+3) [FBref Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#fbref-analysis)
+4) [Liverpool FC Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#liverpool-fc-analysis)
+5) [Post-Season Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#post-season-analysis)
+   1) [Set Pieces](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#set-pieces)
 
 
 ## Introduction
