@@ -7,6 +7,7 @@
 3) [FBref Analysis](https://github.com/chowvb/FPL_analysis#fbref-analysis)
 4) [Liverpool FC Analysis](https://github.com/chowvb/FPL_analysis#liverpool-fc-analysis)
 5) [Post-Season Analysis](https://github.com/chowvb/FPL_analysis#post-season-analysis)
+   1) [Set Pieces](https://github.com/chowvb/FPL_analysis#set-pieces)
 
 
 ## Introduction
