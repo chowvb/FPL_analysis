@@ -26,6 +26,7 @@ def summary_att_stats():
 
     # Show the plot
     plt.grid(True)
+    plt.savefig("images/G_vs_xG_fpl.png", dpi = 300, bbox_inches = "tight")
     plt.show()
     
     gw_data_assists = gw_data.sort_values(by = "assists", ascending=False)
@@ -45,6 +46,7 @@ def summary_att_stats():
 
     # Show the plot
     plt.grid(True)
+    plt.savefig("images/A_vs_xA_fpl.png", dpi = 300, bbox_inches = "tight")
     plt.show()
 
 
@@ -77,6 +79,21 @@ def summary_att_stats():
     # Show the plot
     plt.grid(True)
     # Save the plot
-    #plt.savefig("images/Attacking_Performance.png", dpi = 300, bbox_inches = "tight")
+    plt.savefig("images/Attacking_Performance.png", dpi = 300, bbox_inches = "tight")
     plt.show()
+
+def points_per_90():
+    players_df = pd.read_csv("data/2023-2024/players_raw.csv")
+    variables = ["web_name", "element_type", "total_points", "minutes"]
+    players_df = players_df[variables]
+    ppm = []
+    for i, player_name in enumerate(players_df["web_name"]):
+        if players_df["minutes"][i] > 0:
+            ppm.append(int(players_df["total_points"][i]) / 90)
+        else:
+            ppm.append(0)
     
+    players_df["points_per_90"] = ppm
+    players_df.sort_values(by="points_per_90", ascending= False)
+    return players_df
+
