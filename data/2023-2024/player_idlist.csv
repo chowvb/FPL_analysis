@@ -78,6 +78,9 @@ James,Wright,Wright,778,Aston Villa,GLK
 Kaine,Kesler-Hayden,Kesler-Hayden,793,Aston Villa,DEF
 Morgan,Rogers,Rogers,803,Aston Villa,MID
 Joe,Gauci,Gauci,818,Aston Villa,GLK
+Finley,Munroe,Munroe,854,Aston Villa,DEF
+Kadan,Young,Young,865,Aston Villa,MID
+Lander,Emery,Emery,866,Aston Villa,GLK
 Jaidon,Anthony,Anthony,62,Bournemouth,MID
 Philip,Billing,Billing,63,Bournemouth,MID
 David,Brooks,Brooks,64,Bournemouth,MID
@@ -118,6 +121,7 @@ Max,Kinsey,Kinsey,802,Bournemouth,DEF
 Enes,Ünal,Enes Ünal,804,Bournemouth,FWD
 Dominic,Sadi,Sadi,811,Bournemouth,MID
 Michael,Dacosta Gonzalez,Dacosta Gonzalez,849,Bournemouth,MID
+Callan,McKenna,McKenna,855,Bournemouth,GLK
 Kristoffer,Ajer,Ajer,90,Brentford,DEF
 Ellery,Balcombe,Balcombe,91,Brentford,GLK
 Shandon,Baptiste,Baptiste,92,Brentford,MID
@@ -161,6 +165,7 @@ Vincent,Angelini,Angelini,752,Brentford,GLK
 Hákon,Valdimarsson,Valdimarsson,789,Brentford,GLK
 Benjamin,Fredrick,Fredrick,797,Brentford,DEF
 Benjamin,Arthur,Arthur,834,Brentford,DEF
+Yunus,Konak,Konak,864,Brentford,MID
 Simon,Adingra,Adingra,122,Brighton,MID
 Steven,Alzate,Alzate,123,Brighton,MID
 Yasin,Ayari,Ayari,124,Brighton,MID
@@ -207,6 +212,7 @@ Cameron,Peupion,Peupion,786,Brighton,MID
 Valentín,Barco,Barco,816,Brighton,DEF
 Samy,Chouchane,Chouchane,843,Brighton,MID
 Odeluga,Offiah,Offiah,845,Brighton,DEF
+Noël,Atom,Atom,861,Brighton,DEF
 Enock,Agyei,Agyei,156,Burnley,MID
 Ameen,Al-Dakhil,Al-Dakhil,157,Burnley,DEF
 Samuel,Bastien,Bastien,158,Burnley,MID
@@ -308,6 +314,8 @@ Josh,Acheampong,Acheampong,838,Chelsea,DEF
 Teddy,Sharman-Lowe,Sharman-Lowe,847,Chelsea,GLK
 Tyrique,George,George,851,Chelsea,FWD
 Kiano,Dyer,Dyer,852,Chelsea,MID
+Ted,Curd,Curd,858,Chelsea,GLK
+Zak,Sturge,Sturge,859,Chelsea,DEF
 Rob,Holding,Holding,7,Crystal Palace,DEF
 Naouirou,Ahamada,Ahamada,219,Crystal Palace,MID
 Joachim,Andersen,Andersen,220,Crystal Palace,DEF
@@ -380,6 +388,7 @@ Mackenzie,Hunt,Hunt,719,Everton,MID
 Jenson,Metcalfe,Metcalfe,760,Everton,MID
 Elijah,Campbell,Campbell,761,Everton,DEF
 Lewis,Warrington,Warrington,841,Everton,MID
+Billy,Crellin,Crellin,863,Everton,GLK
 Armando,Broja,Broja,193,Fulham,FWD
 Alex,Iwobi,Iwobi,256,Fulham,MID
 Andreas,Hoelgebaum Pereira,Andreas,267,Fulham,MID
@@ -586,6 +595,7 @@ Habeeb,Ogunneye,Ogunneye,833,Man Utd,DEF
 Dermot,Mee,Mee,835,Man Utd,GLK
 Harry,Amass,Amass,846,Man Utd,DEF
 Ethan,Wheatley,Wheatley,850,Man Utd,FWD
+Louis,Jackson,Jackson,856,Man Utd,DEF
 Lewis,Hall,Hall,204,Newcastle,DEF
 Miguel,Almirón Rejala,Almirón,402,Newcastle,MID
 Elliot,Anderson,Anderson,403,Newcastle,MID
@@ -730,6 +740,7 @@ Billy,Blacker,Blacker,822,Sheffield Utd,FWD
 Oliver,Arblaster,Arblaster,823,Sheffield Utd,MID
 Dovydas,Sasnauskas,Sasnauskas,827,Sheffield Utd,DEF
 Sam,Curtis,Curtis,828,Sheffield Utd,DEF
+Owen,Hampson,Hampson,857,Sheffield Utd,MID
 Brennan,Johnson,Johnson,450,Spurs,MID
 Brandon,Austin,Austin,491,Spurs,GLK
 Rodrigo,Bentancur,Bentancur,492,Spurs,MID
@@ -771,6 +782,8 @@ Alfie,Dorrington,Dorrington,740,Spurs,DEF
 Yago,de Santiago Alonso,Yago Santiago,754,Spurs,MID
 Timo,Werner,Werner,776,Spurs,FWD
 Radu,Dragusin,Drăgușin,777,Spurs,DEF
+Mikey,Moore,Moore,860,Spurs,MID
+Tyrese,Hall,Hall,862,Spurs,MID
 Kalvin,Phillips,Phillips,364,West Ham,MID
 Nayef,Aguerd,N.Aguerd,522,West Ham,DEF
 Michail,Antonio,Antonio,523,West Ham,FWD
@@ -850,3 +863,4 @@ Noha,Lemina,N.Lemina,800,Wolves,MID
 Wesley,Okoduwa,Okoduwa,832,Wolves,DEF
 Leon,Chiwome,Chiwome,836,Wolves,FWD
 Fletcher,Holman,Holman,840,Wolves,FWD
+Temple,Ojinnaka,Ojinnaka,853,Wolves,MID
