@@ -7,7 +7,8 @@
 3) [FBref Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#fbref-analysis)
 4) [Liverpool FC Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#liverpool-fc-analysis)
 5) [Post-Season Analysis](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#post-season-analysis)
-   1) [Set Pieces](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#set-pieces-anlysis)
+   1) [Set Pieces](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#set-pieces-analysis)
+   2) [Build-up Play](https://github.com/chowvb/FPL_analysis?tab=readme-ov-file#build-up-play-analysis)
 
 
 ## Introduction
@@ -72,7 +73,7 @@ An interactive version of this image can be found in [Interactive Plots](interac
 Following the conclusion of 
 
 ### Set Pieces Analysis
-| Squad           |   Shots From Set Pieces |   Goals From Set Pieces |   Efficiency (%) |
+| Squad           |   Shots From Set Pieces |   Direct Goals From Set Pieces |   Efficiency (%) |
 |:----------------|-------------:|-------------:|-----------------:|
 | Arsenal         |           82 |           16 |               20 |
 | Aston Villa     |           77 |            8 |               10 |
@@ -95,8 +96,9 @@ Following the conclusion of
 | West Ham        |           91 |           11 |               12 |
 | Wolves          |           67 |            7 |               10 |
 
+
 ### Build-up Play Analysis
-| Squad           |   Short_Passes_% |   Medium_Passes_% |   Long_Passes_% |
+| Squad           |   Passes < 10 Yards (%) |   Passes 10 - 30 Yards (%) |   Passes > 30 Yards (%) |
 |:----------------|-----------------:|------------------:|----------------:|
 | Arsenal         |               47 |                39 |              10 |
 | Aston Villa     |               41 |                43 |              12 |
@@ -118,3 +120,4 @@ Following the conclusion of
 | Tottenham       |               48 |                39 |               8 |
 | West Ham        |               42 |                35 |              17 |
 | Wolves          |               45 |                37 |              13 |
+
