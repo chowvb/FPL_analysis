@@ -1,3 +1,22 @@
+"""
+Quick Description:
+data_clean.py takes the .csv files containing data from FBref and seperates the multi-layered tables into seperate data 
+frames which can be used for further data analysis. Each of the dataframes contains a description of what the abbreviations stand for as a reference
+for future analysis.
+
+.csv files covered and cleaned:
+    - creativity.csv
+    - defence.csv
+    - goalkeeping_adv.csv
+    - possession.csv
+    - shooting.csv
+    - passing.csv
+
+.csv files NOT cleaned:
+    - general_stats.csv
+    - goalkeeping.csv
+    - other.csv
+"""
 import pandas as pd
 import csv
 
@@ -261,3 +280,23 @@ passing_long = passing[["Unnamed: 0_level_0", "Long"]].droplevel(0, axis = 1)
 passing_other = passing[["Unnamed: 0_level_0", "Unnamed: 17_level_0", "Unnamed: 18_level_0",
                           "Expected", "Unnamed: 21_level_0", "Unnamed: 22_level_0", "Unnamed: 23_level_0",
                           "Unnamed: 24_level_0", "Unnamed: 25_level_0"]].droplevel(0, axis = 1)
+
+
+# All cleaning all the other data files into one dataframe for easy access (general_stats.csv, other.csv)
+"""
+
+"""
+
+general = pd.read_csv("fbref_data/team_data/general_stats.csv", header = [0,1], index_col= 0)
+
+general_playing_time = general[["Unnamed: 0_level_0", "Playing Time"]].droplevel(0, axis = 1)
+general_performance = general[["Unnamed: 0_level_0", "Performance"]].droplevel(0, axis = 1)
+general_expected = general[["Unnamed: 0_level_0", "Expected"]].droplevel(0, axis = 1)
+general_playing_time = general[["Unnamed: 0_level_0", "Playing Time"]].droplevel(0, axis = 1)
+general_progression = general[["Unnamed: 0_level_0", "Progression"]].droplevel(0, axis = 1)
+general_p90 = general[["Unnamed: 0_level_0", "Per 90 Minutes"]].droplevel(0, axis = 1)
+
+other_stats = pd.read_csv("fbref_data/team_data/other.csv", header = [0,1], index_col= 0)
+
+other_performance = other_stats[["Unnamed: 0_level_0", "Performance"]].droplevel(0, axis = 1)
+other_aerial = other_stats[["Unnamed: 0_level_0", "Aerial Duels"]].droplevel(0, axis = 1)
