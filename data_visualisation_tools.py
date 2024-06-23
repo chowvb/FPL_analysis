@@ -1,3 +1,14 @@
+"""
+This file contains all of the data visualisation plots that have been used in this project.
+
+Quick Descriptions:
+- get_team_strength_stats() - Creates a spider plot that compares two teams' FPL strength stats that have been defined by FPL to judge fixture difficulty
+- attacking_radar_plot() - Creates a spider plot that compares the attacking statistics using data scraped from FBref
+- radar_plot() - Takes the concepts of attacking_radar_plot() and makes the plot applicable to any data for two teams 
+
+Further details on all of these functions can be found in the comments of each of the functions 
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd

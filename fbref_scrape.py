@@ -1,3 +1,11 @@
+"""
+Quick Description:
+    This file contains functions that scrape data from the website FBref (A football statistics website)
+
+    - unique_team_id() - creates a dataframe that contains all of the Premier League teams unique links to their respective statistics webpage.
+    - unique_player_id() - Retrieves all of the current Premier League players' individual links to their respective webpage.
+    - update_team_statistics() - Retrieves team statisitcs for different categories from FBref. Data is stored in /fbref_data/team_data/
+"""
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup

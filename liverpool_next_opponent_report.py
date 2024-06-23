@@ -1,3 +1,6 @@
+"""
+***Following the conclusion of the Premier League Season 2023/2024 this script is now depricated***
+"""
 import team_analysis as ta
 import player_analysis as pa
 import pandas as pd
