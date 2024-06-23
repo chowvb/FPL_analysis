@@ -34,3 +34,20 @@ A spider plot to be used for visualising get_team_strength_stats()
 https://plotly.com/python/radar-chart/#multiple-trace-radar-chart
 
 Betfair Data Analysis ML (https://betfair-datascientists.github.io/modelling/EPLmlPython/)
+
+introducing win probability using poisson distribution (https://medium.com/@arit.pom/football-odds-data-analysis-using-poisson-distribution-in-python-part-1-bba64852108f)
+
+
+post_season_analysis.py:
+    - Set Pieces
+        - Inswinging vs Outswinging vs Straight (Rank by goals scored following set pieces)
+        - creativity.csv:
+            - PassDead (SCA vs GCA)
+                - Compare the conversion rate of set pieces shots to goals
+    - Age vs Distance covered.
+    - Visualise Passing (Possession vs Direct Football):
+        - Short 
+        - Medium
+        - Long
+        - Percentage breakdown of passing (Total Attempted passing vs short/medium/long Attempted passes    )
+
