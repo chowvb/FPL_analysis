@@ -42,7 +42,28 @@ team_replace_dict_fbref = {"fpl_team_id": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,1
                                 "Tottenham", "West Ham","Wolves"]
     }
 
-
+team_replace_fbref_to_fpl = {
+    "Arsenal" : "Arsenal",
+    "Aston Villa" : "Aston Villa",
+    "Bournemouth" : "Bournemouth",
+    "Brentford" : "Brentford",
+    "Brighton" : "Brighton",
+    "Burnley" : "Burnley",
+    "Chelsea" : "Chelsea",
+    "Crystal Palace" : "Crystal Palace", 
+    "Everton" : "Everton",
+    "Fulham" : "Fulham",
+    "Liverpool" : "Liverpool",
+    "Luton Town" : "Luton",
+    "Manchester City" : "Man City",
+    "Manchester Utd" : "Man Utd",
+    "Newcastle Utd" : "Newcastle",
+    "Nott'm Forrest" : "Nott'm Forest",
+    "Sheffield Utd" : "Sheffield Utd",
+    "Tottenham" : "Spurs",
+    "West Ham" : "West Ham",
+    "Wolves" : "Wolves"
+    }
 """
 get_extended_gw_data() - utilises a different URL Endpoint to access gameweek data using the player_id and GW_number as arguments. 
 
